@@ -1,7 +1,9 @@
 "use strict";
 
 ready(function () {
-    hoverImages('.aside-nav');
+    // hoverImages('.aside-nav');
+
+
 });
 
 function ready(fn) {

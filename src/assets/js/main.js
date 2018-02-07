@@ -1,5 +1,7 @@
 ready(function(){
-    hoverImages('.aside-nav');
+    // hoverImages('.aside-nav');
+
+
 });
 
 function ready(fn) {
@@ -25,6 +27,9 @@ function hoverImages(targetHover) {
 
 
 
+
+
+
     // let newSrc, src, oldSrc;
     //
     // //делегируем события для контейнера
@@ -38,3 +43,5 @@ function hoverImages(targetHover) {
     //     $(this).attr("src", oldSrc);
     // });
 }
+
+
