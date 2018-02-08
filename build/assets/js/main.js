@@ -1,9 +1,50 @@
-"use strict";
+'use strict';
 
 ready(function () {
-    // hoverImages('.aside-nav');
+    var el = document.querySelector('.aside-nav');
 
+    el.addEventListener('mouseover', handlerNavMouseover);
+    el.addEventListener('mouseout', handlerNavMouseout);
 
+    //обработчик делегирования по ховера
+    var currentElem = null;
+
+    function handlerNavMouseover(event) {
+        var target = event.target;
+
+        if (currentElem) return;
+
+        // уж не на TD ли?
+        while (target != this) {
+            if (target.tagName == 'LI') break;
+            target = target.parentNode;
+        }
+
+        if (target == this) return;
+
+        currentElem = target;
+
+        console.log('навели');
+        // target.style.background = 'pink';
+    }
+
+    function handlerNavMouseout(event) {
+        if (!currentElem) return;
+
+        var relatedTarget = event.relatedTarget;
+
+        if (relatedTarget) {
+            while (relatedTarget) {
+                if (relatedTarget == currentElem) return;
+                relatedTarget = relatedTarget.parentNode;
+            }
+        }
+
+        // произошло событие mouseout, курсор ушёл
+        // currentElem.style.background = '';
+        currentElem = null;
+        console.log('убрали');
+    }
 });
 
 function ready(fn) {
@@ -16,10 +57,6 @@ function ready(fn) {
 
 function hoverImages(targetHover) {
     var targetElement = document.documentElement.querySelectorAll(targetHover);
-
-    Array.prototype.targetElement.forEach(function (item) {
-        console.log(item);
-    });
 
     // let newSrc, src, oldSrc;
     //

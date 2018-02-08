@@ -7,7 +7,7 @@ html,
 body {
     min-height: 100vh;
     color: @primary-text-color;
-    font-family: Muller, sans-serif;
+    font-family: 'Geometria', sans-serif;
 }
 
 body {
@@ -24,13 +24,32 @@ img {
     max-width: 100%;
 }
 
-//.slick-slide img {
-//    max-width: 100%;
-//}
+a:not([class]){
+    color: #197AE3;
+}
 
 .container {
     max-width: 1219px;
-    padding-left: 17px;
-    padding-right: 17px;
+    //padding-left: 17px;
+    //padding-right: 17px;
     margin: 0 auto;
+    width: 100%;
+}
+
+.btn {
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: @btn-bg;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 3px;
+    transition: @transition;
+}
+
+.btn:hover {
+    background: @btn-bg-hover;
 }

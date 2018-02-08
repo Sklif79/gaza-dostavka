@@ -160,6 +160,7 @@
   padding-right: 10px;
   line-height: normal;
   transition: @transition;
+  color: #fff;
   
   &:hover {
     background-color: #fff;
@@ -176,7 +177,6 @@
 }
 
 .aside-nav__txt {
-  margin-top: 2px;
   display: inline-block;
 }
 
@@ -206,5 +206,120 @@
 .aside-callback__txt {
   display: inline-block;
   font-weight: 500;
-  margin-top: 2px;
+}
+
+
+/* - - - - - - - - - - - - index-page - - - - - - - - - - - - */
+.index-content {
+  background: url('../images/index-bg.jpg') no-repeat;
+  min-height: 100vh;
+  background-size: cover;
+  margin-left: 280px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.index-content:before {
+  .absolute-stretch;
+  background: rgba(0,0,0,0.1);
+}
+
+.index-main{
+  flex-grow: 1;
+  opacity: .99;
+  display: flex;
+}
+
+.header-index {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 35px;
+  padding-bottom: 16px;
+  opacity: .99;
+}
+
+.index-title {
+  flex-grow: 1;
+}
+
+.index-title h1 {
+  font-size: 2.125rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.header-index-title__slogan {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+
+/* - - - - - - - - - - - - contacts-schedule - - - - - - - - - - - - */
+.contacts-schedule {
+  white-space: nowrap;
+}
+
+.contacts-schedule__phone {
+  font-weight: bold;
+  line-height: normal;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.contacts-schedule__schedule {
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 7px;
+  letter-spacing: 0.01rem;
+}
+
+/* - - - - - - - - - - - - nav-index - - - - - - - - - - - - */
+.nav-index {
+  flex: 1 0 51.2295%;
+  //margin-right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-index__item {
+  background: rgba(2, 2, 2, 0.75);
+  border-radius: 3px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  flex-basis: calc(50% - 20px);
+}
+
+.nav-index__item a {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.8125rem;
+}
+
+/* - - - - - - - - - - - - index-slider - - - - - - - - - - - - */
+.index-slider {
+  background: rgba(2, 2, 2, 0.75);
+  border-radius: 3px;
+}
+
+
+/* - - - - - - - - - - - - partners - - - - - - - - - - - - */
+.partners {
+  opacity: .99;
+}
+
+
+/* - - - - - - - - - - - - footer - - - - - - - - - - - - */
+.footer {
+  height: 55px;
+  line-height: 55px;
+  font-size: 0.8125rem;
+  color: #ffffff;
+  font-weight: 500;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  opacity: .99;
 }

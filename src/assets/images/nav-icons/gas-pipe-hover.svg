@@ -1,37 +1,34 @@
 <svg width="28" height="28" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <style>
-
-    </style>
 <title>gas-pipe</title>
 <desc>Created using Figma</desc>
-<g id="Canvas" transform="translate(-1269 -329)">
+<g id="Canvas" transform="translate(-1269 -1014)">
 <g id="gas-pipe">
 <g id="Group">
 <g id="Group">
 <g id="Group">
 <g id="Vector">
-<use xlink:href="#path0_fill" transform="translate(1269 329)" fill="#197AE3"/>
+<use xlink:href="#path0_fill" transform="translate(1269 1014)" fill="#197AE3"/>
 </g>
 <g id="Vector">
-<use xlink:href="#path1_fill" transform="translate(1279.73 345.333)" fill="#197AE3"/>
+<use xlink:href="#path1_fill" transform="translate(1279.73 1030.33)" fill="#197AE3"/>
 </g>
 <g id="Vector">
-<use xlink:href="#path2_fill" transform="translate(1279.73 334.6)" fill="#197AE3"/>
+<use xlink:href="#path2_fill" transform="translate(1279.73 1019.6)" fill="#197AE3"/>
 </g>
 <g id="Vector">
-<use xlink:href="#path3_fill" transform="translate(1287.2 334.6)" fill="#197AE3"/>
+<use xlink:href="#path3_fill" transform="translate(1287.2 1019.6)" fill="#197AE3"/>
 </g>
 <g id="Vector">
-<use xlink:href="#path4_fill" transform="translate(1280.67 332.267)" fill="#197AE3"/>
+<use xlink:href="#path4_fill" transform="translate(1280.67 1017.27)" fill="#197AE3"/>
 </g>
 <g id="Vector">
-<use xlink:href="#path5_fill" transform="translate(1283.47 330.867)" fill="#197AE3"/>
+<use xlink:href="#path5_fill" transform="translate(1283.47 1015.87)" fill="#197AE3"/>
 </g>
 <g id="Vector">
-<use xlink:href="#path6_fill" transform="translate(1286.27 332.267)" fill="#197AE3"/>
+<use xlink:href="#path6_fill" transform="translate(1286.27 1017.27)" fill="#197AE3"/>
 </g>
 <g id="Vector">
-<use xlink:href="#path7_fill" transform="translate(1281.85 333.641)" fill="#197AE3"/>
+<use xlink:href="#path7_fill" transform="translate(1281.85 1018.64)" fill="#197AE3"/>
 </g>
 </g>
 </g>
