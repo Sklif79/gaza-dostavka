@@ -1,50 +1,57 @@
 'use strict';
 
 ready(function () {
-    var el = document.querySelector('.aside-nav');
+    // let el = document.querySelector('.aside-nav');
+    //
+    // el.addEventListener('mouseover', handlerNavMouseover);
+    // el.addEventListener('mouseout', handlerNavMouseout);
+    //
+    //
+    // //обработчик делегирования по ховера
+    // let currentElem = null;
+    //
+    // function handlerNavMouseover(event) {
+    //     let target = event.target;
+    //
+    //     if (currentElem) return;
+    //
+    //     // уж не на TD ли?
+    //     while (target != this) {
+    //         if (target.tagName == 'LI') break;
+    //         target = target.parentNode;
+    //     }
+    //
+    //     if (target == this) return;
+    //
+    //     currentElem = target;
+    //
+    //     console.log('навели')
+    //     // target.style.background = 'pink';
+    // }
+    //
+    // function handlerNavMouseout(event) {
+    //     if (!currentElem) return;
+    //
+    //     let relatedTarget = event.relatedTarget;
+    //
+    //     if (relatedTarget) {
+    //         while (relatedTarget) {
+    //             if (relatedTarget == currentElem) return;
+    //             relatedTarget = relatedTarget.parentNode;
+    //         }
+    //     }
+    //
+    //     // произошло событие mouseout, курсор ушёл
+    //     // currentElem.style.background = '';
+    //     currentElem = null;
+    //     console.log('убрали')
+    // }
 
-    el.addEventListener('mouseover', handlerNavMouseover);
-    el.addEventListener('mouseout', handlerNavMouseout);
 
-    //обработчик делегирования по ховера
-    var currentElem = null;
+    hoverImages('div.nav-index', 'div.nav-index__item');
+    hoverImages('ul.aside-nav', 'a.aside-nav__link');
 
-    function handlerNavMouseover(event) {
-        var target = event.target;
-
-        if (currentElem) return;
-
-        // уж не на TD ли?
-        while (target != this) {
-            if (target.tagName == 'LI') break;
-            target = target.parentNode;
-        }
-
-        if (target == this) return;
-
-        currentElem = target;
-
-        console.log('навели');
-        // target.style.background = 'pink';
-    }
-
-    function handlerNavMouseout(event) {
-        if (!currentElem) return;
-
-        var relatedTarget = event.relatedTarget;
-
-        if (relatedTarget) {
-            while (relatedTarget) {
-                if (relatedTarget == currentElem) return;
-                relatedTarget = relatedTarget.parentNode;
-            }
-        }
-
-        // произошло событие mouseout, курсор ушёл
-        // currentElem.style.background = '';
-        currentElem = null;
-        console.log('убрали');
-    }
+    preloadImg("data-src-hover");
 });
 
 function ready(fn) {
@@ -55,19 +62,28 @@ function ready(fn) {
     }
 }
 
-function hoverImages(targetHover) {
-    var targetElement = document.documentElement.querySelectorAll(targetHover);
+//смена изображений по ховеру
+function hoverImages(parentEl, hoverEl) {
+    var newSrc, src, oldSrc;
 
-    // let newSrc, src, oldSrc;
-    //
-    // //делегируем события для контейнера
-    // $('.aside-nav__link').on('mouseenter', img, function () {
-    //     newSrc = $(this).attr("data-src-hover");
-    //     oldSrc = $(this).attr("src");
-    //     src = $(this).attr("src", newSrc);
-    // });
-    //
-    // $('.aside-nav__link').on('mouseleave', img, function () {
-    //     $(this).attr("src", oldSrc);
-    // });
+    //делегируем события для контейнера
+    $(parentEl).on('mouseenter', hoverEl, function () {
+        var image = $(this).find('img');
+        newSrc = image.attr("data-src-hover");
+        oldSrc = image.attr("src");
+        src = image.attr("src", newSrc);
+    });
+
+    $(parentEl).on('mouseleave', hoverEl, function () {
+        $(this).find('img').attr("src", oldSrc);
+    });
+}
+
+//предзагрузка изображений по data-атрибуту
+function preloadImg(dataAttr) {
+    var arr = document.querySelectorAll('img[' + dataAttr + ']');
+
+    for (var i = 0; i < arr.length; i++) {
+        new Image().src = arr[i].getAttribute(dataAttr);
+    }
 }
