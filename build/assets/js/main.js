@@ -48,6 +48,23 @@ ready(function () {
     // }
 
 
+    //fancybox-popup
+    $('.js-modal').fancybox({
+        closeBtn: true,
+        minWidth: 385,
+        padding: 0,
+        helpers: {
+            overlay: {
+                css: {
+                    'background': 'rgba(0,0,0,0.65)'
+                }
+
+            }
+        }
+    });
+
+    customPlaceholderInit();
+
     hoverImages('div.nav-index', 'div.nav-index__item');
     hoverImages('ul.aside-nav', 'a.aside-nav__link');
 
@@ -85,5 +102,74 @@ function preloadImg(dataAttr) {
 
     for (var i = 0; i < arr.length; i++) {
         new Image().src = arr[i].getAttribute(dataAttr);
+    }
+}
+
+//появление после загрузки страницы
+$(window).bind('load', function () {
+    var hiddenBeforLoad =
+    // '.slider-main li, ' +
+    '.index-slider__item '
+    // '.certificates-element, ' +
+    // '.slider-sale '
+    ;
+    $(hiddenBeforLoad).css({ 'opacity': '1' });
+});
+
+//определение главной страницы
+(function () {
+    if (location.pathname === '/') $('html, body').addClass('main-page');
+    console.log(path);
+})();
+
+//кастомный плейсхолдер
+function customPlaceholderInit() {
+    var els = $('.custom-placeholder-wrap');
+    els.each(function () {
+        $(this).on('click', clickHandler);
+        $(this).find('input, textarea').on('focus', focusHandler);
+    });
+
+    textareaDetect();
+
+    function textareaDetect() {
+        els.each(function () {
+            var textarea = $(this).find('textarea');
+            if (textarea.length) {
+                $(this).find('.custom-placeholder').addClass('textarea-custom-placeholder');
+            }
+        });
+    }
+
+    function clickHandler(e) {
+        var el = findParent($(e.target), 'custom-placeholder-wrap'),
+            input = el.find('input, textarea');
+        el.addClass('custom-placeholder-active');
+        input.focus().focusout(function () {
+            var val = $(this).val().trim();
+            if (!val) {
+                el.removeClass('custom-placeholder-active');
+            }
+        });
+    }
+
+    function focusHandler(e) {
+        var el = findParent($(e.target), 'custom-placeholder-wrap');
+        el.addClass('custom-placeholder-active');
+        $(e.target).focusout(function () {
+            var val = $(this).val().trim();
+            if (!val) {
+                el.removeClass('custom-placeholder-active');
+            }
+        });
+    }
+}
+
+function findParent(el, class_) {
+    var parent = el.parent();
+    if (parent.hasClass(class_)) {
+        return parent;
+    } else {
+        return findParent(parent, class_);
     }
 }

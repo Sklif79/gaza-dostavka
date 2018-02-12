@@ -28,12 +28,23 @@ a:not([class]){
     color: #197AE3;
 }
 
+input[type='submit'] {
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 .container {
     max-width: 1219px;
     //padding-left: 17px;
     //padding-right: 17px;
     margin: 0 auto;
     width: 100%;
+}
+
+.content {
+    padding: 0 55px;
 }
 
 .btn {
@@ -46,10 +57,45 @@ a:not([class]){
     height: 35px;
     line-height: 35px;
     text-align: center;
-    border-radius: 3px;
+    border-radius: @border-radius;
     transition: @transition;
+    width: 100%;
+    padding: 0 10px;
 }
 
 .btn:hover {
     background: @btn-bg-hover;
+}
+
+.popup {
+    display: none;
+    padding: 35px 35px 40px;
+    color: #3C4858;
+}
+
+.main-page.fancybox-margin {
+    margin-right: 0;
+}
+
+.fancybox-lock.main-page .fancybox-overlay {
+    overflow: auto;
+}
+
+.fancybox-skin {
+    border-radius: @border-radius 0 @border-radius @border-radius;
+}
+
+.fancybox-close {
+    width: 34px;
+    height: 34px;
+    top: 0;
+    right: -34px;
+    background: url('../images/fancybox-close.svg') 50% @btn-bg no-repeat;
+    transition: @transition;
+    border-bottom-right-radius: @border-radius;
+    border-top-right-radius: @border-radius;
+}
+
+.fancybox-close {
+    background-color: @btn-bg-hover;
 }

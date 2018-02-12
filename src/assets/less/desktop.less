@@ -1,3 +1,4 @@
+/************************* plugins *************************/
 @import "plugins/reset.less";
 @import "plugins/jquery.fancybox.less";
 @import "plugins/slick.less";
@@ -106,6 +107,63 @@
 //.pagination-list-el.active a {
 //}
 
+/* - - - - - - - - - - - - custom-placeholder - - - - - - - - - - - - */
+.field__wrap {
+  display: block;
+  margin-bottom: 22px;
+}
+
+.field__label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.block {
+  display: block;
+}
+
+.field {
+  display: block;
+  background: #fff;
+  padding: 14px 12px;
+  color: #000;
+  width: 100%;
+  border-radius: @border-radius;
+  border: 1px solid @btn-bg;
+}
+
+.custom-placeholder-active .custom-placeholder {
+  color: #656565;
+  font-size: .75rem;
+  height: .75rem;
+  top: -20px;
+}
+
+.custom-placeholder-active .field {
+  padding: 20px 12px 8px;
+}
+
+.custom-placeholder {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 17px;
+  height: 1rem;
+  color: #595959;
+  background-color: transparent;
+  transition: all .3s ease;
+}
+.custom-placeholder-active .textarea-custom-placeholder{
+  top:8px
+}
+
+.textarea-custom-placeholder{
+  top:17px;
+  bottom:auto;
+}
+
 
 
 /* - - - - - - - - - - - - aside - - - - - - - - - - - - */
@@ -159,7 +217,6 @@
   padding-left: 20px;
   padding-right: 10px;
   line-height: normal;
-  //transition: @transition;
   color: #fff;
   
   &:hover {
@@ -208,10 +265,9 @@
   font-weight: 500;
 }
 
-
 /* - - - - - - - - - - - - index-page - - - - - - - - - - - - */
 .index-content {
-  background: url('../images/index-bg.jpg') no-repeat;
+  background: url('../images/index-bg.jpg') 0 100% no-repeat;
   min-height: 100vh;
   background-size: cover;
   margin-left: 280px;
@@ -226,9 +282,10 @@
 }
 
 .index-main{
-  flex-grow: 1;
+  height: 56.5149vh;
   opacity: .99;
   display: flex;
+  min-height: 280px;
 }
 
 .header-index {
@@ -278,32 +335,49 @@
 
 /* - - - - - - - - - - - - nav-index - - - - - - - - - - - - */
 .nav-index {
-  flex: 0 0 51.2295%;
-  //margin-right: 20px;
+  width: 51.2295%;
   display: flex;
   flex-wrap: wrap;
 }
 
 .nav-index__item {
   background: rgba(2, 2, 2, 0.75);
-  border-radius: 3px;
+  border-radius: @border-radius;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   flex-grow: 1;
-  flex-basis: calc(50% - 20px);
+  flex-basis: ~"calc(50% - 20px)";
+  padding: 10px;
+  user-select: none;
 }
 
-.nav-index__item a {
+.nav-index__link {
   color: #fff;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 0.8125rem;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-index__link:hover {
+  color: #1C98F4;;
+}
+
+.nav-index__img {
+  margin-bottom: 25px;
 }
 
 /* - - - - - - - - - - - - index-slider - - - - - - - - - - - - */
 .index-slider {
   background: rgba(2, 2, 2, 0.75);
-  border-radius: 3px;
+  border-radius: @border-radius;
+  height: ~"calc(100% - 20px)";
+  margin-top: 10px;
 }
 
 .index-slider-wrap {
@@ -311,20 +385,60 @@
   flex: none;
 }
 
+.index-slider__item {
+  opacity: 0;
+}
+
+.index-slider__item img {
+  max-height: 100%;
+}
 
 /* - - - - - - - - - - - - partners - - - - - - - - - - - - */
 .partners {
   opacity: .99;
+  flex-grow: 1;
+  //align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 26px;
 }
 
+.partners-slider__item a {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partners-slider__item img {
+  padding: 5px;
+  max-width: 100%;
+  max-height: 100%;
+}
 
 /* - - - - - - - - - - - - footer - - - - - - - - - - - - */
 .footer {
-  height: 55px;
+  height: 56px;
   line-height: 55px;
   font-size: 0.8125rem;
   color: #ffffff;
   font-weight: 500;
   border-top: 1px solid rgba(255, 255, 255, 0.7);
   opacity: .99;
+}
+
+/* - - - - - - - - - - - - popups - - - - - - - - - - - - */
+.popup h2 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.btn-submit {
+  height: 42px;
+  line-height: 42px;
+  font-weight: bold;
 }

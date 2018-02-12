@@ -3,116 +3,17 @@
 <body>
 
 <div class="wrapper index-page">
-    <!-- боковая навигация -->
-    <aside class="aside">
-        <div class="aside__logo-wrap">
-            <a href="/">
-                <img src="assets/images/logo.png" alt="АТГ" title="АТГ">
-            </a>
-        </div>
-        <ul class="aside-nav">
-            <li class="aside-nav__item">
-                <a href="#" class="aside-nav__link">
-                    <span class="aside-nav__ico">
-                        <img
-                                src="assets/images/nav-icons/gas-pipe.svg"
-                                alt=""
-                                class="js-svg"
-                                data-src-hover="assets/images/nav-icons/gas-pipe-hover.svg">
-                    </span>
-                    <span class="aside-nav__txt">Каталог продукции</span>
-                </a>
-            </li>
-            <li class="aside-nav__item">
-                <a href="#" class="aside-nav__link">
-                    <span class="aside-nav__ico">
-                        <img src="assets/images/nav-icons/engineer.svg"
-                             alt=""
-                             class="js-svg"
-                             data-src-hover="assets/images/nav-icons/engineer-hover.svg">
-                    </span>
-                    <span class="aside-nav__txt">Услуги</span>
-                </a>
-            </li>
-            <li class="aside-nav__item">
-                <a href="#" class="aside-nav__link">
-                    <span class="aside-nav__ico">
-                        <img src="assets/images/nav-icons/gas-station.svg"
-                             alt=""
-                             class="js-svg"
-                             data-src-hover="assets/images/nav-icons/gas-station-hover.svg">
-                    </span>
-                    <span class="aside-nav__txt">Сеть АГЗС</span>
-                </a>
-            </li>
-            <li class="aside-nav__item">
-                <a href="#" class="aside-nav__link">
-                    <span class="aside-nav__ico">
-                        <img src="assets/images/nav-icons/tools.svg"
-                             alt=""
-                             class="js-svg"
-                             data-src-hover="assets/images/nav-icons/tools-hover.svg">
-                    </span>
-                    <span class="aside-nav__txt">Сервис</span>
-                </a>
-            </li>
-            <li class="aside-nav__item">
-                <a href="#" class="aside-nav__link">
-                    <span class="aside-nav__ico">
-                        <img src="assets/images/nav-icons/light-bulb.svg"
-                             alt=""
-                             class="js-svg"
-                             data-src-hover="assets/images/nav-icons/light-bulb-hover.svg">
-                    </span>
-                    <span class="aside-nav__txt">Полезная информация</span>
-                </a>
-            </li>
-            <li class="aside-nav__item">
-                <a href="#" class="aside-nav__link">
-                    <span class="aside-nav__ico">
-                        <img src="assets/images/nav-icons/navigation.svg"
-                             alt=""
-                             class="js-svg"
-                             data-src-hover="assets/images/nav-icons/navigation-hover.svg">
-                    </span>
-                    <span class="aside-nav__txt">Контакты</span>
-                </a>
-            </li>
-        </ul>
-        <div class="aside-callback">
-            <a href="#" class="aside-callback__link">
-                <img src="assets/images/phone-call.svg" alt="">
-                <span class="aside-callback__txt">
-                Обратная связь
-            </span>
-            </a>
-        </div>
-    </aside>
+    //= templates/aside.html
 
     <div class="content index-content">
-        <div class="header header-index container">
-            <div class="index-title">
-                <h1>Компания ООО &laquo;АТГ&raquo;</h1>
-                <div class="header-index-title__slogan">
-                    Мы являемся самой крупной организацией по доставке газа
-                </div>
-            </div>
-            <div class="contacts-schedule ">
-                <div class="contacts-schedule__phone">+7 (812) 666-6-707</div>
-                <div class="contacts-schedule__schedule">
-                    работаем: Пн-Пт, с 8:00 до 19:00
-                </div>
-                <a href="#" class="btn">
-                    Обратный звонок
-                </a>
-            </div>
-        </div>
+
+        //= templates/header-index.html
 
         <div class="index-main container">
             <div class="nav-index">
                 <!---->
                 <div class="nav-index__item">
-                    <a href="#">
+                    <a href="#" class="nav-index__link">
                         <div class="nav-index__img">
                             <img src="assets/images/nav-icons/shipment.svg"
                                  data-src-hover="assets/images/nav-icons/shipment-hover.svg"
@@ -124,7 +25,7 @@
 
                 <!---->
                 <div class="nav-index__item">
-                    <a href="#">
+                    <a href="#" class="nav-index__link">
                         <div class="nav-index__img">
                             <img src="assets/images/nav-icons/gasification.svg"
                                  data-src-hover="assets/images/nav-icons/gasification-hover.svg"
@@ -136,7 +37,7 @@
 
                 <!---->
                 <div class="nav-index__item">
-                    <a href="#">
+                    <a href="#" class="nav-index__link">
                         <div class="nav-index__img">
                             <img src="assets/images/nav-icons/filling.svg"
                                  data-src-hover="assets/images/nav-icons/filling-hover.svg"
@@ -148,7 +49,7 @@
 
                 <!---->
                 <div class="nav-index__item">
-                    <a href="#">
+                    <a href="#" class="nav-index__link">
                         <div class="nav-index__img">
                             <img src="assets/images/nav-icons/network.svg"
                                  data-src-hover="assets/images/nav-icons/network-hover.svg"
@@ -168,7 +69,8 @@
                         </div>
 
                         <p>
-                            Закажите доставку газа через наше мобильное приложение и получайте <a href="#">скидки</a> и
+                            Закажите доставку газа через наше мобильное приложение и получайте <a
+                                href="#">скидки</a> и
                             <a href="">бонусы!</a>
                         </p>
 
@@ -188,7 +90,8 @@
                         </div>
 
                         <p>
-                            Закажите доставку газа через наше мобильное приложение и получайте <a href="#">скидки</a> и
+                            Закажите доставку газа через наше мобильное приложение и получайте <a
+                                href="#">скидки</a> и
                             <a href="">бонусы!</a>
                         </p>
 
@@ -209,56 +112,55 @@
                 <span>Наши партнёры</span>
                 <!-- ссылка на страницу Партнерская программа -->
                 <a href="#" class="partners__link">Партнёрская программа</a>
+            </div>
+            <div class="partners-slider">
+                <!---->
+                <div class="partners-slider__item">
+                    <a href="#">
+                        <img src="assets/images/partners/Baxi_logo.png" alt="">
+                    </a>
+                </div>
 
-                <div class="partners-slider">
-                    <!---->
-                    <div class="partners-slider__item">
-                        <a href="#">
-                            <img src="assets/images/partners/Baxi_logo.png" alt="">
-                        </a>
-                    </div>
+                <!---->
+                <div class="partners-slider__item">
+                    <a href="#">
+                        <img src="assets/images/partners/buderus.png" alt="">
+                    </a>
+                </div>
 
-                    <!---->
-                    <div class="partners-slider__item">
-                        <a href="#">
-                            <img src="assets/images/partners/buderus.png" alt="">
-                        </a>
-                    </div>
+                <!---->
+                <div class="partners-slider__item">
+                    <a href="#">
+                        <img src="assets/images/partners/dedietrich.png" alt="">
+                    </a>
+                </div>
 
-                    <!---->
-                    <div class="partners-slider__item">
-                        <a href="#">
-                            <img src="assets/images/partners/dedietrich.png" alt="">
-                        </a>
-                    </div>
+                <!---->
+                <div class="partners-slider__item">
+                    <a href="#">
+                        <img src="assets/images/partners/Vaillant-logo.png" alt="">
+                    </a>
+                </div>
 
-                    <!---->
-                    <div class="partners-slider__item">
-                        <a href="#">
-                            <img src="assets/images/partners/Vaillant-logo.png" alt="">
-                        </a>
-                    </div>
+                <!---->
+                <div class="partners-slider__item">
+                    <a href="#">
+                        <img src="assets/images/partners/Viessmann-logo.png" alt="">
+                    </a>
+                </div>
 
-                    <!---->
-                    <div class="partners-slider__item">
-                        <a href="#">
-                            <img src="assets/images/partners/Viessmann-logo.png" alt="">
-                        </a>
-                    </div>
+                <!---->
+                <div class="partners-slider__item">
+                    <a href="#">
+                        <img src="assets/images/partners/VPS.png" alt="">
+                    </a>
+                </div>
 
-                    <!---->
-                    <div class="partners-slider__item">
-                        <a href="#">
-                            <img src="assets/images/partners/VPS.png" alt="">
-                        </a>
-                    </div>
-
-                    <!---->
-                    <div class="partners-slider__item">
-                        <a href="#">
-                            <img src="assets/images/partners/dedietrich.png" alt="">
-                        </a>
-                    </div>
+                <!---->
+                <div class="partners-slider__item">
+                    <a href="#">
+                        <img src="assets/images/partners/dedietrich.png" alt="">
+                    </a>
                 </div>
             </div>
         </div>
@@ -272,10 +174,12 @@
     </div>
 </div>
 
+//= templates/popups.html
+
 
 <script src="assets/js/libs.js"></script>
 <script src="assets/js/jquery-scripts.js"></script>
 <script src="assets/js/main.js"></script>
-</body>
 
+</body>
 </html>
