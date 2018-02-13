@@ -105,21 +105,9 @@ function preloadImg(dataAttr) {
     }
 }
 
-//появление после загрузки страницы
-$(window).bind('load', function () {
-    var hiddenBeforLoad =
-    // '.slider-main li, ' +
-    '.index-slider__item '
-    // '.certificates-element, ' +
-    // '.slider-sale '
-    ;
-    $(hiddenBeforLoad).css({ 'opacity': '1' });
-});
-
 //определение главной страницы
 (function () {
     if (location.pathname === '/') $('html, body').addClass('main-page');
-    console.log(path);
 })();
 
 //кастомный плейсхолдер
@@ -173,3 +161,14 @@ function findParent(el, class_) {
         return findParent(parent, class_);
     }
 }
+
+//появление после загрузки страницы
+$(window).bind('load', function () {
+    var hiddenBeforLoad =
+    // '.slider-main li, ' +
+    '.index-slider__item '
+    // '.certificates-element, ' +
+    // '.slider-sale '
+    ;
+    $(hiddenBeforLoad).css({ 'opacity': '1' });
+});

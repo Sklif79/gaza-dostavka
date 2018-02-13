@@ -186,46 +186,50 @@
             <div class="index-slider-wrap">
                 <div class="index-slider">
                     <div class="index-slider__item">
-                        <img src="assets/images/slider-phone.png" style="float: left;" alt="">
+                        <div class="index-slider__inner clearfix_">
+                            <img src="assets/images/slider-phone.png" style="float: left; margin-right: 15px" alt="">
 
-                        <div class="index-slider__title">
-                            атг приложение
+                            <div class="index-slider__title">
+                                атг приложение
+                            </div>
+
+                            <p>
+                                Закажите доставку газа через наше мобильное приложение и получайте <a
+                                    href="#">скидки</a> и
+                                <a href="">бонусы!</a>
+                            </p>
+
+                            <a href="#" class="link-store">
+                                <img src="assets/images/app-store.png" alt="">
+                            </a>
+
+                            <a href="#" class="link-store">
+                                <img src="assets/images/google-play.png" alt="">
+                            </a>
                         </div>
-
-                        <p>
-                            Закажите доставку газа через наше мобильное приложение и получайте <a
-                                href="#">скидки</a> и
-                            <a href="">бонусы!</a>
-                        </p>
-
-                        <a href="#" class="link-store">
-                            <img src="assets/images/app-store.png" alt="">
-                        </a>
-
-                        <a href="#" class="link-store">
-                            <img src="assets/images/google-play.png" alt="">
-                        </a>
                     </div>
                     <div class="index-slider__item">
-                        <img src="assets/images/slider-phone.png" style="float: left;" alt="">
+                        <div class="index-slider__inner clearfix_">
+                            <img src="assets/images/slider-phone.png" style="float: left;" alt="">
 
-                        <div class="index-slider__title">
-                            атг приложение
+                            <div class="index-slider__title">
+                                атг приложение
+                            </div>
+
+                            <p>
+                                Закажите доставку газа через наше мобильное приложение и получайте <a
+                                    href="#">скидки</a> и
+                                <a href="">бонусы!</a>
+                            </p>
+
+                            <a href="#" class="link-store">
+                                <img src="assets/images/app-store.png" alt="">
+                            </a>
+
+                            <a href="#" class="link-store">
+                                <img src="assets/images/google-play.png" alt="">
+                            </a>
                         </div>
-
-                        <p>
-                            Закажите доставку газа через наше мобильное приложение и получайте <a
-                                href="#">скидки</a> и
-                            <a href="">бонусы!</a>
-                        </p>
-
-                        <a href="#" class="link-store">
-                            <img src="assets/images/app-store.png" alt="">
-                        </a>
-
-                        <a href="#" class="link-store">
-                            <img src="assets/images/google-play.png" alt="">
-                        </a>
                     </div>
                 </div>
             </div>
@@ -306,7 +310,15 @@
         <div class="field__wrap">
             <label class="field__label custom-placeholder-wrap">
             <span class="block">
-                <input type="text" class="field" placeholder="" name = "name">
+                <input type="text" autocomplete="off" class="field" placeholder="" name="name">
+
+                <!--тултип для обязательных полей-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
             </span>
                 <span class="custom-placeholder">Ваше имя</span>
             </label>
@@ -314,9 +326,18 @@
 
         <div class="field__wrap">
             <label class="field__label custom-placeholder-wrap">
-            <span class="block">
-                <input type="text" class="field" placeholder="" name = "phone">
-            </span>
+                <span class="block">
+                    <input type="text" class="field error" autocomplete="off" placeholder="" name="phone">
+
+                    <!--тултип для обязательных полей, чтобы появился,
+                     на input добавить класс error-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                </span>
                 <span class="custom-placeholder">Телефон для связи</span>
             </label>
         </div>
