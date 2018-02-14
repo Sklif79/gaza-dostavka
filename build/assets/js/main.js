@@ -48,6 +48,63 @@ ready(function () {
     // }
 
 
+    var asideNav = document.querySelectorAll('.aside-nav > li > ul');
+    // searchList(asideNav[1], 1);
+
+
+    // console.log(asideNav)
+
+    // function searchList(el, count) {
+    //     // el = el.find('ul');
+    //     el.style.left  = count * 280 + "px";
+    //
+    //     for (var i = 0; i < el.children.length; i++) {
+    //         console.log(el.children[i])
+    //         // searchList(asideNav[1], 1)
+    //     }
+    //
+    // }
+
+    /**
+     * Рекурсивное перечисление дочерних элементов
+     *
+     * @param DomNode node
+     * Родительский элемент, чьи дочерние узлы нужно перечислять.
+     *
+     * @return void
+     */
+    function enumChildNodes(node, count) {
+        // если нам передали элемент
+
+
+        if (node && 1 == node.nodeType) {
+            // берем его первый дочерний узел
+            var child = node.firstElementChild;
+            // пока узлы не закончились
+            while (child) {
+                // если этот узел является элементом
+                if (1 == child.nodeType) {
+                    // что-то делаем с найденным элементом
+                    if (child.tagName == "UL") {
+                        console.log('элемент ' + child.style, count);
+                        // child.style.left  = count * 280 + "px";
+                        count++;
+
+                        child.style.left = "280px";
+                    }
+
+                    // рекурсивно перечисляем дочерние узлы
+                    enumChildNodes(child, count);
+                };
+                // переходим к следующему узлу
+                child = child.nextSibling;
+            };
+        };
+    };
+
+    // перечисляем содержимое body
+    enumChildNodes(asideNav[1], 1);
+
     //fancybox-popup
     $('.js-modal').fancybox({
         closeBtn: true,
@@ -64,9 +121,11 @@ ready(function () {
     });
 
     customPlaceholderInit();
+    tooltipClick();
+    // asideNav();
 
     hoverImages('div.nav-index', 'div.nav-index__item');
-    hoverImages('ul.aside-nav', 'a.aside-nav__link');
+    hoverImages('ul.aside-nav', '.aside-nav__link');
 
     preloadImg("data-src-hover");
 });
@@ -172,3 +231,61 @@ $(window).bind('load', function () {
     ;
     $(hiddenBeforLoad).css({ 'opacity': '1' });
 });
+
+//tooltip-click
+function tooltipClick() {
+    var $tooltip = $('.tooltip-click');
+
+    if ($tooltip.length) {
+
+        $tooltip.on('click', function (e) {
+            if ($(e.target).hasClass('tooltip-click__close')) {
+                $(this).removeClass('active');
+            } else {
+                $(this).addClass('active');
+            }
+        });
+    }
+}
+
+var asideNav = function asideNav() {
+    var asideNav = {
+        $ul: $('.aside-nav > li > ul'),
+        width: 280,
+
+        appendFirstItemNav: function appendFirstItemNav() {
+            // var bl = $('.aside-nav');
+            // for (var i = 0; i < bl.length; i++) {
+            //     console.log(bl[i])
+            // }
+
+            // $('.aside-nav ul').prepend('<li><a class="js-aside-nav__title" href="#"></a></li>');
+        },
+        findUl: function findUl() {},
+        setLeftPositionNav: function setLeftPositionNav() {
+            // console.log(this.$ul)
+            // for (var i = 0; i < this.$ul.length; i++) {
+            //     // this.$ul[i].style.left = (i + 1) * this.width + 'px';
+            // }
+        }
+    };
+
+    asideNav.setLeftPositionNav();
+    asideNav.appendFirstItemNav();
+};
+
+//первый пункт вложенных меню в выпадающем списке
+// function appendFirstItemNav() {
+//     var $ul = $('.aside-nav').find('ul');
+// }
+//
+// //рассчет левой позиции подменю
+// function setLeftPositionNav() {
+//     var $ul = $('.aside-nav').find('ul'),
+//         width = 280;
+//
+//
+//     for (var i = 0; i < $ul.length; i++) {
+//         $ul[i].style.left = (i + 1) * width + 'px';
+//     }
+// }
