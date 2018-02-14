@@ -46,64 +46,11 @@ ready(function () {
     // }
 
 
-    var asideNav = document.querySelectorAll('.aside-nav > li > ul');
-    // searchList(asideNav[1], 1);
-
-
-    // console.log(asideNav)
-    
-    // function searchList(el, count) {
-    //     // el = el.find('ul');
-    //     el.style.left  = count * 280 + "px";
+    // var asideNav = document.querySelectorAll('.aside-nav > li');
     //
-    //     for (var i = 0; i < el.children.length; i++) {
-    //         console.log(el.children[i])
-    //         // searchList(asideNav[1], 1)
-    //     }
-    //
+    // for (var i = 0; i < asideNav.length; i++) {
+    //     enumChildNodes(asideNav[i], 1);
     // }
-
-    /**
-     * Рекурсивное перечисление дочерних элементов
-     *
-     * @param DomNode node
-     * Родительский элемент, чьи дочерние узлы нужно перечислять.
-     *
-     * @return void
-     */
-    function enumChildNodes(node, count) {
-        // если нам передали элемент
-
-
-        if (node && 1 == node.nodeType) {
-            // берем его первый дочерний узел
-            var child = node.firstElementChild;
-            // пока узлы не закончились
-            while (child) {
-                // если этот узел является элементом
-                if (1 == child.nodeType) {
-                    // что-то делаем с найденным элементом
-                    if (child.tagName == "UL") {
-                        console.log('элемент ' + child.style, count);
-                        // child.style.left  = count * 280 + "px";
-                        count++;
-
-                        child.style.left = "280px";
-                    }
-
-                    // рекурсивно перечисляем дочерние узлы
-                    enumChildNodes(child, count);
-                };
-                // переходим к следующему узлу
-                child = child.nextSibling;
-            };
-        };
-    };
-
-// перечисляем содержимое body
-    enumChildNodes(asideNav[1], 1);
-
-
 
 
 
@@ -125,7 +72,7 @@ ready(function () {
 
     customPlaceholderInit();
     tooltipClick();
-    // asideNav();
+    asideNav();
 
     hoverImages('div.nav-index', 'div.nav-index__item');
     hoverImages('ul.aside-nav', '.aside-nav__link');
@@ -274,10 +221,11 @@ var asideNav = function () {
         },
 
         setLeftPositionNav() {
-            // console.log(this.$ul)
-            // for (var i = 0; i < this.$ul.length; i++) {
-            //     // this.$ul[i].style.left = (i + 1) * this.width + 'px';
-            // }
+            var asideNav = document.querySelectorAll('.aside-nav > li');
+
+            for (var i = 0; i < asideNav.length; i++) {
+                enumChildNodes(asideNav[i], 1);
+            }
         }
     };
 
@@ -285,22 +233,39 @@ var asideNav = function () {
     asideNav.appendFirstItemNav();
 };
 
+/**
+ * Рекурсивное перечисление дочерних элементов
+ *
+ * @param DomNode node
+ * Родительский элемент, чьи дочерние узлы нужно перечислять.
+ * @count integer
+ * @return void
+ */
+function enumChildNodes(node, count) {
+    // если нам передали элемент
 
-//первый пункт вложенных меню в выпадающем списке
-// function appendFirstItemNav() {
-//     var $ul = $('.aside-nav').find('ul');
-// }
-//
-// //рассчет левой позиции подменю
-// function setLeftPositionNav() {
-//     var $ul = $('.aside-nav').find('ul'),
-//         width = 280;
-//
-//
-//     for (var i = 0; i < $ul.length; i++) {
-//         $ul[i].style.left = (i + 1) * width + 'px';
-//     }
-// }
+    if (node && 1 == node.nodeType) {
+        // берем его первый дочерний узел
+        var child = node.firstElementChild;
+
+        // пока узлы не закончились
+        while (child) {
+            // если этот узел является элементом
+            if (1 == child.nodeType) {
+                // что-то делаем с найденным элементом
+                if (child.tagName == "UL") {
+                    console.log('элемент ' + node.style, count);
+                    child.style.left  = count * 280 + "px";
+                    count++;
+                }
+                // рекурсивно перечисляем дочерние узлы
+                enumChildNodes(child, count);
+            }
+            // переходим к следующему узлу
+            child = child.nextSibling;
+        }
+    }
+}
 
 
 
