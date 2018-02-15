@@ -4,3 +4,4 @@
 //= libs/jquery.jscrollpane.min.js
 // = libs/mwheelIntent.js
 //= libs/jquery.mousewheel.js
+//= libs/jquery.inputmask.bundle.min.js

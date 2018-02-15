@@ -7,6 +7,20 @@ ready(function () {
     hoverImages('ul.aside-nav', '.aside-nav__link');
 
     preloadImg("data-src-hover");
+    
+    var aside = document.querySelector('div.aside'),
+        asideFeedback = document.querySelector('div.aside-feedback');
+
+    document.documentElement.addEventListener('click', function (e) {
+        if (~e.target.className.indexOf('aside-callback__link')) {
+            asideFeedback.classList.add('js-active')
+        }
+console.log(e.target)
+        if (~e.target.className.indexOf('aside-feedback__close')) {
+            asideFeedback.classList.remove('js-active')
+        }
+
+    })
 
 });
 

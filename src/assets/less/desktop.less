@@ -5,6 +5,7 @@
 @import "plugins/slick-theme.less";
 @import "plugins/slick-theme.less";
 @import "plugins/jquery.jscrollpane.less";
+@import "plugins/inputmask.less";
 @import "fonts.less";
 @import "variables.less";
 @import "mixins.less";
@@ -142,11 +143,6 @@
   }
 }
 
-.field__tooltip {
-  display: none;
-  line-height: 0;
-}
-
 .field.error + .field__tooltip {
   display: inline-block;
 }
@@ -154,8 +150,13 @@
 .field__tooltip {
   position: fixed;
   right: -1px;
-  top: 50%;
-  margin-top: 13px;
+  margin-top: -25px;
+  display: none;
+  line-height: 0;
+}
+
+.field__tooltip {
+
 }
 
 /* - - - - - - - - - - - - custom-placeholder - - - - - - - - - - - - */
@@ -181,8 +182,21 @@
   color: #000;
   width: 100%;
   border-radius: @border-radius;
-  border: 1px solid @btn-bg;
+  border: 1px solid #CCD3DB;
   font-size: 14px;
+}
+
+.custom-textarea {
+  resize: none;
+  height: 130px;
+}
+
+.custom-textarea + .field__tooltip {
+  margin-top: -71px;
+}
+
+.field:focus {
+  border-color: @btn-bg;
 }
 
 .field.error {
@@ -249,6 +263,7 @@
   align-items: center;
   justify-content: center;
   flex: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .aside-nav {
@@ -261,7 +276,8 @@
     width: 280px;
     background: #fff;
     font-size: 14px;
-    border-right: 1px solid #E0E6ED;
+    //border-right: 1px solid #E0E6ED;
+    box-shadow: 0px 0 1px #E0E6ED;
 
     .js-aside-nav__dropdown > a {
       background: url("../images/arrows/aside-nav-arrow-right.svg") right 20px top 50% no-repeat;
@@ -309,7 +325,7 @@
 
   li {
     line-height: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     user-select: none;
     list-style: none;
 
@@ -324,7 +340,7 @@
     }
 
     &:last-of-type {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      //border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
   }
 
@@ -342,6 +358,10 @@
       background-color: #fff;
       color: #197AE3;
     }
+  }
+
+  .jspHorizontalBar {
+    display: none;
   }
 }
 
@@ -390,22 +410,31 @@
 }
 
 .aside-feedback {
-  width: 341px;
+  width: 314px;
   position: fixed;
   overflow-x: visible;
   overflow-y: auto;
   top: 0;
   bottom: 0;
-  left: 0;
   font-size: 0.875rem;
   z-index: 600;
   color: @dark-text;
+  left: -320px;
+  //left: 0;
+  transition: left @transition linear;
+
+  &.js-active {
+    left: 0;
+  }
+
+  .jspVerticalBar {
+    z-index: 0;
+  }
 }
 
 .aside-feedback__content {
   width: 280px;
   background: #fff;
-  //padding: 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -419,36 +448,17 @@
 }
 
 .aside-feedback__top {
-  height: ~"calc(100vh - 107px)";
-  //padding: 20px;
-  //padding-top: 20px !important;
-  //padding-left: 20px !important;
-
-  //&.jspScrollable {
-  //  width: 260px !important;
-  //
-  //}
-
-  .jspVerticalBar {
-    width: 5px;
-  }
-
-  .jspTrack, .jspVerticalBar {
-    background-color: transparent;
-  }
+  height: ~"calc(100vh - 138px)";
 }
 
-.aside-feedback__bottom {
-  //margin: 0 -20px;
+.aside-feedback__top-inner {
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .aside-feedback__field {
   margin-bottom: 16px;
-  padding-left: 20px;
-
-  &:first-of-type {
-    padding-top: 20px;
-  }
 }
 
 .aside-feedback__field-title {
@@ -464,18 +474,55 @@
 }
 
 .aside-feedback__btn {
-  padding-top: 13px;
-  padding-bottom: 11px;
-  display: block;
+  padding: 5px 6px;
+  min-height: 38px;
+  //display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   border-top: 1px solid #E0E6ED;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #197AE3;
+  //position: relative;
+  transition: @transition;
+  background-repeat: no-repeat;
+
+  &.callback::before {
+    background-image: url("../images/phone-call-feedback.svg");
+  }
+
+  &.review::before {
+    background-image: url("../images/chat.svg");
+  }
+
+  &:hover {
+    color: @btn-bg-hover;
+  }
+
+  &::before {
+    //position: absolute;
+    content: "";
+    width: 13px;
+    height: 13px;
+    margin-right: 6px;
+  }
 }
 
 .aside-feedback__dev {
-  display: block;
-  padding: 7px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
   border-top: 1px solid #E0E6ED;
+  font-size: 0.6875rem;
+  color: #8F9CAE;
+
+  img {
+    margin-left: 8px;
+  }
 }
 
 
@@ -783,7 +830,6 @@
 .tooltip-click__inner-wrap {
   height: 0;
   overflow: hidden;
-  //display: none;
   max-width: 647px;
   padding: 0;
   border-radius: 5px 5px 0 0;

@@ -30,9 +30,13 @@ $(document).ready(function(){
         }
     });
 
-    $('.aside-feedback__top').jScrollPane({
+    //custom scroll
+    $('.aside-feedback__top, .aside-nav, .aside-nav ul').jScrollPane({
         autoReinitialise: true
     });
+
+    //mask
+    $('.js-phone-mask').inputmask({"mask": "+7 (999) 999-99-99"});
 
 
 });
