@@ -90,7 +90,7 @@ button:focus {
     border-radius: @border-radius 0 @border-radius @border-radius;
 }
 
-.fancybox-close {
+.fancybox-close, .aside-feedback__close {
     width: 34px;
     height: 34px;
     top: 0;
@@ -99,8 +99,13 @@ button:focus {
     transition: @transition;
     border-bottom-right-radius: @border-radius;
     border-top-right-radius: @border-radius;
+    cursor: pointer;
 }
 
-.fancybox-close {
+.fancybox-close:hover, .aside-feedback__close:hover {
     background-color: @btn-bg-hover;
+}
+
+.jspScrollable:focus {
+    outline: none;
 }

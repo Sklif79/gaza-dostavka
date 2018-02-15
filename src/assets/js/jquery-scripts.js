@@ -14,4 +14,25 @@ $(document).ready(function(){
         prevArrow: '<div class="index-slider__prev"></div>',
         arrows: true
     });
+
+    //fancybox-popup
+    $('.js-modal').fancybox({
+        closeBtn: true,
+        minWidth: 385,
+        padding: 0,
+        helpers: {
+            overlay: {
+                css: {
+                    'background': 'rgba(0,0,0,0.65)'
+                }
+
+            }
+        }
+    });
+
+    $('.aside-feedback__top').jScrollPane({
+        autoReinitialise: true
+    });
+
+
 });

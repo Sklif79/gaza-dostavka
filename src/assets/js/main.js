@@ -1,75 +1,4 @@
 ready(function () {
-    // let el = document.querySelector('.aside-nav');
-    //
-    // el.addEventListener('mouseover', handlerNavMouseover);
-    // el.addEventListener('mouseout', handlerNavMouseout);
-    //
-    //
-    // //обработчик делегирования по ховера
-    // let currentElem = null;
-    //
-    // function handlerNavMouseover(event) {
-    //     let target = event.target;
-    //
-    //     if (currentElem) return;
-    //
-    //     // уж не на TD ли?
-    //     while (target != this) {
-    //         if (target.tagName == 'LI') break;
-    //         target = target.parentNode;
-    //     }
-    //
-    //     if (target == this) return;
-    //
-    //     currentElem = target;
-    //
-    //     console.log('навели')
-    //     // target.style.background = 'pink';
-    // }
-    //
-    // function handlerNavMouseout(event) {
-    //     if (!currentElem) return;
-    //
-    //     let relatedTarget = event.relatedTarget;
-    //
-    //     if (relatedTarget) {
-    //         while (relatedTarget) {
-    //             if (relatedTarget == currentElem) return;
-    //             relatedTarget = relatedTarget.parentNode;
-    //         }
-    //     }
-    //
-    //     // произошло событие mouseout, курсор ушёл
-    //     // currentElem.style.background = '';
-    //     currentElem = null;
-    //     console.log('убрали')
-    // }
-
-
-    // var asideNav = document.querySelectorAll('.aside-nav > li');
-    //
-    // for (var i = 0; i < asideNav.length; i++) {
-    //     enumChildNodes(asideNav[i], 1);
-    // }
-
-
-
-    //fancybox-popup
-    $('.js-modal').fancybox({
-        closeBtn: true,
-        minWidth: 385,
-        padding: 0,
-        helpers: {
-            overlay: {
-                css: {
-                    'background': 'rgba(0,0,0,0.65)'
-                }
-
-            }
-        }
-    });
-
-
     customPlaceholderInit();
     tooltipClick();
     asideNav();
@@ -209,22 +138,33 @@ var asideNav = function () {
         width: 280,
 
         appendFirstItemNav() {
-            // var bl = $('.aside-nav');
-            // for (var i = 0; i < bl.length; i++) {
-            //     console.log(bl[i])
-            // }
+            var $asideNavUl = document.querySelectorAll('.aside-nav ul'),
+                li,
+                $asideNavLink,
+                liInnerText;
 
-                // $('.aside-nav ul').prepend('<li><a class="js-aside-nav__title" href="#"></a></li>');
-        },
+            for (var i = 0; i < $asideNavUl.length; i++) {
+                $asideNavLink = $asideNavUl[i].parentElement.getElementsByTagName('a')[0];
+                $asideNavUl[i].parentElement.classList.add('js-aside-nav__dropdown');
 
-        findUl() {
+                if ($asideNavLink.classList.contains('aside-nav__link')) {
+                    liInnerText = $asideNavLink.getElementsByClassName('aside-nav__txt')[0]
+                        .textContent;
+                } else {
+                    liInnerText = $asideNavLink.textContent;
+                }
+
+                li = document.createElement('li');
+                li.innerHTML = liInnerText;
+                $asideNavUl[i].insertBefore( li, $asideNavUl[i].firstChild )
+            }
         },
 
         setLeftPositionNav() {
-            var asideNav = document.querySelectorAll('.aside-nav > li');
+            var asideNavEL = document.querySelectorAll('.aside-nav > li');
 
-            for (var i = 0; i < asideNav.length; i++) {
-                enumChildNodes(asideNav[i], 1);
+            for (var i = 0; i < asideNavEL.length; i++) {
+                enumChildNodes(asideNavEL[i], 1);
             }
         }
     };
@@ -254,8 +194,7 @@ function enumChildNodes(node, count) {
             if (1 == child.nodeType) {
                 // что-то делаем с найденным элементом
                 if (child.tagName == "UL") {
-                    console.log('элемент ' + node.style, count);
-                    child.style.left  = count * 280 + "px";
+                    child.style.left = count * 280 + "px";
                     count++;
                 }
                 // рекурсивно перечисляем дочерние узлы
@@ -266,6 +205,8 @@ function enumChildNodes(node, count) {
         }
     }
 }
+
+
 
 
 
