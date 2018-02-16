@@ -10,6 +10,7 @@ $(document).ready(function(){
     $('div.index-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
+        dots: true,
         nextArrow: '<div class="index-slider__next"></div>',
         prevArrow: '<div class="index-slider__prev"></div>',
         arrows: true
@@ -31,12 +32,12 @@ $(document).ready(function(){
     });
 
     //custom scroll
-    $('.aside-feedback__top, .aside-nav, .aside-nav ul').jScrollPane({
+    $('div.aside-feedback__top, ul.aside-nav, ul.aside-nav ul').jScrollPane({
         autoReinitialise: true
     });
 
     //mask
-    $('.js-phone-mask').inputmask({"mask": "+7 (999) 999-99-99"});
+    $('.js-phone-mask').inputmask("+7 (999) 999-99-99");
 
 
 });

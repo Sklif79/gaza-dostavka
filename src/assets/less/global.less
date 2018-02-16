@@ -16,6 +16,11 @@ body {
     font-size: 1rem;
 }
 
+h1 {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
 .wrapper {
     flex: 1 1 auto;
 }
@@ -49,7 +54,19 @@ button:focus {
 }
 
 .content {
-    padding: 0 55px;
+    padding-left: 107px;
+    padding-right: 40px;
+    position: relative;
+    min-height: 100vh;
+}
+
+.wrapper .content.js-aside-hover {
+    &::before {
+        position: absolute;
+        .absolute-stretch;
+        background-color: rgba(0,0,0,.65);
+        z-index: 400;
+    }
 }
 
 .btn {
@@ -111,7 +128,7 @@ button:focus {
 }
 
 .jspDrag {
-    background-color: rgba(0,0,0,.2);
+    background-color: rgba(0,0,0,.5);
     border-radius: 5px;
 }
 

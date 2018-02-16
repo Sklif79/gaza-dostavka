@@ -2,26 +2,13 @@ ready(function () {
     customPlaceholderInit();
     tooltipClick();
     asideNav();
+    asideFidback();
+    mainPage();
 
     hoverImages('div.nav-index', 'div.nav-index__item');
     hoverImages('ul.aside-nav', '.aside-nav__link');
 
     preloadImg("data-src-hover");
-    
-    var aside = document.querySelector('div.aside'),
-        asideFeedback = document.querySelector('div.aside-feedback');
-
-    document.documentElement.addEventListener('click', function (e) {
-        if (~e.target.className.indexOf('aside-callback__link')) {
-            asideFeedback.classList.add('js-active')
-        }
-console.log(e.target)
-        if (~e.target.className.indexOf('aside-feedback__close')) {
-            asideFeedback.classList.remove('js-active')
-        }
-
-    })
-
 });
 
 function ready(fn) {
@@ -59,9 +46,21 @@ function preloadImg(dataAttr) {
 }
 
 //определение главной страницы
-(function () {
-    if (location.pathname === '/') $('html, body').addClass('main-page');
-})();
+function isMainPage() {
+    let result = (location.pathname === '/') ? true : false;
+    return result;
+}
+
+console.log(isMainPage())
+
+//изменение стилей для главной страницы
+function mainPage() {
+    if (isMainPage()) {
+        $('html, body').addClass('main-page');
+        $('.aside').removeClass('moved overlay-mask');
+    }
+
+}
 
 //кастомный плейсхолдер
 function customPlaceholderInit() {
@@ -148,7 +147,9 @@ function tooltipClick() {
 
 var asideNav = function () {
     var asideNav = {
-        $ul: $('.aside-nav > li > ul'),
+        $ul: $('ul.aside-nav > li > ul'),
+        $aside: $('div.aside'),
+        $content: $('div.content'),
         width: 280,
 
         appendFirstItemNav() {
@@ -170,7 +171,7 @@ var asideNav = function () {
 
                 li = document.createElement('li');
                 li.innerHTML = liInnerText;
-                $asideNavUl[i].insertBefore( li, $asideNavUl[i].firstChild )
+                $asideNavUl[i].insertBefore(li, $asideNavUl[i].firstChild)
             }
         },
 
@@ -180,11 +181,65 @@ var asideNav = function () {
             for (var i = 0; i < asideNavEL.length; i++) {
                 enumChildNodes(asideNavEL[i], 1);
             }
-        }
+        },
+
+        asideHover() {
+            var self = this,
+                $asideTextBlock =
+                    $('span.aside-nav__txt, span.aside-callback__txt, a.aside-callback__link img');
+
+
+            this.$aside.hover(
+                function () {
+                    if (!isMainPage()) {
+                        self.$aside.removeClass('moved');
+
+                        setTimeout(function () {
+                            if (!self.$aside.hasClass('moved')) {
+                                $asideTextBlock.fadeIn();
+                            }
+                        }, 400);
+
+                        setTimeout(function () {
+                            self.$aside.removeClass('overlay-mask')
+                        }, 600);
+
+                        self.$content.addClass('js-aside-hover');
+
+                    } else {
+                        self.$content.addClass('js-aside-hover');
+                    }
+                },
+
+                function () {
+                    if (!$('.aside-feedback').hasClass('js-active')) {
+                        self.$content.removeClass('js-aside-hover');
+                    }
+
+                    if (!isMainPage()) {
+                        self.$aside.addClass('overlay-mask');
+                        $asideTextBlock.hide();
+
+
+                        setTimeout(function () {
+                            self.$aside.addClass('moved');
+                            $asideTextBlock.hide();
+                        }, 450);
+
+                        setTimeout(function () {
+                            self.$aside.addClass('overlay-mask');
+                        }, 650);
+                    }
+
+                    // self.$content.removeClass('js-aside-hover');
+                }
+            )
+        },
     };
 
     asideNav.setLeftPositionNav();
     asideNav.appendFirstItemNav();
+    asideNav.asideHover();
 };
 
 /**
@@ -218,6 +273,25 @@ function enumChildNodes(node, count) {
             child = child.nextSibling;
         }
     }
+}
+
+function asideFidback() {
+    var aside = document.querySelector('div.aside'),
+        asideFeedback = document.querySelector('div.aside-feedback'),
+        content = document.querySelector('div.content');
+
+    document.documentElement.addEventListener('click', function (e) {
+        if (~e.target.className.indexOf('aside-callback__link')) {
+            asideFeedback.classList.add('js-active');
+            console.log(content)
+            content.classList.add('js-aside-hover');
+        }
+
+        if (~e.target.className.indexOf('aside-feedback__close')) {
+            asideFeedback.classList.remove('js-active');
+            content.classList.remove('js-aside-hover');
+        }
+    })
 }
 
 
