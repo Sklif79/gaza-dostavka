@@ -31,10 +31,10 @@
                 </div>
             </div>
 
-            <div class="header-with-nav__bottom">
-                <div class="container">
+            <div class="header-with-nav__bottom-wrap">
+                <div class="header-with-nav__bottom">
                     <h1>Газовое оборудование</h1>
-                    
+
                     <ul class="header-with-nav__bottom-nav">
                         <li><a href="#" class="active">Регуляторы давления</a></li>
                         <li><a href="#">Запорно-предохранительная арматура</a></li>
@@ -66,190 +66,525 @@
         </div>
 
         <div class="container">
-            <form name="" action="" class="filter-section">
-                <!---->
-                <div class="filter-section__item">
-                    <div class="filter-section__title">
-                        <span>Количество баллонов:</span>
+            //= templates/filter.html
 
-                        <div class="fyi">
-                            <img src="assets/images/fyi.svg" alt="">
-                            <div class="fyi__tooltip">
-                                Описание… Описание… Описание… Описание…Описание…
-                                Описание…Описание… Описание…
+            <div class="products-list clear-gap">
+                <!-- если товар отсутствует добавить к классу
+                .products-list__item класс not-available-->
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/regulator.jpg" alt="">
+                        </div>
+
+                        <div class="products-list__title">
+                            Двухступенчатый регулятор давления SRG (Чехия)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Пропускная способность:
+                                </span>
+                                <span class="products-list__param-value">
+                                    24 кг/ч
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Давление на выходе:
+                                </span>
+                                <span class="products-list__param-value">
+                                    37 мБар
+                                </span>
                             </div>
                         </div>
-                    </div>
-                    <select class="js-example-basic-multiple" name="" multiple="multiple">
-                        <option disabled>Выберите параметры</option>
-                        <option value="2">2 шт</option>
-                        <option value="4">4 шт</option>
-                        <option value="6">6 шт</option>
-                        <option value="8">8 шт</option>
-                    </select>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
                 <!---->
-                <div class="filter-section__item">
-                    <div class="filter-section__title">
-                        <span>Тип подводки:</span>
+                <div class="products-list__item not-available">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/regulator.jpg" alt="">
+                        </div>
 
-                        <div class="fyi">
-                            <img src="assets/images/fyi.svg" alt="">
-                            <div class="fyi__tooltip">
-                                Описание… Описание… Описание… Описание…Описание…
-                                Описание…Описание… Описание…
+                        <div class="products-list__title">
+                            Двухступенчатый регулятор давления SRG (Чехия)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Пропускная способность:
+                                </span>
+                                <span class="products-list__param-value">
+                                    24 кг/ч
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Давление на выходе:
+                                </span>
+                                <span class="products-list__param-value">
+                                    37 мБар
+                                </span>
                             </div>
                         </div>
-                    </div>
-                    <select class="js-example-basic-multiple" name="" multiple="multiple">
-                        <option disabled>Выберите параметры</option>
-                        <option value="2">Гибкая</option>
-                        <option value="4">Металлическая рампа</option>
-                        <option value="6">8 шт</option>
-                        <option value="8">10 шт</option>
-                    </select>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
                 <!---->
-                <div class="filter-section__item">
-                    <div class="filter-section__title">
-                        <span>Давление:</span>
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/regulator.jpg" alt="">
+                        </div>
 
-                        <div class="fyi">
-                            <img src="assets/images/fyi.svg" alt="">
-                            <div class="fyi__tooltip">
-                                Описание… Описание… Описание… Описание…Описание…
-                                Описание…Описание… Описание…
+                        <div class="products-list__title">
+                            Двухступенчатый регулятор давления SRG (Чехия)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Пропускная способность:
+                                </span>
+                                <span class="products-list__param-value">
+                                    24 кг/ч
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Давление на выходе:
+                                </span>
+                                <span class="products-list__param-value">
+                                    37 мБар
+                                </span>
                             </div>
                         </div>
-                    </div>
-                    <select class="js-example-basic-multiple" name="" multiple="multiple">
-                        <option disabled>Выберите параметры</option>
-                        <option value="2">29 мБр</option>
-                        <option value="4">37 мБр</option>
-                        <option value="6">6 шт </option>
-                        <option value="8">50 мБр</option>
-                    </select>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
                 <!---->
-                <div class="filter-section__item">
-                    <div class="filter-section__title">
-                        <span>Количество баллонов:</span>
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/regulator.jpg" alt="">
+                        </div>
 
-                        <div class="fyi">
-                            <img src="assets/images/fyi.svg" alt="">
-                            <div class="fyi__tooltip">
-                                Описание… Описание… Описание… Описание…Описание…
-                                Описание…Описание… Описание…
+                        <div class="products-list__title">
+                            Двухступенчатый регулятор давления SRG (Чехия)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Пропускная способность:
+                                </span>
+                                <span class="products-list__param-value">
+                                    24 кг/ч
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Давление на выходе:
+                                </span>
+                                <span class="products-list__param-value">
+                                    37 мБар
+                                </span>
                             </div>
                         </div>
-                    </div>
-                    <select class="js-example-basic-multiple" name="" multiple="multiple">
-                        <option disabled>Выберите параметры</option>
-                        <option value="2">2 шт </option>
-                        <option value="4">4 шт </option>
-                        <option value="6">6 шт </option>
-                        <option value="8">8 шт </option>
-                    </select>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
                 <!---->
-                <div class="filter-section__item">
-                    <div class="filter-section__title">
-                        <span>Тип клапана:</span>
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/regulator.jpg" alt="">
+                        </div>
 
-                        <div class="fyi">
-                            <img src="assets/images/fyi.svg" alt="">
-                            <div class="fyi__tooltip">
-                                Описание… Описание… Описание… Описание…Описание…
-                                Описание…Описание… Описание…
+                        <div class="products-list__title">
+                            Двухступенчатый регулятор давления SRG (Чехия)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Пропускная способность:
+                                </span>
+                                <span class="products-list__param-value">
+                                    24 кг/ч
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Давление на выходе:
+                                </span>
+                                <span class="products-list__param-value">
+                                    37 мБар
+                                </span>
                             </div>
                         </div>
-                    </div>
-                    <select class="js-example-basic-multiple" name="" multiple="multiple">
-                        <option disabled>Выберите параметры</option>
-                        <option value="2">механический</option>
-                        <option value="4">механический</option>
-                        <option value="6">механический</option>
-                    </select>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
+                <!---->
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/regulator.jpg" alt="">
+                        </div>
 
+                        <div class="products-list__title">
+                            Двухступенчатый регулятор давления SRG (Чехия)
+                        </div>
 
-            </form>
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Пропускная способность:
+                                </span>
+                                <span class="products-list__param-value">
+                                    24 кг/ч
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Давление на выходе:
+                                </span>
+                                <span class="products-list__param-value">
+                                    37 мБар
+                                </span>
+                            </div>
+                        </div>
 
-            <div class="">
-                *Баллоны в стоимость установки не включены
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!---->
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/regulator.jpg" alt="">
+                        </div>
+
+                        <div class="products-list__title">
+                            Двухступенчатый регулятор давления SRG (Чехия)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Пропускная способность:
+                                </span>
+                                <span class="products-list__param-value">
+                                    24 кг/ч
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Давление на выходе:
+                                </span>
+                                <span class="products-list__param-value">
+                                    37 мБар
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!---->
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/regulator.jpg" alt="">
+                        </div>
+
+                        <div class="products-list__title">
+                            Двухступенчатый регулятор давления SRG (Чехия)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Пропускная способность:
+                                </span>
+                                <span class="products-list__param-value">
+                                    24 кг/ч
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Давление на выходе:
+                                </span>
+                                <span class="products-list__param-value">
+                                    37 мБар
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="more-btn-wrap">
+                <div class="more-btn btn-transparent">
+                    Показать еще
+                </div>
             </div>
 
-            <div class="three-columns clear-gap">
-                <!---->
-                <div class="three-columns__item">
-                    <a href="#" class="three-columns__link">
-                        <div class="three-columns__img">
-                            <img src="assets/images/nav-icons/catalog-products__1.png" alt="">
-                        </div>
-                        <div class="three-columns__overlay"></div>
-                        <div class="three-columns__title">
-                            Газовое оборудование
-                        </div>
+            <div class="mounting">
+                <div class="mouting-inner">
+                    <h4>
+                        Монтаж и обслуживание
+                    </h4>
+
+                    <p>
+                        Доверьте монтаж профессионалам с многолетним опытом!
+                    </p>
+
+                    <span>Компания ооо «АТГ» специализируется на монтаже газоболонного
+                        оборудования с 2002 года</span>
+                </div>
+
+                <div class="mounting__btn-wrap">
+                    <a href="#mounting" class="btn js-modal mounting__btn">
+                        Заказать монтаж
                     </a>
                 </div>
 
-                <!---->
-                <div class="three-columns__item">
-                    <a href="#" class="three-columns__link">
-                        <div class="three-columns__img">
-                            <img src="assets/images/nav-icons/catalog-products__2.png" alt="">
-                        </div>
-                        <div class="three-columns__overlay"></div>
-                        <div class="three-columns__title">
-                            Канализационное оборудование
-                        </div>
+            </div>
+
+
+            <div class="useful-information">
+                <div class="useful-information__title">
+                    <h2>Полезная информация</h2>
+
+                    <a href="#" class="btn-transparent useful-information__btn">
+                        Вся информация
                     </a>
                 </div>
 
-                <!---->
-                <div class="three-columns__item">
-                    <a href="#" class="three-columns__link">
-                        <div class="three-columns__img">
-                            <img src="assets/images/nav-icons/catalog-products__3.png" alt="">
+                <div class="useful-information-wrap">
+                    <!---->
+                    <div class="useful-information__item">
+                        <div class="useful-information__img">
+                            <img src="assets/images/remove/useful-information.jpg" alt="">
                         </div>
-                        <div class="three-columns__overlay"></div>
-                        <div class="three-columns__title">
-                            Газгольдеры
+                        <div class="useful-information__item-inner">
+                            <div class="useful-information__item-title">
+                                Мобильное приложение – покупай
+                                получай балы
+                            </div>
+                            <div class="useful-information__item-txt">
+                                Специализированная система снабжения газом различного
+                                оборудования длинное предложение в три строки предложение
+                                в три строки
+                            </div>
+                            <a href="#" class="btn-bottom-border">Подробнее</a>
                         </div>
-                    </a>
-                </div>
+                    </div>
 
-                <!---->
-                <div class="three-columns__item">
-                    <a href="#" class="three-columns__link">
-                        <div class="three-columns__img">
-                            <img src="assets/images/nav-icons/catalog-products__4.png" alt="">
+                    <!---->
+                    <div class="useful-information__item">
+                        <div class="useful-information__img">
+                            <img src="assets/images/remove/useful-information.jpg" alt="">
                         </div>
-                        <div class="three-columns__overlay"></div>
-                        <div class="three-columns__title">
-                            Газоболонная установка GOK
+                        <div class="useful-information__item-inner">
+                            <div class="useful-information__item-title">
+                                Мобильное приложение
+                            </div>
+                            <div class="useful-information__item-txt">
+                                Специализированная система снабжения газом различного
+                                оборудования.
+                            </div>
+                            <a href="#" class="btn-bottom-border">Подробнее</a>
                         </div>
-                    </a>
+                    </div>
                 </div>
-
-                <!---->
-                <div class="three-columns__item">
-                    <a href="#" class="three-columns__link">
-                        <div class="three-columns__img">
-                            <img src="assets/images/nav-icons/catalog-products__5.png" alt="">
-                        </div>
-                        <div class="three-columns__overlay"></div>
-                        <div class="three-columns__title">
-                            Резервное энергообеспечение
-                        </div>
-                    </a>
-                </div>
-
             </div>
 
 
