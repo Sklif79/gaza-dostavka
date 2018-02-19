@@ -1,6 +1,7 @@
 /************************* plugins *************************/
 @import "plugins/reset.less";
 @import "plugins/jquery.fancybox.less";
+@import "plugins/jquery.fancybox-thumbs.less";
 @import "plugins/slick.less";
 @import "plugins/slick-theme.less";
 @import "plugins/slick-theme.less";
@@ -179,6 +180,23 @@
 
 .block {
   display: block;
+  pointer-events: none;
+}
+
+.block.small-block {
+  display: flex;
+  align-items: center;
+
+  input {
+    flex: none;
+    width: 91px;
+    margin-right: 10px;
+  }
+}
+
+.small-block__title {
+  font-size: 0.875rem;
+  color: @gray;
 }
 
 .field {
@@ -1267,6 +1285,7 @@
   font-size: 2.25rem;
   font-weight: bold;
   margin-bottom: 2rem;
+  line-height: 2.5rem;
 }
 
 .description-section__info p {
@@ -1572,6 +1591,19 @@
   text-transform: uppercase;
   margin-bottom: 40px;
   font-weight: 500;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 27px;
+    height: 3px;
+    background: @link-blue;
+    bottom: -11px;
+    left: 50%;
+    margin-left: -13px;
+    border-radius: 5px;
+  }
 }
 
 .mounting p {
@@ -1679,12 +1711,6 @@
   display: flex;
 }
 
-.card-inner__pager {
-  width: 75px;
-  margin-right: 10px;
-  flex: none;
-}
-
 .card-inner-description {
   padding: 20px 0 20px 25px;
 
@@ -1756,7 +1782,25 @@
 }
 
 .card-inner__pager {
-  outline: 1px solid;
+  width: 75px;
+  margin-right: 10px;
+  flex: none;
+
+  .card-inner__pager__img {
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #E0E6ED;
+    border-radius: @border-radius;
+    margin-bottom: 10px;
+
+    &.slick-current {
+      border-color: @link-blue;
+    }
+  }
 }
 
 .card-inner__slider {
@@ -1764,11 +1808,17 @@
   width: 458px;
   border: 1px solid #E0E6ED;
   border-radius: @border-radius;
-}
+  overflow: hidden;
 
-.card-inner__slider-img {
-  padding: 21px;
-  text-align: center;
+
+
+  .card-inner__slider-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 21px;
+  }
 }
 
 /* - - - - - - - - - - - - tabs - - - - - - - - - - - - */

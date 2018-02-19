@@ -1,9 +1,10 @@
 //= libs/jquery-3.2.0.min.js
 //= libs/slick.min.js
 //= libs/jquery.fancybox.pack.js
+//= libs/jquery.fancybox-thumbs.js
 //= libs/jquery.jscrollpane.min.js
 // = libs/mwheelIntent.js
 //= libs/jquery.mousewheel.js
-//= libs/jquery.inputmask.bundle.min.js
+//= libs/jquery.inputmask.bundle.js
 //= libs/select2.js
 //= libs/cropText.js

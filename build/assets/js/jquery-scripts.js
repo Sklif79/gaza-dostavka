@@ -7,6 +7,7 @@ $(document).ready(function () {
         arrows: true
     });
 
+    //слайдер на главной
     $('div.index-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -16,16 +17,27 @@ $(document).ready(function () {
         arrows: true
     });
 
+    //слайдер карточки товара
     $('div.card-inner__slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: false,
-        arrows: false
+        arrows: false,
+        infinite: false,
+        asNavFor: '.card-inner__pager',
+        focusOnSelect: true
     });
 
-
-
-
+    $('div.card-inner__pager').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        vertical: true,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        asNavFor: '.card-inner__slider',
+        focusOnSelect: true
+    });
 
     //fancybox-popup
     $('.js-modal').fancybox({
@@ -37,24 +49,22 @@ $(document).ready(function () {
                 css: {
                     'background': 'rgba(0,0,0,0.65)'
                 }
-
             }
         }
     });
 
-    $(".card-inner-fancybox")
-        .attr('rel', 'gallery')
-        .fancybox({
-            helpers: {
-                thumbs: {
-                    width  : 40,
-                    height : 40,
-                    source  : function(current) {
-                        return $(current.element).data('thumbnail');
-                    }
-                }
+    //слайдер с миниатюрами для главной
+    $(".fancybox-thumb").fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        padding: 43,
+        helpers: {
+            thumbs: {
+                width: 75,
+                height: 60
             }
-        });
+        }
+    });
 
     //custom scroll
     $('div.aside-feedback__top, ul.aside-nav, ul.aside-nav ul').jScrollPane({
@@ -76,19 +86,19 @@ $(document).ready(function () {
     $('.useful-information__item-txt').liTextLength({
         length: 110,         //Видимое кол-во символов
         afterLength: '...',  //Текст после видимого содержания
-        fullText:false       //Добавить ссылку для отображения скрытого текста
+        fullText: false       //Добавить ссылку для отображения скрытого текста
     });
 
     //табы
     $("#tabs-content div").hide(); // Скрытое содержимое
-    $("#tabs-list li:first").attr("id","current"); // Какой таб показать первым
+    $("#tabs-list li:first").attr("id", "current"); // Какой таб показать первым
     $("#tabs-content div:first").fadeIn(); // Показ первого контента таба
 
-    $('#tabs-list a').click(function(e) {
+    $('#tabs-list a').click(function (e) {
         e.preventDefault();
         $("#tabs-content div").hide(); //Скрыть всё содержимое
-        $("#tabs-list li").attr("id",""); //Сброс идентификаторов
-        $(this).parent().attr("id","current"); // Активация идентификаторов
+        $("#tabs-list li").attr("id", ""); //Сброс идентификаторов
+        $(this).parent().attr("id", "current"); // Активация идентификаторов
         $('#' + $(this).attr('title')).fadeIn(); // Показать содержимое текущей вкладки
     });
 

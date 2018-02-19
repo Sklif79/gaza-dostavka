@@ -170,57 +170,86 @@ b {
 .jspPane {
     width: 100% !important;}
 
-.select2-container--default.select2-container--focus .select2-selection--multiple,
-.select2-container--default .select2-selection--multiple {
-    border-color: @link-blue;
-    border-radius: 3px;
-    font-size: 0;
-    line-height: 0;
+//.select2-container--default.select2-container--focus .select2-selection--multiple,
+//.select2-container--default .select2-selection--multiple {
+//    border-color: @link-blue;
+//    border-radius: 3px;
+//    font-size: 0;
+//    line-height: 0;
+//}
+//
+//.select2-container--open .select2-dropdown--below {
+//    top: 8px;
+//}
+//
+//.select2-container--open .select2-dropdown--above {
+//    top: -8px;
+//}
+//
+//.select2-dropdown {
+//    border: none;
+//    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+//    border-radius: 0;
+//}
+//
+//.select2-container--default .select2-results__option[aria-disabled=true] {
+//    color: @gray;
+//    padding-bottom: 10px;
+//    padding-left: 12px;
+//    background: none;
+//}
+//
+//.select2-results__options {
+//    font-size: 0.875rem;
+//    color: @dark-text;
+//}
+//
+//.select2-results__option {
+//    padding-left: 36px;
+//    background: url("../images/checbox-clear.png") 12px 6px no-repeat;
+//}
+//
+//.select2-container--default .select2-results__option--highlighted[aria-selected] {
+//    background-color: #f2f3f5;
+//    color: inherit;
+//}
+//
+//.select2-container--default .select2-results__option[aria-selected=true] {
+//    background: url("../images/checbox-checked.png") 12px 6px no-repeat;;
+//}
+//
+//
+//
+//.selection {
+//    //display: inline-block;
+//    //width: 100%;
+//}
+
+.fancybox-nav {
+    width: 50px;
+
 }
 
-.select2-container--open .select2-dropdown--below {
-    top: 8px;
+.fancybox-prev {
+    left: -150px;
 }
 
-.select2-container--open .select2-dropdown--above {
-    top: -8px;
+.fancybox-next {
+    right: -150px;
 }
 
-.select2-dropdown {
-    border: none;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-    border-radius: 0;
-}
-
-.select2-container--default .select2-results__option[aria-disabled=true] {
-    color: @gray;
-    padding-bottom: 10px;
-    padding-left: 12px;
+.fancybox-nav span {
+    visibility: visible;
     background: none;
+    width: 18px;
+    height: 34px;
+    margin-top: -17px;
 }
 
-.select2-results__options {
-    font-size: 0.875rem;
-    color: @dark-text;
+.fancybox-next span {
+    background: url("../images/arrows/fancybox-right-arrow.svg") center no-repeat;
 }
 
-.select2-results__option {
-    padding-left: 36px;
-    background: url("../images/checbox-clear.png") 12px 6px no-repeat;
-}
-
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
-    background-color: #f2f3f5;
-    color: inherit;
-}
-
-.select2-container--default .select2-results__option[aria-selected=true] {
-    background: url("../images/checbox-checked.png") 12px 6px no-repeat;;
-}
-
-
-
-.selection {
-    //display: inline-block;
-    //width: 100%;
+.fancybox-prev span {
+    background: url("../images/arrows/fancybox-left-arrow.svg") center no-repeat;
 }

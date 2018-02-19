@@ -128,11 +128,11 @@ function findParent(el, class_) {
 //появление после загрузки страницы
 $(window).bind('load', function () {
     var hiddenBeforLoad =
-            '.filter-section, ' +
-            '.index-slider__item '
-        // '.certificates-element, ' +
-        // '.slider-sale '
-        ;
+        '.filter-section, ' +
+        '.index-slider__item ' +
+        '.card-inner__pager__img, ' +
+        '.card-inner__slider-img';
+
     $(hiddenBeforLoad).css({'opacity': '1'})
 });
 
@@ -310,6 +310,14 @@ $.fn.setMaxHeights = function () {
 
     return this.height(Math.max.apply(this, maxHeight));
 };
+
+//ввод в input только цифр
+($('input.js-only-digits').keypress(function (e) {
+    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        console.log('ddd')
+        return false;
+    }
+})());
 
 
 
