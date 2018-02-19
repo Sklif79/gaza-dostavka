@@ -5,3 +5,4 @@
 // = libs/mwheelIntent.js
 //= libs/jquery.mousewheel.js
 //= libs/jquery.inputmask.bundle.min.js
+//= libs/select2.js

@@ -30,7 +30,7 @@ img {
 }
 
 a:not([class]){
-    color: #197AE3;
+    color: @link-blue;
 }
 
 input[type='submit'] {
@@ -47,17 +47,25 @@ button:focus {
     outline: none;
 }
 
+b {
+    font-weight: 500;
+}
+
 .container {
-    max-width: 1219px;
+    max-width: 1263px;
     margin: 0 auto;
     width: 100%;
+    //padding: 0 15px;
+    padding-left: 22px;
+    padding-right: 22px;
 }
 
 .content {
-    padding-left: 107px;
-    padding-right: 40px;
+    //padding-left: 107px;
+    //padding-right: 40px;
     position: relative;
     min-height: 100vh;
+    padding-left: 66px;
 }
 
 .wrapper .content.js-aside-hover {
@@ -93,6 +101,11 @@ button:focus {
     display: none;
     padding: 35px 35px 40px;
     color: #3C4858;
+}
+
+.clear-gap {
+    font-size: 0;
+    line-height: 0;
 }
 
 .main-page.fancybox-margin {
@@ -143,3 +156,51 @@ button:focus {
 
 .jspPane {
     width: 100% !important;}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default .select2-selection--multiple {
+    border-color: @link-blue;
+    border-radius: 3px;
+    font-size: 0;
+    line-height: 0;
+}
+
+.select2-container--open .select2-dropdown--below {
+    top: 8px;
+}
+
+.select2-container--open .select2-dropdown--above {
+    top: -8px;
+}
+
+.select2-dropdown {
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+}
+
+.select2-container--default .select2-results__option[aria-disabled=true] {
+    color: @gray;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    background: none;
+}
+
+.select2-results__options {
+    font-size: 0.875rem;
+    color: @dark-text;
+}
+
+.select2-results__option {
+    padding-left: 36px;
+    background: url("../images/checbox-clear.png") 12px 6px no-repeat;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #f2f3f5;
+    color: inherit;
+}
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+    background: url("../images/checbox-checked.png") 12px 6px no-repeat;;
+}

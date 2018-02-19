@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $('div.partners-slider').slick({
         slidesToShow: 6,
         slidesToScroll: 1,
@@ -39,5 +39,20 @@ $(document).ready(function(){
     //mask
     $('.js-phone-mask').inputmask("+7 (999) 999-99-99");
 
+    //custom select for filter
+    $('.js-example-basic-multiple').select2({
+        placeholder: 'Выберите параметры',
+        language: 'ru',
+        width: "100%",
+        allowClear: true
+    });
+
+    // $('.filter-section').css('opacity','1');
+
 
 });
+
+
+
+
+
