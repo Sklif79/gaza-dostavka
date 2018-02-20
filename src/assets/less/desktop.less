@@ -768,7 +768,7 @@
     line-height: normal;
     font-size: 0.9375rem;
 
-    &:hover {
+    &:hover, &.active {
       color: @link-blue;
     }
   }
@@ -1268,6 +1268,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+}
+
+.description-section__info-inner {
+  max-width: 560px;
 }
 
 .description-section__info {
@@ -1591,19 +1596,6 @@
   text-transform: uppercase;
   margin-bottom: 40px;
   font-weight: 500;
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 27px;
-    height: 3px;
-    background: @link-blue;
-    bottom: -11px;
-    left: 50%;
-    margin-left: -13px;
-    border-radius: 5px;
-  }
 }
 
 .mounting p {
@@ -1614,7 +1606,7 @@
   color: #FFFFFF;
 }
 
-.mouting span {
+.mounting span {
   color: #8F9CAE;
 }
 
@@ -1796,6 +1788,7 @@
     border: 1px solid #E0E6ED;
     border-radius: @border-radius;
     margin-bottom: 10px;
+    cursor: pointer;
 
     &.slick-current {
       border-color: @link-blue;
@@ -1866,6 +1859,361 @@
 
 .tabs-content {
   padding: 26px 25px 42px;
+}
+
+/* - - - - - - - - - - - - cylinders-advantages - - - - - - - - - - - - */
+.cylinders-advantages {
+  background: #F4F4F4;
+  padding: 54px 20px 70px;
+  margin-bottom: 60px;
+}
+
+.cylinders-advantages h2 {
+  font-size: 1.375rem;
+  color: @dark-text;
+  margin-bottom: 43px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.cylinders-advantages__grids {
+  max-width: 1030px;
+  margin: 0 auto;
+}
+
+.cylinders-advantages__grids-full {
+  display: flex;
+  justify-content: center;
+}
+
+.cylinders-advantages__grids-center {
+  margin: 0 65px;
+}
+
+.cylinders-advantages__item {
+  max-width: 328px;
+  text-align: center;
+  padding: 0 15px;
+  font-size: 0.875rem;
+  margin-bottom: 28px;
+}
+
+.cylinders-advantages__img {
+  margin-bottom: 19px;
+}
+
+.cylinders-advantages__title {
+  font-weight: bold;
+  line-height: 1.0625rem;
+  margin-bottom: 6px;
+  color: @dark-text;
+  text-transform: uppercase;
+}
+
+.cylinders-advantages__txt {
+  line-height: 1.125rem;
+}
+
+.cylinders-advantages__grids-third .cylinders-advantages__item {
+  margin-bottom: 42px;
+}
+
+/* - - - - - - - - - - - - distributors - - - - - - - - - - - - */
+.distributors {
+  display: flex;
+  max-width: 1160px;
+  margin: 0 auto 50px;
+  justify-content: space-between;
+}
+
+.distributors__img {
+  margin-bottom: 23px;
+}
+
+.distributors__item {
+  text-align: center;
+  max-width: 510px;
+  padding: 0 25px;
+}
+
+
+/* - - - - - - - - - - - - select-counter - - - - - - - - - - - - */
+.select-counter {
+  display: flex;
+  margin: 0 auto 21px;
+  justify-content: space-between;
+  max-width: 1190px;
+}
+
+.select-counter__item {
+  display: flex;
+  border: 1px solid #E0E6ED;
+  border-radius: @border-radius;
+  margin-right: 10px;
+  flex: none;
+  width: ~"calc(50% - 10px)";
+
+
+  &:nth-of-type(even) {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
+
+.select-counter__advantages {
+  padding: 34px 28px 23px;
+  flex-grow: 1;
+  border-right: 1px solid #E0E6ED;
+
+  &:nth-of-type(even) {
+    border-rigth: none;
+    border-left: 1px solid #E0E6ED;
+  }
+}
+
+.select-counter__img {
+  width: 234px;
+  flex: none;
+  padding: 10px;
+  text-align: center;
+
+  &::before {
+    content: "";
+    vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    min-height: 1px;
+  }
+}
+
+.select-counter__img img {
+  vertical-align: middle;
+}
+
+.select-counter__title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: @link-blue;
+  margin-bottom: 21px;
+}
+
+.select-counter__list {
+  list-style: none;
+
+  li {
+    padding-left: 26px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 16px;
+      height: 16px;
+      left: 0;
+      top: 1px;
+      background: url("../images/checked-list.png") center no-repeat;
+    }
+  }
+}
+
+/* - - - - - - - - - - - - counter-advanced-info - - - - - - - - - - - - */
+.counter-advanced-info {
+  margin-bottom: 35px;
+  text-align: center;
+  font-size: .875rem;
+  color: @dark-text;
+}
+
+.counter-advanced-info p {
+  margin-bottom: 11px;
+}
+
+/* - - - - - - - - - - - - additional-equipment - - - - - - - - - - - - */
+.additional-equipment {
+  background: #F4F4F4;
+  padding: 43px 40px 60px;
+}
+
+.additional-equipment__title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: @dark-text;
+}
+
+.additional-equipment__inner {
+  margin-left: -10px;
+}
+
+.additional-equipment__item {
+  background: #fff;
+  border: 1px solid #E0E6ED;
+  border-radius: @border-radius;
+  width: 23.8468%;
+  margin-left: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  vertical-align: top;
+  transition: border-color @transition;
+
+  &:hover {
+    border-color: @link-blue;
+  }
+}
+
+.additional-equipment__img {
+  position: relative;
+  height: 200px;
+  text-align: center;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    min-height: 1px;
+  }
+}
+
+.additional-equipment__img img {
+  vertical-align: middle;
+}
+
+.additional-equipment__name {
+  padding: 12px 20px;
+  border-top: 1px solid #E0E6ED;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  line-height: 1.125rem;
+  color: @dark-text;
+}
+
+/* - - - - - - - - - - - - sewerage-advantages - - - - - - - - - - - - */
+.sewerage-advantages {
+  padding: 55px 0;
+}
+
+.sewerage-advantages h2 {
+  margin-bottom: 53px;
+  font-weight: 500;
+  line-height: normal;
+  font-size: 1.375rem;
+  color: #3C4858;
+}
+
+.sewerage-advantages__inner {
+  display: flex;
+}
+
+.sewerage-advantages__map {
+  width: 256px;
+  height: 444px;
+  position: relative;
+
+  img {
+    max-width: none;
+  }
+}
+
+.sewerage-advantages__img {
+  margin-right: 54px;
+  padding-left: 118px;
+}
+
+.sewerage-advantages__img-points {
+  width: 256px;
+  height: 444px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sewerage-advantages__img-point {
+  width: 63px;
+  height: 63px;
+  background: url("../images/points-map__bg.png") 50% 54% no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 22px;
+  color: #FFFFFF;
+  transition: background @transition;
+
+  &.active {
+    background-image: url("../images/points-map__bg-hover.png");
+  }
+}
+
+.sewerage-advantages__list {
+  padding-top: 17px;
+  padding-right: 70px;
+}
+
+.sewerage-advantages__list ol {
+  padding-left: 18px;
+  line-height: 1.3125rem;
+  color: @dark-text;
+}
+
+.sewerage-advantages__list li {
+  margin-bottom: 22px;
+  transition: color @transition;
+
+  &.active {
+    color: #197AE3;
+  }
+}
+
+.sewerage-advantages__img-point {
+  position: absolute;
+  z-index: 10;
+}
+
+.sewerage-advantages__img-point[data-point="1"] {
+  right: -10px;
+  top: -7px;
+}
+
+.sewerage-advantages__img-point[data-point="2"] {
+  right: 25px;
+  top: 75px;
+}
+
+.sewerage-advantages__img-point[data-point="3"] {
+  right: 76px;
+  top: 147px;
+}
+
+.sewerage-advantages__img-point[data-point="4"] {
+  right: 2px;
+  top: 223px;
+}
+
+.sewerage-advantages__img-point[data-point="5"] {
+  right: 98px;
+  top: 273px;
+}
+
+.sewerage-advantages__img-point[data-point="6"] {
+  left: -12px;
+  top: 68px;
+}
+
+.sewerage-advantages__img-point[data-point="7"] {
+  left: -5px;
+  top: 302px;
+}
+
+.sewerage-advantages__img-point[data-point="8"] {
+  right: 113px;
+  top: 382px;
 }
 
 /* - - - - - - - - - - - - footer - - - - - - - - - - - - */

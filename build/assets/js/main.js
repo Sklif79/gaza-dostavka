@@ -14,6 +14,7 @@ ready(function () {
 
     $('.three-columns__title').setMaxHeights();
     $('.four-columns__title').setMaxHeights();
+    $('.additional-equipment__name').setMaxHeights();
 
     $(window).resize(function () {
         setTimeout(function () {
@@ -294,9 +295,23 @@ $.fn.setMaxHeights = function () {
 };
 
 //ввод в input только цифр
-$('input.js-only-digits').keypress(function (e) {
-    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-        console.log('ddd');
-        return false;
-    }
+(function () {
+    $('input.js-only-digits').keypress(function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            console.log('ddd');
+            return false;
+        }
+    });
+})();
+
+//ховер по карте изображений
+(function () {
+    var pointNumber;
+
+    $('[data-point]').hover(function () {
+        pointNumber = $(this).attr('data-point');
+        $('[data-point="' + pointNumber + '"]').addClass('active');
+    }, function () {
+        $('[data-point="' + pointNumber + '"]').removeClass('active');
+    });
 })();
