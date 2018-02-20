@@ -1,0 +1,554 @@
+//= templates/head.html
+
+<body>
+
+<div class="wrapper">
+    //= templates/aside.html
+
+    <div class="content">
+        <div class="header-with-nav">
+            <div class="header-with-nav__top container">
+                <ul class="header-nav">
+                    <li><a href="#" class="active">Газовое</a></li>
+                    <li><a href="#">Канализационное</a></li>
+                    <li><a href="#">Газгольдеры</a></li>
+                    <li><a href="#">Газоболонная установка GOK</a></li>
+                    <li><a href="#">Резервное энергообеспечение</a></li>
+                </ul>
+
+                <div class="phones-dropdown">
+                    <a href="tel:+78126666707" class="phones-dropdown__title">+7 (812) 666-67-07</a>
+                    <div class="phones-dropdown__inner">
+                        <a href="tel:+78126666707">+7 (812) 666-67-07</a>
+
+                        <div class="phones-dropdown__schedule">
+                            <span>Часы работы:</span>
+                            Пн-Пт; с 8:00 до 19:00
+                        </div>
+
+                        <a href="#feedback" class="btn  js-modal">Заказать звонок</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-with-nav__bottom-wrap">
+                <div class="header-with-nav__bottom">
+                    <h1>Газогенераторы</h1>
+
+                    <ul class="header-with-nav__bottom-nav">
+                        <li><a href="#" class="active">Газогенераторы</a></li>
+                        <li><a href="#">ИБП</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- описание раздела -->
+        <div class="description-section">
+            <img src="assets/images/description-section/gas-generator__bg.png"
+                 alt=""
+                 class="description-section__bg">
+            <div class="description-section__img">
+                <img src="assets/images/description-section/gas-generator.png" alt="">
+            </div>
+            <div class="description-section__info">
+                <div class="description-section__info-inner">
+                    <h2>Альтернативный источник энергии для дома</h2>
+                    <p>
+                        На сегодняшний день каталог продукции GENERAC представлен несколькими десятками моделей
+                        мощностью от 5 до 120 киловатт, которые могут использоваться для обеспечения электрической
+                        энергией частных и многоквартирных домов, коммерческих объектов и промышленных предприятий.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            //= templates/filter.html
+
+            <div class="products-list clear-gap">
+                <!-- если товар отсутствует добавить к классу
+                .products-list__item класс not-available-->
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/gas-generator-item.jpg" alt="">
+                        </div>
+
+                        <div class="products-list__title">
+                            Газовый генератор Generac 6520 (5,6 кВт)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочее давление:
+                                </span>
+                                <span class="products-list__param-value">
+                                    25 бар
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочая температра:
+                                </span>
+                                <span class="products-list__param-value">
+                                     -40...+65
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!---->
+                <div class="products-list__item not-available">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/gas-generator-item.jpg" alt="">
+                        </div>
+
+                        <div class="products-list__title">
+                            Газовый генератор Generac 6520 (5,6 кВт)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочее давление:
+                                </span>
+                                <span class="products-list__param-value">
+                                    25 бар
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочая температра:
+                                </span>
+                                <span class="products-list__param-value">
+                                     -40...+65
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!---->
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/gas-generator-item.jpg" alt="">
+                        </div>
+
+                        <div class="products-list__title">
+                            Газовый генератор Generac 6520 (5,6 кВт)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочее давление:
+                                </span>
+                                <span class="products-list__param-value">
+                                    25 бар
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочая температра:
+                                </span>
+                                <span class="products-list__param-value">
+                                     -40...+65
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!---->
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/gas-generator-item.jpg" alt="">
+                        </div>
+
+                        <div class="products-list__title">
+                            Газовый генератор Generac 6520 (5,6 кВт)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочее давление:
+                                </span>
+                                <span class="products-list__param-value">
+                                    25 бар
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочая температра:
+                                </span>
+                                <span class="products-list__param-value">
+                                     -40...+65
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!---->
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/gas-generator-item.jpg" alt="">
+                        </div>
+
+                        <div class="products-list__title">
+                            Газовый генератор Generac 6520 (5,6 кВт)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочее давление:
+                                </span>
+                                <span class="products-list__param-value">
+                                    25 бар
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочая температра:
+                                </span>
+                                <span class="products-list__param-value">
+                                     -40...+65
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!---->
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/gas-generator-item.jpg" alt="">
+                        </div>
+
+                        <div class="products-list__title">
+                            Газовый генератор Generac 6520 (5,6 кВт)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочее давление:
+                                </span>
+                                <span class="products-list__param-value">
+                                    25 бар
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочая температра:
+                                </span>
+                                <span class="products-list__param-value">
+                                     -40...+65
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!---->
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/gas-generator-item.jpg" alt="">
+                        </div>
+
+                        <div class="products-list__title">
+                            Газовый генератор Generac 6520 (5,6 кВт)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочее давление:
+                                </span>
+                                <span class="products-list__param-value">
+                                    25 бар
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочая температра:
+                                </span>
+                                <span class="products-list__param-value">
+                                     -40...+65
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!---->
+                <div class="products-list__item">
+                    <a href="#" class="products-list__link">
+                        <div class="products-list__img">
+                            <img src="assets/images/remove/gas-generator-item.jpg" alt="">
+                        </div>
+
+                        <div class="products-list__title">
+                            Газовый генератор Generac 6520 (5,6 кВт)
+                        </div>
+
+                        <div class="products-list__param">
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочее давление:
+                                </span>
+                                <span class="products-list__param-value">
+                                    25 бар
+                                </span>
+                            </div>
+                            <div class="products-list__param-field">
+                                <span class="products-list__param-name">
+                                    Рабочая температра:
+                                </span>
+                                <span class="products-list__param-value">
+                                     -40...+65
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="products-list__price-wrap">
+                            <div class="products-list__availability">
+                                <div class="products-list__availability-available">
+                                    В наличии
+                                </div>
+                                <div class="products-list__availability-not">
+                                    Нет в наличии
+
+                                    <div class="fyi">
+                                        <img src="assets/images/fyi.svg" alt="">
+                                        <div class="fyi__tooltip">
+                                            Описание… Описание… Описание… Описание…Описание…
+                                            Описание…Описание… Описание…
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="products-list__price">
+                                <span>1 000 000</span><span> &#8381;</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="more-btn-wrap">
+                <div class="more-btn btn-transparent">
+                    Показать еще
+                </div>
+            </div>
+
+            <div class="mounting">
+                <div class="mouting-inner dashed-title">
+                    <h4>
+                        Монтаж и обслуживание
+                    </h4>
+
+                    <p>
+                        Доверьте монтаж профессионалам с многолетним опытом!
+                    </p>
+
+                    <span>Компания ООО «АТГ» специализируется на монтаже генераторов Generac с 2010 года.</span>
+                </div>
+
+                <div class="mounting__btn-wrap">
+                    <a href="#mounting" class="btn js-modal mounting__btn">
+                        Заказать монтаж
+                    </a>
+                </div>
+
+            </div>
+
+            //= templates/useful-information.html
+
+        </div>
+
+    </div>
+</div>
+
+//= templates/popups.html
+
+
+<script src="assets/js/libs.js"></script>
+<script src="assets/js/jquery-scripts.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

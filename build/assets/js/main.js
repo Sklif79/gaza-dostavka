@@ -126,7 +126,7 @@ function findParent(el, class_) {
 
 //появление после загрузки страницы
 $(window).bind('load', function () {
-    var hiddenBeforLoad = '.filter-section, ' + '.index-slider__item ' + '.card-inner__pager__img, ' + '.card-inner__slider-img';
+    var hiddenBeforLoad = '.filter-section, ' + '.index-slider__item, ' + '.card-inner__pager__img, ' + '.card-inner__slider-img';
 
     $(hiddenBeforLoad).css({ 'opacity': '1' });
 });

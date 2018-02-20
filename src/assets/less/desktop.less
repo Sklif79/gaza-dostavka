@@ -1109,7 +1109,7 @@
 }
 
 /* - - - - - - - - - - - - catalog - - - - - - - - - - - - */
-.three-columns__item, .four-columns__item {
+.three-columns__item, .four-columns__item, .two-columns__item {
   border-radius: 3px;
   overflow: hidden;
   position: relative;
@@ -1127,6 +1127,17 @@
   margin-bottom: 1.6406%;
 }
 
+.two-columns__item {
+  width: 48.7284%;
+  margin-right: 2.461%;
+  margin-bottom: 2.461%;
+}
+
+.two-columns__link {
+  display: block;
+  padding: 50px 15px 36px;
+}
+
 .three-columns__link {
   display: block;
   padding: 40px 15px 22px;
@@ -1137,7 +1148,7 @@
   padding: 80px 15px 18px;
 }
 
-.three-columns__img, .four-columns__img {
+.two-columns__img, .three-columns__img, .four-columns__img {
   text-align: center;
   margin-bottom: 23px;
   height: 122px;
@@ -1156,6 +1167,10 @@
   }
 }
 
+.two-columns__img {
+  height: 225px;
+}
+
 .four-columns__img {
   height: 145px;
   margin-bottom: 85px;
@@ -1169,7 +1184,11 @@
   margin-right: 0;
 }
 
-.three-columns__title, .four-columns__title {
+.two-columns__item:last-of-type {
+  margin-right: 0;
+}
+
+.two-columns__title, .three-columns__title, .four-columns__title {
   font-size: 1.125rem;
   line-height: normal;
   color: @link-blue;
@@ -1184,7 +1203,12 @@
   line-height: 1.125rem;
 }
 
-.three-columns__overlay, .four-columns__overlay {
+.two-columns__title {
+  font-size: 1.375rem;
+  line-height: normal;
+}
+
+.two-columns__overlay, .three-columns__overlay, .four-columns__overlay {
   .absolute-stretch;
   transition: background @transition;
 
@@ -1210,6 +1234,20 @@
     right: 0;
     opacity: 0;
     transition: @transition;
+  }
+}
+
+.two-columns__item:hover {
+  .two-columns__title {
+    color: #fff;
+  }
+
+  .two-columns__overlay {
+    background: rgba(0, 0, 0, 0.5);
+
+    &::before, &::after {
+      opacity: 1;
+    }
   }
 }
 
@@ -1497,6 +1535,7 @@
 
 .products-list__img img {
   vertical-align: middle;
+  max-height: 100%;
 }
 
 .products-list__title {
@@ -1645,6 +1684,13 @@
   line-height: 31px;
   font-weight: normal;
   padding: 0 12px;
+  border-color: #E0E6ED;
+
+  &:hover {
+    background-color: transparent;
+    color: @link-blue;
+    border-color: @link-blue;
+  }
 }
 
 .useful-information-wrap {
@@ -2033,7 +2079,7 @@
 /* - - - - - - - - - - - - additional-equipment - - - - - - - - - - - - */
 .additional-equipment {
   background: #F4F4F4;
-  padding: 43px 40px 60px;
+  padding: 43px 40px 50px;
 }
 
 .additional-equipment__title {
@@ -2068,15 +2114,19 @@
 .additional-equipment__img {
   position: relative;
   height: 200px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //text-align: center;
 
-  &::before {
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-    min-height: 1px;
-  }
+  //&::before {
+  //  content: "";
+  //  display: inline-block;
+  //  vertical-align: middle;
+  //  height: 100%;
+  //  min-height: 1px;
+  //}
 }
 
 .additional-equipment__img img {
@@ -2091,6 +2141,7 @@
   font-weight: 500;
   line-height: 1.125rem;
   color: @dark-text;
+  font-size: 1rem;
 }
 
 /* - - - - - - - - - - - - sewerage-advantages - - - - - - - - - - - - */
@@ -2145,6 +2196,7 @@
   font-size: 22px;
   color: #FFFFFF;
   transition: background @transition;
+  cursor: help;
 
   &.active {
     background-image: url("../images/points-map__bg-hover.png");
@@ -2214,6 +2266,63 @@
 .sewerage-advantages__img-point[data-point="8"] {
   right: 113px;
   top: 382px;
+}
+
+/* - - - - - - - - - - - - gasholders-advantages - - - - - - - - - - - - */
+.gasholders-advantages {
+  padding-top: 54px;
+  padding-bottom: 45px;
+}
+
+.gasholders-advantages h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: @dark-text;
+  margin-bottom: 45px;
+}
+
+.gasholders-advantages__inner {
+  display: flex;
+  max-width: 1066px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.gasholders-advantages__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: none;
+  width: 31%;
+}
+
+.gasholders-advantages__item img {
+  margin-right: 20px;
+}
+
+.gasholders-advantages__txt {
+  line-height: 1.25rem;
+}
+
+/* - - - - - - - - - - - - gasholders-distributor - - - - - - - - - - - - */
+.gasholders-distributor {
+  padding-top: 45px;
+  padding-bottom: 60px;
+  max-width: 697px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.gasholders-distributor img {
+  margin-right: 20px;
+}
+
+.gasholders-distributor p {
+  font-weight: 500;
+  line-height: 1.5625rem;
+  font-size: 1.125rem;
+  color: @dark-text;
 }
 
 /* - - - - - - - - - - - - footer - - - - - - - - - - - - */
