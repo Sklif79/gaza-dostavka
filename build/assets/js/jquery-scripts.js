@@ -77,9 +77,10 @@ $(document).ready(function () {
     //custom select for filter
     $('.js-example-basic-multiple').select2({
         placeholder: 'Выберите параметры',
-        language: 'ru',
+        // language: 'ru',
         width: "100%",
-        allowClear: true
+        allowClear: true,
+        theme: 'classic'
     });
 
     //Обрезка длины текста
