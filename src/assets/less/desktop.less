@@ -8,6 +8,7 @@
 @import "plugins/jquery.jscrollpane.less";
 @import "plugins/inputmask.less";
 @import "plugins/select2.less";
+@import "plugins/nouislider.less";
 @import "fonts.less";
 @import "variables.less";
 @import "mixins.less";
@@ -2546,10 +2547,49 @@
   color: #FFFFFF;
   position: absolute;
   bottom: 34px;
-  padding: 10px;
+  padding: 0 10px;
   left: 0;
   right: 0;
   text-align: center;
+}
+
+/* - - - - - - - - - - - - footer - - - - - - - - - - - - */
+.shipment-calculation {
+  display: flex;
+  background-color: #171F29;
+  margin-top: -40px;
+  margin-bottom: 60px;
+  line-height: 1.625rem;
+  font-size: 1.125rem;
+  color: #B8C0CC;
+}
+
+.shipment-calculation__description {
+  padding: 40px;
+  flex-grow: 1;
+  background: url("../images/Russia.png") center no-repeat #273444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shipment-calculation__inner {
+  max-width: 680px;
+}
+
+.shipment-calculation__description h2 {
+  font-weight: bold;
+  font-size: 2.25rem;
+  margin-bottom: 28px;
+  color: #FFFFFF;
+  line-height: normal;
+}
+
+.shipment-calculation__calc {
+  flex: none;
+  width: 474px;
+  padding: 54px 40px 48px;
+  background-color: rgba(0,0,0,0.4);
 }
 
 /* - - - - - - - - - - - - footer - - - - - - - - - - - - */

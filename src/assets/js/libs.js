@@ -8,3 +8,4 @@
 //= libs/jquery.inputmask.bundle.js
 //= libs/select2.js
 //= libs/cropText.js
+//= libs/nouislider.js

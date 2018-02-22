@@ -1,0 +1,210 @@
+//= templates/head.html
+
+<body>
+
+<div class="wrapper">
+    //= templates/aside.html
+
+    <div class="content">
+        <div class="header-with-nav">
+            <div class="header-with-nav__top container">
+                <ul class="header-nav">
+                    <li><a href="#" class="active">Доствака газа</a></li>
+                    <li><a href="#">Газификация</a></li>
+                    <li><a href="#">Канализация</a></li>
+                    <li><a href="#">Котельная</a></li>
+                    <li><a href="#">Источники электроэнергии</a></li>
+                    <li><a href="#">Доставка и обмен баллонов</a></li>
+                </ul>
+
+                <div class="phones-dropdown">
+                    <a href="tel:+78126666707" class="phones-dropdown__title">+7 (812) 666-67-07</a>
+                    <div class="phones-dropdown__inner">
+                        <a href="tel:+78126666707">+7 (812) 666-67-07</a>
+
+                        <div class="phones-dropdown__schedule">
+                            <span>Часы работы:</span>
+                            Пн-Пт; с 8:00 до 19:00
+                        </div>
+
+                        <a href="#feedback" class="btn  js-modal">Заказать звонок</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-with-nav__bottom-wrap">
+                <div class="header-with-nav__bottom">
+                    <h1>Доставка газа</h1>
+
+                    <ul class="header-with-nav__bottom-nav">
+                        <li><a href="#" class="active">Цены на газ</a></li>
+                        <li><a href="#">Качество газа</a></li>
+                        <li><a href="#">Vip клиент</a></li>
+                        <li><a href="#">Мобильное приложение</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="shipment-calculation">
+            <div class="shipment-calculation__description">
+                <div class="shipment-calculation__inner">
+                    <h2>Компания ООО “АТГ” </h2>
+
+                    <p>
+                        Предоставляет услуги по доставке сжиженного углеводородного газа
+                        (пропан-бутан) специальными транспортными средствами - газовозами. Транспортировка
+                        газа производится маневренными газовозами, что позволяет доставлять газ по дорогам
+                        любого уровня сложности.
+                    </p>
+                </div>
+            </div>
+
+            <div class="shipment-calculation__calc">
+                <!--<form name="shipment-calculator" method="post" action="">-->
+                    <div class="shipment-calculation__value">
+                        <span>Количество литров</span>
+                        <input type="text" id="js-shipment-value">
+                    </div>
+                    <div class="shipment-calculation__slider" id="js-shipment-calc"></div>
+
+<br>
+<br>
+<br>
+<br>
+                    <!--<input type="submit" value="Оформить заказ" class="btn">-->
+                <!--</form>-->
+            </div>
+        </div>
+
+        <div class="container">
+
+
+            //= templates/useful-information.html
+
+        </div>
+
+    </div>
+</div>
+
+//= templates/popups.html
+
+
+<script src="assets/js/libs.js"></script>
+<script src="assets/js/jquery-scripts.js"></script>
+<script src="assets/js/main.js"></script>
+
+<!-- скрипт ползунка калькулятора -->
+<!-- работа со значениями описана в конце скрипта -->
+<!-- https://refreshless.com/nouislider/ -->
+<script>
+
+    var slider = document.getElementById('js-shipment-calc'),
+        input = document.getElementById('js-shipment-value'),
+    inputs = [input];
+
+    noUiSlider.create(slider, {
+        range: {
+            //второе число в массиве - это шаг
+            min: [300, 100],
+            '20%': [1500, 100],
+            '70%': [2000, 100],
+            max: [10000]
+        },
+        start: 300,
+        pips: {
+            mode: 'values',
+            values: [300, 1500, 2000, 10000],
+            density: 4
+        }
+
+
+    });
+
+    slider.noUiSlider.on('update', function( values, handle ) {
+        input.value = parseInt(values[handle]);
+    });
+
+
+    function setSliderHandle(i, value) {
+        var r = [null,null];
+        r[i] = value;
+        slider.noUiSlider.set(r);
+    }
+
+    // Listen to keydown events on the input field.
+    inputs.forEach(function(input, handle) {
+
+        input.addEventListener('change', function(){
+            setSliderHandle(handle, this.value);
+        });
+
+        input.addEventListener('keydown', function( e ) {
+
+            var values = slider.noUiSlider.get();
+            var value = Number(values[handle]);
+
+            // [[handle0_down, handle0_up], [handle1_down, handle1_up]]
+            var steps = slider.noUiSlider.steps();
+
+            // [down, up]
+            var step = steps[handle];
+
+            var position;
+
+            // 13 is enter,
+            // 38 is key up,
+            // 40 is key down.
+            switch ( e.which ) {
+
+                case 13:
+                    setSliderHandle(handle, this.value);
+                    break;
+
+                case 38:
+
+                    // Get step to go increase slider value (up)
+                    position = step[1];
+
+                    // false = no step is set
+                    if ( position === false ) {
+                        position = 1;
+                    }
+
+                    // null = edge of slider
+                    if ( position !== null ) {
+                        setSliderHandle(handle, value + position);
+                    }
+
+                    break;
+
+                case 40:
+
+                    position = step[0];
+
+                    if ( position === false ) {
+                        position = 1;
+                    }
+
+                    if ( position !== null ) {
+                        setSliderHandle(handle, value - position);
+                    }
+
+                    break;
+            }
+        });
+    });
+
+
+    //https://refreshless.com/nouislider/slider-read-write/
+    //получение значения
+    //slider.noUiSlider.get();
+
+    //установка значения
+    //slider.noUiSlider.set(10);
+
+
+</script>
+
+</body>
+</html>
