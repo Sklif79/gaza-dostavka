@@ -6,6 +6,9 @@ ready(function () {
     asideNav();
     asideFidback();
     mainPage();
+    radioBtn($('.shipment-form__city input[type="radio"]'));
+    tooltipPosition();
+    checkedInput();
 
     hoverImages('div.nav-index', 'div.nav-index__item');
     hoverImages('ul.aside-nav', '.aside-nav__link');
@@ -201,6 +204,8 @@ var asideNav = function asideNav() {
                     }, 600);
 
                     self.$content.addClass('js-aside-hover');
+
+                    $('body').addClass('blocked');
                 } else {
                     self.$content.addClass('js-aside-hover');
                 }
@@ -221,6 +226,8 @@ var asideNav = function asideNav() {
                     setTimeout(function () {
                         self.$aside.addClass('overlay-mask');
                     }, 650);
+
+                    $('body').removeClass('blocked');
                 }
 
                 // self.$content.removeClass('js-aside-hover');
@@ -315,3 +322,157 @@ $.fn.setMaxHeights = function () {
         $('[data-point="' + pointNumber + '"]').removeClass('active');
     });
 })();
+
+//input[type="radio"]
+function radioBtn($input) {
+    $input.on('change', function () {
+        $input.parent('label').removeClass('js__selected');
+
+        if ($(this).prop('checked')) {
+            $(this).parent('label').addClass('js__selected');
+        }
+    });
+}
+
+//позиция окна tooltip
+function tooltipPosition() {
+    var width = document.documentElement.offsetWidth,
+        fyi = document.querySelectorAll('.fyi'),
+        container = void 0,
+        tooltipLeft = void 0;
+
+    for (var i = 0; i < fyi.length; i++) {
+        container = fyi[i].querySelector('.fyi__tooltip');
+
+        tooltipLeft = fyi[i].offsetLeft;
+
+        if (tooltipLeft > width / 2) {
+            container.style.left = 'auto';
+            container.style.right = '-20px';
+        }
+    }
+}
+
+//кастомный input[type="checkbox"]
+/**
+ * custom input[type='chekbox']
+ * toggle class active to parent element input (label) after click
+ */
+function checkedInput() {
+    var checkbox = document.documentElement.querySelectorAll('input[type="checkbox"]');
+
+    checkbox.forEach(function (item) {
+        item.addEventListener('change', function () {
+            if (this.checked) {
+                this.parentElement.classList.add('active');
+            } else {
+                this.parentElement.classList.remove('active');
+            }
+        });
+    });
+}
+
+// скрипт ползунка калькулятора
+// работа со значениями описана в конце скрипта
+// https://refreshless.com/nouislider/
+
+var slider = document.getElementById('js-shipment-calc'),
+    input = document.getElementById('js-shipment-value'),
+    inputs = [input];
+
+noUiSlider.create(slider, {
+    range: {
+        //второе число в массиве - это шаг
+        min: [300, 100],
+        '30%': [1500, 100],
+        '65%': [2000, 100],
+        max: [10000]
+    },
+    start: 300,
+    pips: {
+        mode: 'values',
+        values: [300, 1500, 2000, 10000],
+        density: 4
+    },
+    connect: [true, false]
+});
+
+slider.noUiSlider.on('update', function (values, handle) {
+    input.value = parseInt(values[handle]);
+});
+
+function setSliderHandle(i, value) {
+    var r = [null, null];
+    r[i] = value;
+    slider.noUiSlider.set(r);
+}
+
+// Listen to keydown events on the input field.
+inputs.forEach(function (input, handle) {
+
+    input.addEventListener('change', function () {
+        setSliderHandle(handle, this.value);
+    });
+
+    input.addEventListener('keydown', function (e) {
+
+        var values = slider.noUiSlider.get();
+        var value = Number(values[handle]);
+
+        // [[handle0_down, handle0_up], [handle1_down, handle1_up]]
+        var steps = slider.noUiSlider.steps();
+
+        // [down, up]
+        var step = steps[handle];
+
+        var position;
+
+        // 13 is enter,
+        // 38 is key up,
+        // 40 is key down.
+        switch (e.which) {
+
+            case 13:
+                setSliderHandle(handle, this.value);
+                break;
+
+            case 38:
+
+                // Get step to go increase slider value (up)
+                position = step[1];
+
+                // false = no step is set
+                if (position === false) {
+                    position = 1;
+                }
+
+                // null = edge of slider
+                if (position !== null) {
+                    setSliderHandle(handle, value + position);
+                }
+
+                break;
+
+            case 40:
+
+                position = step[0];
+
+                if (position === false) {
+                    position = 1;
+                }
+
+                if (position !== null) {
+                    setSliderHandle(handle, value - position);
+                }
+
+                break;
+        }
+    });
+});
+
+//https://refreshless.com/nouislider/slider-read-write/
+//получение значения
+//slider.noUiSlider.get();
+
+//установка значения
+//slider.noUiSlider.set(10);

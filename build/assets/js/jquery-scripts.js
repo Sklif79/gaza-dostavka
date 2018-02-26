@@ -39,6 +39,29 @@ $(document).ready(function () {
         focusOnSelect: true
     });
 
+    //слайдер на фотогалереи
+    $('div.shipment-gallery-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        nextArrow: '<div class="shipment-slider__next"></div>',
+        prevArrow: '<div class="shipment-slider__prev"></div>',
+        arrows: true
+    });
+
+    //fancybox-popup
+    $('.js_fancybox-img').fancybox({
+        closeBtn: true,
+        padding: 0,
+        helpers: {
+            overlay: {
+                css: {
+                    'background': 'rgba(0,0,0,0.65)'
+                }
+            }
+        }
+    });
+
     //fancybox-popup
     $('.js-modal').fancybox({
         closeBtn: true,
@@ -77,10 +100,16 @@ $(document).ready(function () {
     //custom select for filter
     $('.js-example-basic-multiple').select2({
         placeholder: 'Выберите параметры',
-        // language: 'ru',
         width: "100%",
         allowClear: true,
         theme: 'classic'
+    });
+
+    //custom select for calculator
+    $('.js_distance').select2({
+        width: "100%",
+        theme: 'classic',
+        minimumResultsForSearch: Infinity,
     });
 
     //Обрезка длины текста
@@ -102,6 +131,7 @@ $(document).ready(function () {
         $(this).parent().attr("id", "current"); // Активация идентификаторов
         $('#' + $(this).attr('title')).fadeIn(); // Показать содержимое текущей вкладки
     });
+
 
 });
 

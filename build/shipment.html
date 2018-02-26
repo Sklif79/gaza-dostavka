@@ -324,26 +324,286 @@
                 </div>
             </div>
 
-            <div class="shipment-calculation__calc">
-                <!--<form name="shipment-calculator" method="post" action="">-->
-                    <div class="shipment-calculation__value">
-                        <span>Количество литров</span>
-                        <input type="text" id="js-shipment-value">
-                    </div>
-                    <div class="shipment-calculation__slider" id="js-shipment-calc"></div>
+            <!--
+                https://refreshless.com/nouislider/slider-read-write/
+                получение значения
+                slider.noUiSlider.get();
 
-<br>
-<br>
-<br>
-<br>
-                    <!--<input type="submit" value="Оформить заказ" class="btn">-->
-                <!--</form>-->
+                установка значения
+                slider.noUiSlider.set(10);
+            -->
+            <div class="shipment-calculation__calc">
+                <div class="shipment-calculation__row">
+                    <span class="shipment-calculation__title">Количество литров</span>
+                    <input type="text" id="js-shipment-value">
+                </div>
+                <div class="shipment-calculation__slider" id="js-shipment-calc"></div>
+
+                <div class="shipment-calculation__row">
+                    <span class="shipment-calculation__title">Стоимость за литр газа</span>
+                    <span class="shipment-calculation__gas-cost">19,7 руб</span>
+                </div>
+
+                <form class="shipment-form" name="" action="" method="post">
+                    <div class="shipment-form__select-wrap">
+                        <span class="shipment-form__select-title">Доставка</span>
+                        <select name="" id="" class="js_distance">
+                            <option selected value="">Расстояние от КАД — до 100 км</option>
+                            <option value="">Расстояние от КАД — до 200 км</option>
+                            <option value="">Расстояние от КАД — до 300 км</option>
+                            <option value="">Расстояние от КАД — до 400 км</option>
+                        </select>
+                    </div>
+                    <div class="shipment-calculation__info">
+                        Стоимость доставки данного объёма литров рассчитывается менеджером
+                        после офрмления заявки
+                    </div>
+
+                    <div class="shipment-form__city">
+                        <div class="shipment-form__city-selected">
+                            <label class="js__selected">
+                                <input type="radio" name="city" checked>Санкт-Петербург
+                            </label>
+                            <label>
+                                <input type="radio" name="city">Москва
+                            </label>
+                        </div>
+
+                        <div class="shipment-form__vip">
+                            <label>
+                                <input type="checkbox">VIP клиент
+                            </label>
+                            <div class="fyi">
+                                <img src="assets/images/fyi-gray.svg" alt="">
+                                <div class="fyi__tooltip">
+                                    Описание… Описание… Описание… Описание…Описание…
+                                    Описание…Описание… Описание…
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shipment-form__total">
+                        К оплате: <span>25 000 руб.</span>
+                    </div>
+
+                    <input type="submit" value="Оформить заказ" class="btn">
+                </form>
+
+                <div class="shipment-calculation__warning">
+                    * Предложение не является публичной офертой
+                </div>
+            </div>
+        </div>
+
+        <div class="shipment-advantages">
+            <!---->
+            <div class="shipment-advantages__item">
+                <img src="assets/images/advantages-icons/shipment-advatages/shipment-advantages__1.svg" alt="">
+                <div class="shipment-advantages__title">
+                    Практичность
+                </div>
+                <div class="shipment-advantages__txt">
+                    Cжиженный газ практичен в эксплуатации, удобен при доставке, заправке и использовании
+                </div>
+            </div>
+
+            <!---->
+            <div class="shipment-advantages__item">
+                <img src="assets/images/advantages-icons/shipment-advatages/shipment-advantages__2.svg" alt="">
+                <div class="shipment-advantages__title">
+                    Гибкость
+                </div>
+                <div class="shipment-advantages__txt">
+                    Подходит для любой территории, доставка газа осуществляется круглогодично
+                </div>
+            </div>
+
+            <!---->
+            <div class="shipment-advantages__item">
+                <img src="assets/images/advantages-icons/shipment-advatages/shipment-advantages__3.svg" alt="">
+                <div class="shipment-advantages__title">
+                    Экологичность
+                </div>
+                <div class="shipment-advantages__txt">
+                    При сгорании газа выделяется в 2 раза меньше вредных веществ, чем при сгорании
+                    бензина или дизеля
+                </div>
+            </div>
+
+            <!---->
+            <div class="shipment-advantages__item">
+                <img src="assets/images/advantages-icons/shipment-advatages/shipment-advantages__4.svg" alt="">
+                <div class="shipment-advantages__title">
+                    Надежность
+                </div>
+                <div class="shipment-advantages__txt">
+                    Системы газового отопления надежны и долговечны
+                </div>
+            </div>
+        </div>
+
+        <div class="how-to-order">
+            <div class="how-to-order__inner dashed-title">
+                <h2>Порядок заказа доставки газа</h2>
+
+                <p>Вы можете заказать доставку газа в компании ООО “АТГ” одним из следующих способов:</p>
+
+                <div class="how-to-order__items">
+                    <a href="tel:+78126666707" class="how-to-order__item">
+                        <div class="how-to-order__item-info">
+                            Позвонить в компанию <br>
+                            <b>+7 (812) 666-67-07</b>
+                        </div>
+                        <img src="assets/images/how-to-1.svg" alt="">
+                    </a>
+
+                    <a href="tel:+78126666707" class="how-to-order__item">
+                        <div class="how-to-order__item-info">
+                            Заполнить форму обратной связи
+                        </div>
+                        <img src="assets/images/how-to-2.svg" alt="">
+                    </a>
+
+                    <a href="tel:+78126666707" class="how-to-order__item">
+                        <div class="how-to-order__item-info">
+                            Сделать заказ через мобильное приложение со скидкой
+                        </div>
+                        <img src="assets/images/how-to-3.svg" alt="">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="gas-shipment-info dashed-title">
+            <div class="gas-shipment-info__inner">
+                <h2>Сроки поставки газа</h2>
+
+                <p>
+                    Компания ООО “АТГ” доставляет газ современной спецтехникой. Наш автопарк состоит из 9
+                    газовозов, которые оснащены новейшим оборудованием, что позволяет производить доставку в
+                    максимально сжатые сроки. В связи с высокой загруженностью в зимний период, мы советуем
+                    Вам планировать доставку сжиженного углеводородного газа заранее, желательно за 2-3
+                    рабочих дня. В летний период доставка газа возможна в день подачи заявки.
+                </p>
+            </div>
+        </div>
+
+        <div class="shipment-gallery dashed-title">
+            <h2>Фотогалерея</h2>
+
+            <div class="shipment-gallery-slider">
+                <!---->
+                <div class="shipment-gallery-slider__item">
+                    <img src="assets/images/remove/shipment-gallery.jpg" alt="">
+                    <div class="shipment-gallery-slider__caption">
+                        Характеристики авто dummy text of the printing and typesetting industry.
+                    </div>
+                </div>
+
+                <!---->
+                <div class="shipment-gallery-slider__item">
+                    <img src="assets/images/remove/shipment-gallery.jpg" alt="">
+                    <div class="shipment-gallery-slider__caption">
+                        Характеристики авто dummy text of the printing and typesetting industry.
+                    </div>
+                </div>
+
+                <!---->
+                <div class="shipment-gallery-slider__item">
+                    <img src="assets/images/remove/shipment-gallery.jpg" alt="">
+                    <div class="shipment-gallery-slider__caption">
+                        Характеристики авто dummy text of the printing and typesetting industry.
+                    </div>
+                </div>
+
+                <!---->
+                <div class="shipment-gallery-slider__item">
+                    <img src="assets/images/remove/shipment-gallery.jpg" alt="">
+                    <div class="shipment-gallery-slider__caption">
+                        Характеристики авто dummy text of the printing and typesetting industry.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gas-shipment-info dashed-title">
+            <div class="gas-shipment-info__inner">
+                <h2>Стоимость доставки газа </h2>
+
+                <p>
+                    Стоимость доставки газа от компании ООО “АТГ” минимальна для рынка Санкт-Петербурга
+                    и Ленинградской области. Конечная стоимость напрямую зависит от параметров доставки
+                    и формируется в каждом случае индивидуально.
+                </p>
+            </div>
+        </div>
+
+        <div class="shipment-sale">
+            <div class="shipment-sale__more">
+                <img src="assets/images/shipment-sale__bg.png" alt="">
+                <div class="shipment-sale__more-info">
+                    <div class="shipment-sale__label">Акция</div>
+                    <h2>Доставка газа со скидкой до 25% от розничной цены</h2>
+                    <a href="#" class="btn-transparent">Подробнее</a>
+                </div>
+            </div>
+            <div class="shipment-sale__sales">
+                <div class="shipment-sale__sales-label">Другие акции</div>
+                <div class="shipment-sale__sales-item">
+                    <img src="assets/images/remove/shipment-sale__sales.png" alt="">
+                    <div class="shipment-sale__sales-info">
+                        <p>
+                            Скачай приложение-
+                            получай баллы длинное
+                        </p>
+                        <a href="#" class="shipment-sale__sales-lnk">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="shipment-sale__sales-item">
+                    <img src="assets/images/remove/shipment-sale__sales.png" alt="">
+                    <div class="shipment-sale__sales-info">
+                        <p>
+                            Скачай приложение-
+                            получай баллы
+                        </p>
+                        <a href="#" class="shipment-sale__sales-lnk">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gas-quality">
+            <div class="gas-quality__img">
+                <a href="assets/images/certif.jpg" class="js_fancybox-img">
+                    <img src="assets/images/certif.jpg" alt="">
+                </a>
+            </div>
+            <div class="gas-quality__info">
+                <h2>Качество газа</h2>
+
+                <p>
+                    Компания ООО “АТГ” поставляет газ напрямую от ООО “ПО “Киришинефтеоргсинтез” (КИНЕФ),
+                    который находится в г. Кириши Ленинградской области.
+                </p>
+
+                <p>
+                    Качество газа от завода КИНЕФ одно из лучших не только в Северо-Западном регионе,
+                    но и в России. Сжиженный углеводородный газ от ООО “ПО “Киришинефтеоргсинтез” отличается
+                    высоким качеством и соответствует ГОСТу 20448-90.
+                </p>
+
+                <p>
+                    При каждой отгрузке газа с завода КИНЕФ, мы получаем Сертификат качества, в котором
+                    указано процентное соотношение смеси пропан-бутана.
+                </p>
+
             </div>
         </div>
 
         <div class="container">
-
-
             <div class="useful-information">
                 <div class="useful-information__title">
                     <h2>Полезная информация</h2>
@@ -391,7 +651,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
     </div>
@@ -711,118 +970,6 @@
 <script src="assets/js/libs.js"></script>
 <script src="assets/js/jquery-scripts.js"></script>
 <script src="assets/js/main.js"></script>
-
-<!-- скрипт ползунка калькулятора -->
-<!-- работа со значениями описана в конце скрипта -->
-<!-- https://refreshless.com/nouislider/ -->
-<script>
-
-    var slider = document.getElementById('js-shipment-calc'),
-        input = document.getElementById('js-shipment-value'),
-    inputs = [input];
-
-    noUiSlider.create(slider, {
-        range: {
-            //второе число в массиве - это шаг
-            min: [300, 100],
-            '20%': [1500, 100],
-            '70%': [2000, 100],
-            max: [10000]
-        },
-        start: 300,
-        pips: {
-            mode: 'values',
-            values: [300, 1500, 2000, 10000],
-            density: 4
-        }
-
-
-    });
-
-    slider.noUiSlider.on('update', function( values, handle ) {
-        input.value = parseInt(values[handle]);
-    });
-
-
-    function setSliderHandle(i, value) {
-        var r = [null,null];
-        r[i] = value;
-        slider.noUiSlider.set(r);
-    }
-
-    // Listen to keydown events on the input field.
-    inputs.forEach(function(input, handle) {
-
-        input.addEventListener('change', function(){
-            setSliderHandle(handle, this.value);
-        });
-
-        input.addEventListener('keydown', function( e ) {
-
-            var values = slider.noUiSlider.get();
-            var value = Number(values[handle]);
-
-            // [[handle0_down, handle0_up], [handle1_down, handle1_up]]
-            var steps = slider.noUiSlider.steps();
-
-            // [down, up]
-            var step = steps[handle];
-
-            var position;
-
-            // 13 is enter,
-            // 38 is key up,
-            // 40 is key down.
-            switch ( e.which ) {
-
-                case 13:
-                    setSliderHandle(handle, this.value);
-                    break;
-
-                case 38:
-
-                    // Get step to go increase slider value (up)
-                    position = step[1];
-
-                    // false = no step is set
-                    if ( position === false ) {
-                        position = 1;
-                    }
-
-                    // null = edge of slider
-                    if ( position !== null ) {
-                        setSliderHandle(handle, value + position);
-                    }
-
-                    break;
-
-                case 40:
-
-                    position = step[0];
-
-                    if ( position === false ) {
-                        position = 1;
-                    }
-
-                    if ( position !== null ) {
-                        setSliderHandle(handle, value - position);
-                    }
-
-                    break;
-            }
-        });
-    });
-
-
-    //https://refreshless.com/nouislider/slider-read-write/
-    //получение значения
-    //slider.noUiSlider.get();
-
-    //установка значения
-    //slider.noUiSlider.set(10);
-
-
-</script>
 
 </body>
 </html>
