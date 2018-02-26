@@ -476,7 +476,7 @@
 <!-- заказ монтаж и обслуживание -->
 <div id="mounting" class="popup">
     <h2>Заявка на монтаж и обслуживание</h2>
-    <form name="review" action="#" method="post">
+    <form name="mounting" action="#" method="post">
 
         <div class="field__wrap">
             <label class="field__label custom-placeholder-wrap">
@@ -562,7 +562,7 @@
 <!---->
 <div id="online-order" class="popup">
     <h2>Заявка на монтаж и обслуживание</h2>
-    <form name="review" action="#" method="post">
+    <form name="online-order" action="#" method="post">
 
         <div class="field__wrap">
             <label class="field__label">
@@ -638,6 +638,92 @@
 
             </span>
                 <span class="custom-placeholder">Email</span>
+            </label>
+        </div>
+
+        <input type="submit" value="Отправить заявку" class="btn btn-submit">
+    </form>
+</div>
+
+<!-- Заявка на доставку газа -->
+<div id="shipment-order" class="popup">
+    <h2>Заявка на доставку газа</h2>
+    <form name="shipment-order" action="#" method="post">
+
+        <div class="field__wrap">
+            <label class="field__label custom-placeholder-wrap">
+            <span class="block">
+                <input type="text" autocomplete="off" class="field" placeholder="" name="name">
+
+                <!--тултип для обязательных полей-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                <!--/-->
+
+            </span>
+                <span class="custom-placeholder">Ваше имя</span>
+            </label>
+        </div>
+
+        <div class="field__wrap">
+            <label class="field__label custom-placeholder-wrap">
+                <span class="block">
+                    <input type="text" class="field js-phone-mask error" autocomplete="off" placeholder="" name="phone">
+
+                    <!--тултип для обязательных полей, чтобы появился,
+                     на input добавить класс error-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                    <!--/-->
+
+                </span>
+                <span class="custom-placeholder">Телефон для связи</span>
+            </label>
+        </div>
+
+        <div class="field__wrap">
+            <label class="field__label custom-placeholder-wrap">
+            <span class="block">
+                <input type="text" autocomplete="off" class="field" placeholder="" name="email">
+
+                <!--тултип для обязательных полей-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                <!--/-->
+
+            </span>
+                <span class="custom-placeholder">Ваш email</span>
+            </label>
+        </div>
+
+        <div class="field__wrap">
+            <label class="field__label custom-placeholder-wrap">
+            <span class="block">
+                <input type="text" autocomplete="off" class="field" placeholder="" name="address">
+
+                <!--тултип для обязательных полей-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                <!--/-->
+
+            </span>
+                <span class="custom-placeholder">Адрес доставки газа</span>
             </label>
         </div>
 

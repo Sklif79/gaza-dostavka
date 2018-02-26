@@ -82,6 +82,18 @@ b {
     font-weight: 500;
 }
 
+blockquote {
+    font-style: italic;
+
+    &::before {
+        content: "“";
+    }
+
+    &::after {
+        content: "”";
+    }
+}
+
 .hr {
     height: 1px;
     background: #F4F4F4;

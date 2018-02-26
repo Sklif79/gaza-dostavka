@@ -49,6 +49,16 @@ $(document).ready(function () {
         arrows: true
     });
 
+    //слайдер отзывов
+    $('div.review-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        nextArrow: '<div class="review-slider__next"></div>',
+        prevArrow: '<div class="review-slider__prev"></div>',
+        arrows: true
+    });
+
     //fancybox-popup
     $('.js_fancybox-img').fancybox({
         closeBtn: true,
@@ -109,7 +119,15 @@ $(document).ready(function () {
     $('.js_distance').select2({
         width: "100%",
         theme: 'classic',
-        minimumResultsForSearch: Infinity,
+        minimumResultsForSearch: Infinity
+    });
+
+    //custom select for additional-equipment
+    $('.js_additional-equipment').select2({
+        placeholder: 'Вид оборудования',
+        width: 254,
+        theme: 'classic',
+        minimumResultsForSearch: Infinity
     });
 
     //Обрезка длины текста
