@@ -61,7 +61,8 @@ function preloadImg(dataAttr) {
 
 //определение главной страницы
 function isMainPage() {
-    let result = (location.pathname === '/') ? true : false;
+    let path = location.pathname,
+        result = (path === '/' || ~path.indexOf('index-page.html') ) ? true : false;
     return result;
 }
 
@@ -246,8 +247,6 @@ var asideNav = function () {
 
                         $('body').removeClass('blocked');
                     }
-
-                    // self.$content.removeClass('js-aside-hover');
                 }
             )
         },
@@ -495,9 +494,6 @@ function setSliderHandle(i, value) {
     r[i] = value;
     slider.noUiSlider.set(r);
 }
-
-
-
 
 //https://refreshless.com/nouislider/slider-read-write/
 //получение значения

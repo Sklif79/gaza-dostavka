@@ -63,7 +63,8 @@ function preloadImg(dataAttr) {
 
 //определение главной страницы
 function isMainPage() {
-    var result = location.pathname === '/' ? true : false;
+    var path = location.pathname,
+        result = path === '/' || ~path.indexOf('index-page.html') ? true : false;
     return result;
 }
 
@@ -229,8 +230,6 @@ var asideNav = function asideNav() {
 
                     $('body').removeClass('blocked');
                 }
-
-                // self.$content.removeClass('js-aside-hover');
             });
         }
     };

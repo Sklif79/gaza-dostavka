@@ -104,8 +104,11 @@ $(document).ready(function () {
         autoReinitialise: true
     });
 
-    //mask
-    $('.js-phone-mask').inputmask("+7 (999) 999-99-99");
+    //mask showMaskOnHover
+    $('.js-phone-mask').inputmask({
+        "mask":"+7 (999) 999-99-99",
+        "showMaskOnHover":false
+    });
 
     //custom select for filter
     $('.js-example-basic-multiple').select2({
