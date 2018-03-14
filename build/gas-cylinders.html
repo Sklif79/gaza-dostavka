@@ -399,28 +399,6 @@
                 <!---->
                 <div class="filter-section__item">
                     <div class="filter-section__title">
-                        <span>Количество баллонов:</span>
-            
-                        <div class="fyi">
-                            <img src="assets/images/fyi.svg" alt="">
-                            <div class="fyi__tooltip">
-                                Описание… Описание… Описание… Описание…Описание…
-                                Описание…Описание… Описание…
-                            </div>
-                        </div>
-                    </div>
-                    <select class="js-example-basic-multiple" name="" multiple="multiple">
-                        <option disabled>Выберите параметры</option>
-                        <option value="2">2 шт</option>
-                        <option value="4">4 шт</option>
-                        <option value="6">6 шт</option>
-                        <option value="8">8 шт</option>
-                    </select>
-                </div>
-            
-                <!---->
-                <div class="filter-section__item">
-                    <div class="filter-section__title">
                         <span>Тип клапана:</span>
             
                         <div class="fyi">
@@ -437,6 +415,21 @@
                         <option value="4">механический</option>
                         <option value="6">механический</option>
                     </select>
+                </div>
+            
+                <!---->
+                <div class="filter-section__item">
+                    <div class="filter-section__title input">
+                        <label class="checkbox"><input type="checkbox">Термокомпенсация</label>
+            
+                        <div class="fyi">
+                            <img src="assets/images/fyi.svg" alt="">
+                            <div class="fyi__tooltip">
+                                Описание… Описание… Описание… Описание…Описание…
+                                Описание…Описание… Описание…
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </form>
 
@@ -1099,6 +1092,8 @@
     </div>
 </div>
 
+<div id="toUp"></div>
+
 <!-- - - - - - - - - - popups - - - - - - - - - -->
 <!-- обратный звонок -->
 <div id="feedback" class="popup">
@@ -1488,6 +1483,92 @@
 
             </span>
                 <span class="custom-placeholder">Адрес доставки газа</span>
+            </label>
+        </div>
+
+        <input type="submit" value="Отправить заявку" class="btn btn-submit">
+    </form>
+</div>
+
+<!-- Заявка на газификацию -->
+<div id="gasification-order" class="popup">
+    <h2>Заявка на газификацию</h2>
+    <form name="shipment-order" action="#" method="post">
+
+        <div class="field__wrap">
+            <label class="field__label custom-placeholder-wrap">
+            <span class="block">
+                <input type="text" autocomplete="off" class="field" placeholder="" name="name">
+
+                <!--тултип для обязательных полей-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                <!--/-->
+
+            </span>
+                <span class="custom-placeholder">Ваше имя</span>
+            </label>
+        </div>
+
+        <div class="field__wrap">
+            <label class="field__label custom-placeholder-wrap">
+                <span class="block">
+                    <input type="text" class="field js-phone-mask error" autocomplete="off" placeholder="" name="phone">
+
+                    <!--тултип для обязательных полей, чтобы появился,
+                     на input добавить класс error-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                    <!--/-->
+
+                </span>
+                <span class="custom-placeholder">Телефон для связи</span>
+            </label>
+        </div>
+
+        <div class="field__wrap">
+            <label class="field__label custom-placeholder-wrap">
+            <span class="block">
+                <input type="text" autocomplete="off" class="field" placeholder="" name="email">
+
+                <!--тултип для обязательных полей-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                <!--/-->
+
+            </span>
+                <span class="custom-placeholder">Ваш email</span>
+            </label>
+        </div>
+
+        <div class="field__wrap">
+            <label class="field__label custom-placeholder-wrap">
+            <span class="block">
+                <input type="text" autocomplete="off" class="field" placeholder="" name="address">
+
+                <!--тултип для обязательных полей-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                <!--/-->
+
+            </span>
+                <span class="custom-placeholder">Адрес установки газификации</span>
             </label>
         </div>
 

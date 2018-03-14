@@ -150,8 +150,10 @@ $(document).ready(function () {
         $("#tabs-content div").hide(); //Скрыть всё содержимое
         $("#tabs-list li").attr("id", ""); //Сброс идентификаторов
         $(this).parent().attr("id", "current"); // Активация идентификаторов
-        $('#' + $(this).attr('title')).fadeIn(); // Показать содержимое текущей вкладки
+        $('#' + $(this).attr('data-title')).fadeIn(); // Показать содержимое текущей вкладки
     });
+
+
 
 
 });

@@ -9,6 +9,7 @@ ready(function () {
     radioBtn($('.shipment-form__city input[type="radio"]'));
     tooltipPosition();
     checkedInput();
+    jQueryTabs();
 
     hoverImages('div.nav-index', 'div.nav-index__item');
     hoverImages('ul.aside-nav', '.aside-nav__link');
@@ -352,6 +353,29 @@ function tooltipPosition() {
     }
 }
 
+//кнопка наверх
+(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 700) {
+            $('#toUp').show();
+        } else {
+            $('#toUp').hide();
+        }
+    });
+
+    $(document).on('click', '#toUp', function () {
+        $('html, body').animate({ scrollTop: 0 }, 500);
+    });
+})();
+
+//кастомные табы
+function jQueryTabs() {
+    $('.tab').on('click', function () {
+        $(this).closest('.tabs-wrap').find('.tab, .panel').removeClass('active');
+        $(this).addClass('active').closest('.tabs-wrap').find('div[data-id="' + $(this).attr('data-id') + '"]').addClass('active');
+    });
+}
+
 //кастомный input[type="checkbox"]
 /**
  * custom input[type='chekbox']
@@ -359,8 +383,13 @@ function tooltipPosition() {
  */
 function checkedInput() {
     var checkbox = document.documentElement.querySelectorAll('input[type="checkbox"]');
+    var radiobox = document.documentElement.querySelectorAll('input[type="radio"]');
 
     checkbox.forEach(function (item) {
+        if (item.checked) {
+            item.parentElement.classList.add('active');
+        }
+
         item.addEventListener('change', function () {
             if (this.checked) {
                 this.parentElement.classList.add('active');
@@ -369,6 +398,20 @@ function checkedInput() {
             }
         });
     });
+
+    // radiobox.forEach(function (item) {
+
+    radiobox.addEventListener('change', function () {
+        if (this.checked) {
+            item.parentElement.classList.add('active');
+        } else {
+            this.parentElement.classList.remove('active');
+        }
+
+        console.log(item.checked);
+    });
+    // });
+
 }
 
 // скрипт ползунка калькулятора

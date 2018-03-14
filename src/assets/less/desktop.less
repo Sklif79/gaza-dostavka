@@ -1317,6 +1317,10 @@
   color: @dark-text;
   margin-bottom: 4px;
   white-space: nowrap;
+
+  &.input {
+    margin-top: 33px;
+  }
 }
 
 .fyi {
@@ -1324,6 +1328,7 @@
   vertical-align: middle;
   position: relative;
   cursor: pointer;
+  line-height: 0;
 }
 
 .fyi:hover .fyi__tooltip {
@@ -1340,6 +1345,9 @@
   width: 300px;
   box-shadow: 0 0 9px rgba(60, 72, 88, 0.25);
   display: none;
+  white-space: normal;
+  line-height: 1.125rem;
+  font-size: 0.8125rem;
 }
 
 .products-list {
@@ -1707,46 +1715,48 @@
   border-radius: 3px;
   margin-left: 85px;
   margin-bottom: 70px;
-}
 
-#tabs-list {
-  list-style: none;
-  background: #F7F9FC;
-  font-size: 0;
-  line-height: 0;
-  border-bottom: 1px solid #E0E6ED;
-  height: 49px;
-
-  li {
-    display: inline-block;
-
-  }
-
-  #current {
-    background: #fff;
+  #tabs-list {
+    list-style: none;
+    background: #F7F9FC;
+    font-size: 0;
+    line-height: 0;
+    border-bottom: 1px solid #E0E6ED;
     height: 49px;
+
+    li {
+      display: inline-block;
+
+    }
+
+    #current {
+      background: #fff;
+      height: 49px;
+    }
+
+    #current a {
+      border-top-color: @link-blue;
+      color: @link-blue;
+    }
+
+    a {
+      font-weight: 500;
+      line-height: normal;
+      font-size: 0.875rem;
+      color: @dark-text;
+      padding: 12px 25px 15px;
+      display: inline-block;
+      border-right: 1px solid #E0E6ED;
+      border-top: 3px solid transparent;
+    }
   }
 
-  #current a {
-    border-top-color: @link-blue;
-    color: @link-blue;
-  }
-
-  a {
-    font-weight: 500;
-    line-height: normal;
-    font-size: 0.875rem;
-    color: @dark-text;
-    padding: 12px 25px 15px;
-    display: inline-block;
-    border-right: 1px solid #E0E6ED;
-    border-top: 3px solid transparent;
+  .tabs-content {
+    padding: 26px 25px 42px;
   }
 }
 
-.tabs-content {
-  padding: 26px 25px 42px;
-}
+
 
 /* - - - - - - - - - - - - cylinders-advantages - - - - - - - - - - - - */
 .cylinders-advantages {
@@ -3185,11 +3195,11 @@
 
 /* - - - - - - - - - - - - page-description - - - - - - - - - - - - */
 .page-description {
-  min-height: 471px;
   background: #273444;
   margin-top: -40px;
-  padding: 76px 40px 40px;
   color: #fff;
+  position: relative;
+  overflow: hidden;
 
   h2 {
     max-width: 860px;
@@ -3205,6 +3215,358 @@
     line-height: 1.625rem;
   }
 }
+
+.page-description__inner {
+  position: relative;
+  padding: 40px;
+  background: rgba(0,0,0,0.5);
+  min-height: 471px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-description__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: none;
+}
+
+/* - - - - - - - - - - - - gasification-installation - - - - - - - - - - - - */
+.gasification-installation {
+  padding: 53px 65px;
+
+  h2 {
+    margin-bottom: 30px;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 1.375rem;
+    color: #3C4858;
+  }
+
+  p {
+    max-width: 680px;
+    margin: 0 auto 19px;
+    text-align: center;
+    line-height: 1.5rem;
+  }
+}
+
+.installation-order {
+  text-align: center;
+  font-size: 0;
+  line-height: 0;
+
+  a[href^="tel:"] {
+    white-space: nowrap;
+    color: #156FD1;
+    font-weight: 500;
+  }
+
+  a:not([href^="tel:"]) {
+    white-space: nowrap;
+    color: @link-blue;
+    border-bottom: 1px solid fade(@link-blue, 70%);
+  }
+}
+
+.installation-order__item {
+  display: inline-block;
+  width: 19.6882%;
+  vertical-align: top;
+  position: relative;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &:not(:last-of-type)::after {
+    position: absolute;
+    content: "";
+    width: ~"calc(100% - 76px - 36px)";
+    height: 3px;
+    background: linear-gradient(270deg, #197AE3 1.09%, rgba(25, 122, 227, 0.25) 100%);
+    right: 0;
+    top: 36px;
+    transform: translateX(50%);
+  }
+}
+
+.installation-order__description {
+  line-height: 1.125rem;
+  font-size: 0.875rem;
+  color: @dark-text;
+  padding: 0 5px;
+
+  .fyi__tooltip {
+    max-width: 220px;
+    text-align: left;
+  }
+}
+
+.installation-order__img {
+  margin-bottom: 23px;
+}
+
+/* - - - - - - - - - - - - gasification-advantages - - - - - - - - - - - - */
+.advantages-graphical {
+  background: #F4F4F4;
+  padding-top: 55px;
+  padding-bottom: 12px;
+
+  h2 {
+    margin-bottom: 30px;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 1.375rem;
+    color: #3C4858;
+  }
+
+  p {
+    max-width: 782px;
+    margin: 0 auto 25px;
+    text-align: center;
+    line-height: 1.5rem;
+  }
+}
+
+.advantages-graphical-more {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 990px;
+  margin: 0 auto;
+
+  h3 {
+    text-align: left;
+    color: @dark-text;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 0.875rem;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.advantages-graphical-more__item {
+  width: 33.3333%;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
+.advantages-graphical-more__img {
+  flex: none;
+  width: 55px;
+  margin-right: 11px;
+  padding-top: 5px;
+}
+
+.advantages-graphical-chart {
+  padding: 54px 0 103px;
+  background: #273444;
+  border-radius: @border-radius;
+  max-width: 990px;
+  margin: 0 auto 37px;
+  color: #fff;
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.advantages-graphical-chart-table {
+  line-height: 46px;
+  max-width: 794px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 67px;
+}
+
+.advantages-graphical-chart__row {
+  height: 46px;
+  line-height: 89px;
+  text-indent: -37px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  position: relative;
+
+  &::before{
+    content: "";
+    position: absolute;
+    width: 4px;
+    bottom: -1px;
+    left: -4px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &:first-of-type {
+    border-right: none;
+    border-left: none;
+  }
+}
+
+.advantages-graphical-chart__axis-title {
+  transform: rotate(-90deg) translateX(-50%);
+  transform-origin: 0 100%;
+  border: none;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: auto;
+  line-height: normal;
+  text-indent: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+}
+
+.advantages-graphical-chart-columns {
+  left: 67px;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.advantages-graphical-chart__column {
+  width: 17.1939%;
+  margin-left: 6.1898%;
+  flex: none;
+  font-size: 0.875rem;
+  text-align: center;
+  line-height: normal;
+  position: relative;
+}
+
+.advantages-graphical-chart__column-title {
+  top: ~"calc(100% + 14px)";
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.advantages-graphical-chart__column.theme-background_red {
+  height: 10px;
+}
+
+.advantages-graphical-chart__column.theme-background_yellow {
+  height: 159px;
+}
+
+.advantages-graphical-chart__column.theme-background_green {
+  height: 307px;
+}
+
+.advantages-graphical-chart__column.theme-background_blue {
+  height: 331px;
+}
+
+/* - - - - - - - - - - - - gas-shipment-tabs - - - - - - - - - - - - */
+.gas-shipment-tabs {
+  width: 800px;
+  margin: 26px auto 0;
+  border: 1px solid #E0E6ED;
+  border-radius: @border-radius;
+
+  .tabs {
+    display: flex;
+    list-style: none;
+  }
+
+  .tab {
+    flex: none;
+    width: 25%;
+    height: 48px;
+    line-height: 48px;
+    border-right: 1px solid #E0E6ED;
+    border-bottom: 1px solid #E0E6ED;
+    text-transform: uppercase;
+    color: @gray;
+    font-weight: 500;
+    
+    &.active {
+      background: #F2F3F5;
+      color: @link-blue;
+    }
+
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+
+  .tabs-content__section {
+    padding: 21px 31px 23px;
+    border-bottom: 1px solid #E0E6ED;
+
+    &:last-of-type {
+      border: none;
+    }
+
+    &:first-of-type {
+      padding-top: 31px;
+    }
+  }
+
+  h4 {
+    font-size: 1rem;
+    color: @dark-text;
+    font-weight: 500;
+    margin-bottom: 12px;
+
+    &:after {
+      display: none;
+    }
+  }
+  
+  .panel {
+    text-align: left;
+  }
+}
+
+.tabs-content__section {
+
+}
+
+.tabs-content__section-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.tabs-content__section-title-checkbox {
+  font-size: 0.875rem;
+
+  label {
+    &.active {
+      color: @dark-text;
+    }
+
+    &:first-of-type {
+      margin-right: 39px;
+    }
+  }
+}
+
+
 
 /* - - - - - - - - - - - - footer - - - - - - - - - - - - */
 .footer {
@@ -3271,6 +3633,25 @@
   z-index: 10;
 }
 
+/* - - - - - - - - - - - - toUp - - - - - - - - - - - - */
+#toUp {
+  position: fixed;
+  right: 70px;
+  bottom: 200px;
+  width: 58px;
+  height: 58px;
+  background: url("../images/toUp-arrow.svg") 50% 50% no-repeat fade(@link-blue, 70%);
+  cursor: pointer;
+  border-radius: 50%;
+  display: none;
+  transition: 0.2s;
+  z-index: 10000;
+}
+
+#toUp:hover {
+  background-color: @link-blue;
+}
+
 /* - - - - - - - - - - - - popups - - - - - - - - - - - - */
 .popup h2 {
   font-size: 1.125rem;
@@ -3284,6 +3665,39 @@
   height: 42px;
   line-height: 42px;
   font-weight: bold;
+}
+
+/* - - - - - - - - - - - - modifiers - - - - - - - - - - - - */
+.theme-color_red {
+  color: #F0666E;
+}
+
+.theme-color_yellow {
+  color: #F7C065;
+}
+
+.theme-color_green {
+  color: #27AE60;
+}
+
+.theme-color_blue {
+  color: #2091E1;
+}
+
+.theme-background_red {
+  background: #F0666E;
+}
+
+.theme-background_yellow {
+  background: #F7C065;
+}
+
+.theme-background_green {
+  background: #27AE60;
+}
+
+.theme-background_blue {
+  background: #2091E1;
 }
 
 /* IE10+ specific styles go here */
