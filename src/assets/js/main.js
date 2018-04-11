@@ -409,22 +409,26 @@ function checkedInput() {
     let checkbox = document.documentElement.querySelectorAll('input[type="checkbox"]');
     let radiobox = document.documentElement.querySelectorAll('input[type="radio"]');
 
-    checkbox.forEach(function (item) {
-        if (item.checked) {
-            item.parentElement.classList.add('active');
-        }
-
-        item.addEventListener('change', function () {
-            if (this.checked) {
-                this.parentElement.classList.add('active');
-            } else {
-                this.parentElement.classList.remove('active');
+    if (checkbox.length) {
+        checkbox.forEach(function (item) {
+            if (item.checked) {
+                item.parentElement.classList.add('active');
             }
-        })
-    });
+
+            item.addEventListener('change', function () {
+                if (this.checked) {
+                    this.parentElement.classList.add('active');
+                } else {
+                    this.parentElement.classList.remove('active');
+                }
+            })
+        });
+    }
+
 
     // radiobox.forEach(function (item) {
 
+    if (radiobox.length) {
         radiobox.addEventListener('change', function () {
             if (this.checked) {
                 item.parentElement.classList.add('active');
@@ -433,10 +437,10 @@ function checkedInput() {
             }
 
             console.log(item.checked)
-        })
+        });
+    }
+
     // });
-
-
 }
 
 

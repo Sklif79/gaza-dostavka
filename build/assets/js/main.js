@@ -385,33 +385,37 @@ function checkedInput() {
     var checkbox = document.documentElement.querySelectorAll('input[type="checkbox"]');
     var radiobox = document.documentElement.querySelectorAll('input[type="radio"]');
 
-    checkbox.forEach(function (item) {
-        if (item.checked) {
-            item.parentElement.classList.add('active');
-        }
-
-        item.addEventListener('change', function () {
-            if (this.checked) {
-                this.parentElement.classList.add('active');
-            } else {
-                this.parentElement.classList.remove('active');
+    if (checkbox.length) {
+        checkbox.forEach(function (item) {
+            if (item.checked) {
+                item.parentElement.classList.add('active');
             }
+
+            item.addEventListener('change', function () {
+                if (this.checked) {
+                    this.parentElement.classList.add('active');
+                } else {
+                    this.parentElement.classList.remove('active');
+                }
+            });
         });
-    });
+    }
 
     // radiobox.forEach(function (item) {
 
-    radiobox.addEventListener('change', function () {
-        if (this.checked) {
-            item.parentElement.classList.add('active');
-        } else {
-            this.parentElement.classList.remove('active');
-        }
+    if (radiobox.length) {
+        radiobox.addEventListener('change', function () {
+            if (this.checked) {
+                item.parentElement.classList.add('active');
+            } else {
+                this.parentElement.classList.remove('active');
+            }
 
-        console.log(item.checked);
-    });
+            console.log(item.checked);
+        });
+    }
+
     // });
-
 }
 
 // скрипт ползунка калькулятора

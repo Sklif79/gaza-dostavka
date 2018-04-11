@@ -243,7 +243,7 @@
     background: #fff;
     font-size: 14px;
     //border-right: 1px solid #E0E6ED;
-    box-shadow: 0px 0 1px #E0E6ED;
+    box-shadow: 0 0 1px #E0E6ED;
 
     .js-aside-nav__dropdown > a {
       background: url("../images/arrows/aside-nav-arrow-right.svg") right 20px top 50% no-repeat;
@@ -1861,7 +1861,7 @@
   border-right: 1px solid #E0E6ED;
 
   &:nth-of-type(even) {
-    border-rigth: none;
+    border-right: none;
     border-left: 1px solid #E0E6ED;
   }
 }
@@ -3480,12 +3480,13 @@
   height: 331px;
 }
 
-/* - - - - - - - - - - - - gas-shipment-tabs - - - - - - - - - - - - */
-.gas-shipment-tabs {
+/* - - - - - - - - - - - - gas-cost-form - - - - - - - - - - - - */
+.gas-cost-form {
   width: 800px;
   margin: 26px auto 0;
   border: 1px solid #E0E6ED;
   border-radius: @border-radius;
+  display: inline-block;
 
   .tabs {
     display: flex;
@@ -3566,6 +3567,34 @@
   }
 }
 
+.gas-cost-form__result {
+  display: flex;
+  background: @dark-text;
+  justify-content: space-between;
+  margin-left: -1px;
+  margin-right: -1px;
+  padding: 20px 30px 15px;
+  border-radius: 0 0 3px 3px;
+}
+
+.gas-cost-form__result-title {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.gas-cost-form__result-selected {
+  font-weight: 500;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.gas-cost-form__submit-title {
+  font-size: 0.75rem;
+}
+//.radio-btn-progress  {
+//  display: flex;
+//  justify-content: space-between;
+//}
 
 
 /* - - - - - - - - - - - - footer - - - - - - - - - - - - */
