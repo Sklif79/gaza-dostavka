@@ -1756,8 +1756,6 @@
   }
 }
 
-
-
 /* - - - - - - - - - - - - cylinders-advantages - - - - - - - - - - - - */
 .cylinders-advantages {
   background: #F4F4F4;
@@ -2761,6 +2759,11 @@
   }
 }
 
+.photo-gallery {
+  padding-top: 54px;
+  padding-bottom: 60px;
+}
+
 /* - - - - - - - - - - - - shipment-sale - - - - - - - - - - - - */
 .shipment-sale {
   padding: 50px 0;
@@ -3030,7 +3033,6 @@
     color: @dark-text;
     line-height: 1.375rem;
 
-
     &::before {
       content: counter(numbers); /* Выводим число */
       counter-increment: numbers; /* Увеличиваем значение счётчика */
@@ -3103,6 +3105,8 @@
   transform: translateX(-50%);
 }
 
+
+
 /* - - - - - - - - - - - - review - - - - - - - - - - - - */
 .review {
   background: url("../images/review-slider__bg.jpg") 50% 0 no-repeat;
@@ -3112,9 +3116,10 @@
   margin-bottom: 54px;
 
   h2 {
-    font-size: 1.375rem;
-    font-weight: 500;
+    //font-size: 1.375rem;
+    //font-weight: 500;
     margin-bottom: 34px;
+    color: #fff;
   }
 }
 
@@ -3139,7 +3144,7 @@
     button {
       width: 7px;
       height: 7px;
-      background: rgba(255,255,255,0.3);
+      background: rgba(255, 255, 255, 0.3);
       border-radius: 50%;
       padding: 0;
 
@@ -3162,7 +3167,7 @@
 }
 
 .review-city {
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, .7);
 }
 
 .review-slider__prev, .review-slider__next {
@@ -3219,7 +3224,7 @@
 .page-description__inner {
   position: relative;
   padding: 40px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   min-height: 471px;
   display: flex;
   flex-direction: column;
@@ -3406,7 +3411,7 @@
   font-size: 0.875rem;
   position: relative;
 
-  &::before{
+  &::before {
     content: "";
     position: absolute;
     width: 4px;
@@ -3503,7 +3508,7 @@
     text-transform: uppercase;
     color: @gray;
     font-weight: 500;
-    
+
     &.active {
       background: #F2F3F5;
       color: @link-blue;
@@ -3537,7 +3542,7 @@
       display: none;
     }
   }
-  
+
   .panel {
     text-align: left;
   }
@@ -3567,6 +3572,10 @@
   }
 }
 
+.panels h4 {
+  text-align: left;
+}
+
 .gas-cost-form__result {
   display: flex;
   background: @dark-text;
@@ -3590,11 +3599,226 @@
 
 .gas-cost-form__submit-title {
   font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
 }
-//.radio-btn-progress  {
-//  display: flex;
-//  justify-content: space-between;
-//}
+
+.radio-progress {
+  position: relative;
+  max-width: 598px;
+
+  &::after {
+    content: "";
+    left: 1px;
+    right: 1px;
+    top: 6px;
+    height: 5px;
+    background: @dark-text;
+    position: absolute;
+  }
+}
+
+.radio-btn-progress {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding-bottom: 72px;
+  line-height: 0;
+}
+
+.radio-btn-progress__point {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  background: #fff;
+  border: 4px solid @dark-text;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  line-height: normal;
+  z-index: 20;
+
+  &.active {
+    background: @link-blue;
+    border-color: @link-blue;
+
+    .radio-progress__value, .radio-progress__value span {
+      color: @link-blue;
+    }
+  }
+
+  input {
+    //display: none;
+    margin: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+.radio-progress__value {
+  text-align: center;
+  display: inline-block;
+  top: 40px;
+  position: absolute;
+  transform: translateX(~"calc(-50% + 5px)");
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: @dark-text;
+
+  span {
+    white-space: nowrap;
+    font-size: 0.6875rem;
+    color: #000;
+  }
+}
+
+.radio-btn-progress__line {
+  position: absolute;
+  top: 6px;
+  left: 1px;
+  height: 5px;
+  background: @link-blue;
+  z-index: 10;
+
+}
+
+.tab-section-list {
+  column-count: 2;
+  column-gap: 53px;
+  list-style: none;
+  display: inline-block;
+
+  li {
+    line-height: 1.125rem;
+    font-size: 0.875rem;
+    position: relative;
+
+    &::after {
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      content: "";
+      background: @link-blue;
+      position: absolute;
+      left: -5px;
+      top: 10px;
+    }
+  }
+}
+
+.inputs-wrap {
+  display: flex;
+}
+
+.inputs-wrap .checkbox {
+  white-space: nowrap;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.checkbox__column {
+  margin-right: 50px;
+}
+
+/* - - - - - - - - - - - - gasholder-description - - - - - - - - - - - - */
+.gasholder-description {
+  background: url('../images/gasholder-description__bg.jpg') center no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding: 60px 0;
+
+}
+
+.gasholder-description-inner {
+  display: flex;
+  align-items: center;
+}
+
+.gasholder-description__img {
+  margin-right: 31px;
+  flex: none;
+  width: 321px;
+}
+
+.gasholder-description__info {
+  flex-grow: 1;
+
+  h4 {
+    margin-bottom: 22px;
+  }
+
+  p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* - - - - - - - - - - - - tank-offer - - - - - - - - - - - - */
+.tank-offer {
+  padding: 54px 0 45px;
+}
+
+.table-wrap {
+  width: 1008px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.tank-offer-inner p {
+  max-width: 750px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.table-wrap {
+  border: 1px solid #E0E6ED;
+  border-radius: 3px;
+}
+
+.table_color-column {
+  font-size: 0.875rem;
+
+  table {
+    margin: -1px;
+    width: ~"calc(100% + 2px)";
+  }
+
+
+  tr td:first-of-type {
+    background: @dark-text;
+    color: #fff;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    
+    .fyi {
+      color: @dark-text;
+    }
+  }
+
+  th {
+    text-align: right;
+    color: @link-blue;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1px solid #E0E6ED;
+    padding: 9px 15px;
+    min-height: 52px;
+    vertical-align: middle;
+  }
+
+  td {
+    border: 1px solid #E0E6ED;
+    padding: 9px 15px;
+    min-height: 52px;
+    vertical-align: middle;
+  }
+}
+
 
 
 /* - - - - - - - - - - - - footer - - - - - - - - - - - - */
@@ -3741,7 +3965,6 @@
     padding-bottom: 18px;
   }
 }
-
 
 /*sitemap*/
 .sitemap-wrap {

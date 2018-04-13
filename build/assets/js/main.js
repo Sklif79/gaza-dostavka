@@ -11,6 +11,10 @@ ready(function () {
     checkedInput();
     jQueryTabs();
 
+    setTimeout(function () {
+        inputFilter();
+    }, 1000);
+
     hoverImages('div.nav-index', 'div.nav-index__item');
     hoverImages('ul.aside-nav', '.aside-nav__link');
 
@@ -382,40 +386,69 @@ function jQueryTabs() {
  * toggle class active to parent element input (label) after click
  */
 function checkedInput() {
-    var checkbox = document.documentElement.querySelectorAll('input[type="checkbox"]');
-    var radiobox = document.documentElement.querySelectorAll('input[type="radio"]');
+    var reset = document.querySelectorAll('input[type="reset"]'),
+        $target,
+        $slider,
+        $pointArr,
+        width,
+        index = -1;
 
-    if (checkbox.length) {
-        checkbox.forEach(function (item) {
-            if (item.checked) {
-                item.parentElement.classList.add('active');
+    inspectionInputs(document.querySelectorAll('input[type="checkbox"], input[type="radio"]'));
+
+    document.addEventListener('change', function (e) {
+        $target = $(e.target);
+        $slider = $target.closest('.radio-progress');
+        $pointArr = $slider.find('.radio-btn-progress__point');
+
+        if (e.target.closest('.checkbox') && !e.target.hasAttribute('disabled')) {
+            e.target.closest('.checkbox').classList.toggle('active');
+        }
+
+        if (e.target.closest('.radio')) {
+            inspectionInputs(document.querySelectorAll('input[type="radio"]'));
+
+            if ($target.closest('.radio-btn-progress__point').length) {
+                width = $target.closest('.radio-btn-progress__point').position().left;
+
+                $slider.find('.radio-btn-progress__line').css({ 'width': width + 'px' });
+
+                $pointArr.each(function (i, item) {
+                    //
+                    if (index === -1) {
+                        $(item).hasClass('active') ? index = i : $(item).addClass('active');
+                    }
+
+                    if (i === $pointArr.length - 1) {
+                        index = -1;
+                    }
+                });
             }
+        }
+    });
 
-            item.addEventListener('change', function () {
-                if (this.checked) {
-                    this.parentElement.classList.add('active');
-                } else {
-                    this.parentElement.classList.remove('active');
-                }
-            });
-        });
-    }
-
-    // radiobox.forEach(function (item) {
-
-    if (radiobox.length) {
-        radiobox.addEventListener('change', function () {
-            if (this.checked) {
-                item.parentElement.classList.add('active');
-            } else {
-                this.parentElement.classList.remove('active');
+    document.addEventListener('click', function (e) {
+        for (var i = 0; i < reset.length; i++) {
+            if (e.target === reset[i]) {
+                setTimeout(function () {
+                    inspectionInputs(document.querySelectorAll('input[type="checkbox"], input[type="radio"]'));
+                }, 0);
             }
+        }
+    });
+}
 
-            console.log(item.checked);
-        });
+function inspectionInputs(arr) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].checked) {
+            arr[i].parentElement.classList.add('active');
+        } else {
+            arr[i].parentElement.classList.remove('active');
+        }
+
+        if (arr[i].hasAttribute('disabled')) {
+            arr[i].parentElement.classList.add('disabled');
+        }
     }
-
-    // });
 }
 
 // скрипт ползунка калькулятора
@@ -525,3 +558,66 @@ function setSliderHandle(i, value) {
 
 //установка значения
 //slider.noUiSlider.set(10);
+
+
+function inputFilter() {
+    if (document.querySelectorAll('.inputs-wrap').length) {
+        (function () {
+
+            //проверки
+            var maxColumn = function maxColumn() {
+                var width = 0,
+                    count = 0;
+                for (var i = 0; i < arrNew.length; i++) {
+                    width += arrNew[i].offsetWidth + 50;
+                    count++;
+                    if (width > maxWidth) {
+                        count--;
+                        return count;
+                    }
+                }
+            };
+
+            //сортировка input по длине и рассчет колонок
+            var arr = document.querySelectorAll('.inputs-wrap .checkbox'),
+                arrNew = [],
+                wrap = document.querySelector('.inputs-wrap'),
+                maxWidth = wrap.offsetWidth,
+                columns = 0;
+
+            arr.forEach(function (item) {
+                arrNew.push(item);
+            });
+
+            arrNew.sort(function (a, b) {
+                return b.offsetWidth - a.offsetWidth;
+            });
+
+            var elInColumn = Math.ceil(arrNew.length / maxColumn()),
+                maxCol = maxColumn();
+
+            //колонки
+            for (var i = 0; i < maxCol; i++) {
+                (function () {
+                    var div = document.createElement('div');
+                    div.classList.add('checkbox__column');
+
+                    //запихиваем элементы в колонку
+                    for (var _i = 0; _i < elInColumn; _i++) {
+                        if (arrNew.length) {
+                            div.append(arrNew.shift());
+                        }
+                    }
+
+                    wrap.append(div);
+                })();
+            }
+
+            document.querySelectorAll('.checkbox__column').forEach(function (item) {
+                item.classList.add('js-calculated');
+            });
+
+            document.querySelector('.inputs-wrap').classList.add('js-calculated');
+        })();
+    }
+}
