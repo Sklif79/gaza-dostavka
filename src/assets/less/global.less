@@ -110,6 +110,22 @@ table {
     border-collapse: collapse;
 }
 
+ul:not([class]) li {
+    position: relative;
+    list-style: none;
+
+    &:after {
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        content: "";
+        background: #197AE3;
+        position: absolute;
+        left: -5px;
+        top: 10px;
+    }
+}
+
 .hr {
     height: 1px;
     background: #F4F4F4;
@@ -412,5 +428,9 @@ label.checkbox {
 .noUi-value {
     font-size: 1rem;
     color: #fff;
+}
+
+.slick-dots li::after {
+    display: none;
 }
 

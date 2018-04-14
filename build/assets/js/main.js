@@ -15,6 +15,36 @@ ready(function () {
         inputFilter();
     }, 1000);
 
+    calculateHeightColumn(document.querySelectorAll('.advantages-graphical-chart'), '.advantages-graphical-chart__row', '.advantages-graphical-chart__column');
+
+    /**
+     *
+     * @param el
+     */
+    function calculateHeightColumn(el, row, column) {
+        var height;
+
+        el.forEach(function () {
+            height;
+        });
+    }
+
+    $('.advantages-graphical-chart').each(function () {
+        var columnHeight = $('.advantages-graphical-chart-columns').height(),
+            maxvalue = parseFloat($(this).find('.advantages-graphical-chart__row:first-of-type').html().replace(/\s/g, '')),
+            minValue = parseFloat($(this).find('.advantages-graphical-chart__row:last-of-type').html().replace(/\s/g, '')),
+            valueOnePercent = (maxvalue - minValue) / 100;
+
+        $('.advantages-graphical-chart__column:first-of-type').each(function () {
+            var columnValue = parseFloat($(this).data('value'));
+            // columnPercent = (columnValue / (maxvalue - minValue)) * 100;
+
+            console.log(columnValue, maxvalue - minValue);
+        });
+
+        console.log($(this).find('.advantages-graphical-chart__row:first-of-type').text(), $(this).find('.advantages-graphical-chart__row:last-of-type').text());
+    });
+
     hoverImages('div.nav-index', 'div.nav-index__item');
     hoverImages('ul.aside-nav', '.aside-nav__link');
 
