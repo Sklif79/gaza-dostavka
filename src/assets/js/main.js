@@ -13,46 +13,6 @@ ready(function () {
         inputFilter();
     }, 1000);
 
-
-    calculateHeightColumn(document.querySelectorAll('.advantages-graphical-chart'), '.advantages-graphical-chart__row', '.advantages-graphical-chart__column');
-
-    /**
-     *
-     * @param el
-     */
-    function calculateHeightColumn(el, row, column) {
-        var height;
-
-        el.forEach(function () {
-            height;
-
-        })
-
-    }
-
-
-
-    $('.advantages-graphical-chart').each(function () {
-        var columnHeight  = $('.advantages-graphical-chart-columns').height(),
-            maxvalue = parseFloat($(this).find('.advantages-graphical-chart__row:first-of-type')
-                .html().replace(/\s/g, '')),
-            minValue = parseFloat($(this).find('.advantages-graphical-chart__row:last-of-type')
-                .html().replace(/\s/g, '')),
-            valueOnePercent = (maxvalue - minValue) / 100;
-
-        $('.advantages-graphical-chart__column:first-of-type').each(function () {
-            var columnValue = parseFloat($(this).data('value'));
-                // columnPercent = (columnValue / (maxvalue - minValue)) * 100;
-
-            console.log(columnValue, (maxvalue - minValue));
-        });
-
-
-        console.log($(this).find('.advantages-graphical-chart__row:first-of-type')
-            .text() , $(this).find('.advantages-graphical-chart__row:last-of-type')
-            .text())
-    })
-
     hoverImages('div.nav-index', 'div.nav-index__item');
     hoverImages('ul.aside-nav', '.aside-nav__link');
 
@@ -61,6 +21,7 @@ ready(function () {
     $('.three-columns__title').setMaxHeights();
     $('.four-columns__title').setMaxHeights();
     $('.additional-equipment__name').setMaxHeights();
+    $('.advantages-graphical-chart-table').advantagesGraphicalChart();
 
     $(window).resize(function () {
         setTimeout(function () {
@@ -367,7 +328,6 @@ $.fn.setMaxHeights = function () {
 (function () {
     $('input.js-only-digits').keypress(function (e) {
         if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-            console.log('ddd')
             return false;
         }
     });
@@ -626,9 +586,6 @@ function setSliderHandle(i, value) {
 //slider.noUiSlider.set(10);
 
 
-
-
-
 function inputFilter() {
     if (document.querySelectorAll('.inputs-wrap').length) {
         (function () {
@@ -690,3 +647,152 @@ function inputFilter() {
         })();
     }
 }
+
+
+//плагин для графиков
+(function ($, window, document) {
+
+    // window и document передаются локально, вместо глобальных
+    // переменных, что немного ускоряет процесс определения
+    // и позволяет более эффективно минифицировать
+    // ваш код, если эти переменные часто используются
+    // в вашем плагине
+
+    // определяем необходимые параметры по умолчанию
+    var pluginName = 'advantagesGraphicalChart',
+        defaults = {
+            // propertyName: "value"
+        };
+
+    // конструктор плагина
+    function Plugin(element, options) {
+        this.element = element;
+
+        this.options = $.extend({}, defaults, options);
+
+        this._defaults = defaults;
+        this._name = pluginName;
+
+        this.init();
+    }
+
+    Plugin.prototype.init = function () {
+        // Тут пишем код самого плагина
+        // Здесь у нас уже есть доступ к DOM, и входным параметрам
+        // через объект, типа this.element и this.options
+        var el = this.element,
+            options = this.options;
+
+        setLeftPosition(el);
+        columnHeight(el);
+    };
+
+    function columnHeight(el) {
+        var $columns = $(el).find('.advantages-graphical-chart__column'),
+            i, columnValue,
+
+            columnMaxHeight = $(el).find('.advantages-graphical-chart-columns').height()    ;
+
+        for (i = 0; i < $columns.length; i++) {
+            columnValue = parseFloat($columns[i].getAttribute('data-value'));
+
+        }
+    }
+
+    /**
+     * max margin-left and max width for el
+     * @param el
+     */
+    function setLeftPosition(el) {
+        var $leftIndexesArr = $(el).find('.advantages-graphical-chart__row span'),
+            maxWidth = getMaxWidth($leftIndexesArr),
+            $curentEl;
+
+        $leftIndexesArr.each(function () {
+            $curentEl = $(this);
+
+            //форматирование числа боковой колонки
+            $curentEl.text((+$curentEl.text()).toLocaleString('ru'));
+            $curentEl.text($curentEl.text().replace(/,/, '.'));
+
+            $curentEl.css({
+                'margin-left': -maxWidth - 16 + 'px',
+                'width': maxWidth + 'px'
+            });
+        });
+    }
+
+    function getMaxWidth(arr) {
+        var i, maxWidth = 0;
+
+        for (i = 0; i < arr.length; i++) {
+            maxWidth = Math.max(maxWidth, $(arr[i]).width());
+        }
+
+        return Math.ceil(maxWidth);
+    }
+
+    // Простой декоратор конструктора,
+    // предотвращающий дублирование плагинов
+    $.fn[pluginName] = function (options) {
+        return this.each(function () {
+            if (!$.data(this, 'plugin_' + pluginName)) {
+                $.data(this, 'plugin_' + pluginName,
+                    new Plugin(this, options));
+            }
+        });
+    }
+
+})(jQuery, window, document);
+
+
+// calculateHeightColumn(document.querySelectorAll('.advantages-graphical-chart'), '.advantages-graphical-chart__row', '.advantages-graphical-chart__column');
+
+/**
+ *
+ * @param el
+ */
+// function calculateHeightColumn(el, row, column) {
+//     var height;
+//
+//     el.forEach(function () {
+//         height;
+//
+//     })
+//
+// }
+
+
+// $('.advantages-graphical-chart').each(function () {
+//     var columnHeight = $('.advantages-graphical-chart-columns').height(),
+//         maxvalue = parseFloat($(this).find('.advantages-graphical-chart__row:first-of-type')
+//             .html().replace(/\s/g, '')),
+//         minValue = parseFloat($(this).find('.advantages-graphical-chart__row:last-of-type')
+//             .html().replace(/\s/g, '')),
+//         valueOnePercent = (maxvalue - minValue) / 100,
+//         spanWidth;
+//
+//     $('.advantages-graphical-chart__column:first-of-type').each(function () {
+//         var columnValue = parseFloat($(this).data('value'));
+//         // columnPercent = (columnValue / (maxvalue - minValue)) * 100;
+//
+//         console.log(columnValue, (maxvalue - minValue));
+//     });
+//
+//
+//     console.log($(this).find('.advantages-graphical-chart__row:first-of-type')
+//         .text(), $(this).find('.advantages-graphical-chart__row:last-of-type')
+//         .text())
+//
+//
+//     // $('.advantages-graphical-chart__row span', this).setShiftLeft();
+// })
+
+// //максимальная ширина со смещением для блоков с цифрами в графике
+// $.fn.setShiftLeft = function () {
+//     var maxWidth = this.map(function (i, e) {
+//         return $(e).width();
+//     }).get();
+//
+//     return this.css('margin-left', '-' + Math.max.apply(this, maxWidth) + 20 + 'px');
+// };
