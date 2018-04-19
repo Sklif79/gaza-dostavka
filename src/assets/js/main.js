@@ -5,9 +5,11 @@ ready(function () {
     asideFidback();
     mainPage();
     radioBtn($('.shipment-form__city input[type="radio"]'));
+    radioBtn($('.radio-inline input[type="radio"]'));
     tooltipPosition();
     checkedInput();
     jQueryTabs();
+    countTabsContentList();
 
     setTimeout(function () {
         inputFilter();
@@ -77,7 +79,6 @@ function mainPage() {
         $('html, body').addClass('main-page');
         $('.aside').removeClass('moved overlay-mask');
     }
-
 }
 
 //кастомный плейсхолдер
@@ -400,6 +401,12 @@ function jQueryTabs() {
         $(this).addClass('active').closest('.tabs-wrap')
             .find('div[data-id="' + $(this).attr('data-id') + '"]').addClass('active');
     });
+
+    $('.tabs-wrap').each(function () {
+        if ($('.tab', $(this)).length === 1) {
+            $('.tab', $(this)).addClass('js-single');
+        }
+    });
 }
 
 
@@ -645,4 +652,13 @@ function inputFilter() {
             document.querySelector('.inputs-wrap').classList.add('js-calculated');
         })();
     }
+}
+
+//определение количества списков в блоке с табами
+function countTabsContentList() {
+    $('.tabs-list-wrap').each(function () {
+        if ($('.tabs-list', $(this)).length === 1) {
+            $(this).addClass('js-single');
+        }
+    })
 }

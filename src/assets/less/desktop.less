@@ -1329,6 +1329,7 @@
   vertical-align: middle;
   position: relative;
   cursor: pointer;
+  margin-left: 10px;
   //line-height: 0;
   //width: 18px;
   //height: 18px;
@@ -3131,8 +3132,6 @@
   transform: translateX(-50%);
 }
 
-
-
 /* - - - - - - - - - - - - review - - - - - - - - - - - - */
 .review {
   background: url("../images/review-slider__bg.jpg") 50% 0 no-repeat;
@@ -3255,6 +3254,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  ul li {
+    line-height: 3rem;
+    font-size: 1.875rem;
+    color: #fff;
+    font-weight: bold;
+    padding-left: 40px;
+
+    &::after {
+      width: 24px;
+      height: 19px;
+      background: url("../images/checking-white.png") center no-repeat;
+    }
+  }
 }
 
 .page-description__bg {
@@ -3264,6 +3277,28 @@
   min-width: 100%;
   min-height: 100%;
   max-width: none;
+}
+
+.page-description-slider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 82px;
+  background: rgba(0,0,0,.85);
+}
+
+.page-description-slider {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  text-align: center;
+
+  img {
+    display: inline;
+  }
 }
 
 /* - - - - - - - - - - - - gasification-installation - - - - - - - - - - - - */
@@ -3402,123 +3437,9 @@
 }
 
 .advantages-graphical-chart {
-  padding: 54px 0 103px;
-  background: #273444;
-  border-radius: @border-radius;
-  max-width: 990px;
-  margin: 0 auto 37px;
-  color: #fff;
-
-  h3 {
-    font-size: 1.25rem;
-    font-weight: 500;
-
-    &::after {
-      display: none;
-    }
-  }
-}
-
-.advantages-graphical-chart-table {
-  line-height: 46px;
-  max-width: 794px;
-  margin: 0 auto;
-  position: relative;
-  padding-left: 67px;
-}
-
-.advantages-graphical-chart__row {
-  height: 46px;
-  line-height: 89px;
-  //text-indent: -37px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: none;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.875rem;
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 4px;
-    bottom: -1px;
-    left: -4px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  &:first-of-type {
-    border-right: none;
-    border-left: none;
-  }
-
-  span {
-    margin-left: -37px;
-    display: inline-block;
-    text-align: right;
-    height: auto;
-    line-height: normal;
-  }
-}
-
-.advantages-graphical-chart__axis-title {
-  transform: rotate(-90deg) translateX(-50%);
-  transform-origin: 0 100%;
-  border: none;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  height: auto;
-  line-height: normal;
-  text-indent: 0;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.875rem;
-}
-
-.advantages-graphical-chart-columns {
-  left: 67px;
-  position: absolute;
-  top: 45px;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.advantages-graphical-chart__column {
-  width: 17.1939%;
-  margin-left: 6.1898%;
-  flex: none;
-  font-size: 0.875rem;
   text-align: center;
-  line-height: normal;
-  position: relative;
+  margin-bottom: 37px;
 }
-
-.advantages-graphical-chart__column-title {
-  top: ~"calc(100% + 14px)";
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
-//.advantages-graphical-chart__column.theme-background_red {
-//  height: 10px;
-//}
-//
-//.advantages-graphical-chart__column.theme-background_yellow {
-//  height: 159px;
-//}
-//
-//.advantages-graphical-chart__column.theme-background_green {
-//  height: 307px;
-//}
-//
-//.advantages-graphical-chart__column.theme-background_blue {
-//  height: 331px;
-//}
 
 /* - - - - - - - - - - - - gas-cost-form - - - - - - - - - - - - */
 .gas-cost-form {
@@ -3547,6 +3468,11 @@
     &.active {
       background: #F2F3F5;
       color: @link-blue;
+    }
+
+    &.js-single {
+      background: transparent;
+      width: 100%;
     }
 
     &:last-of-type {
@@ -3714,14 +3640,28 @@
   height: 5px;
   background: @link-blue;
   z-index: 10;
-
 }
 
-.tab-section-list {
-  column-count: 2;
-  column-gap: 53px;
-  list-style: none;
-  display: inline-block;
+.tabs-list-wrap {
+  display: flex;
+  justify-content: space-between;
+
+  &.js-single {
+    ul {
+      column-count: 2;
+      column-gap: 53px;
+      list-style: none;
+      display: inline-block;
+    }
+
+    .tabs-list {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.tabs-list {
+  flex-basis: 48%;
 
   li {
     line-height: 1.125rem;
@@ -3733,6 +3673,10 @@
   display: flex;
 }
 
+.inputs-wrap > .checkbox {
+  margin-right: 50px;
+}
+
 .inputs-wrap .checkbox {
   white-space: nowrap;
   margin-bottom: 20px;
@@ -3741,6 +3685,49 @@
 
 .checkbox__column {
   margin-right: 50px;
+}
+
+.radio-inline-wrap {
+  display: flex;
+  align-items: center;
+
+  .fyi {
+
+  }
+}
+
+.radio-inline {
+  display: flex;
+
+  input[type=radio] {
+    display: none;
+  }
+
+  label {
+    color: @gray;
+    padding: 0 26px;
+    height: 31px;
+    line-height: 29px;
+    border: 1px solid #CCD3DB;
+    cursor: pointer;
+    margin-right: -1px;
+
+    &:first-of-type {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    
+    &.js__selected {
+      background: @link-blue;
+      color: #fff;
+      border-color: transparent;
+    }
+  }
 }
 
 /* - - - - - - - - - - - - gasholder-description - - - - - - - - - - - - */
@@ -3817,7 +3804,7 @@
     color: #fff;
     text-align: left;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    
+
     .fyi {
       color: @dark-text;
     }
@@ -3859,9 +3846,9 @@
   }
 
   .half {
-    height: 295px;
+    min-height: 295px;
   }
-  
+
   li {
     color: #000;
     margin-bottom: 5px;
@@ -3873,7 +3860,7 @@
   display: flex;
 }
 
-.half-center  {
+.half-center {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3890,6 +3877,18 @@
   flex-basis: 50%;
 }
 
+.js_select-count {
+  opacity: 0;
+}
+
+.half__section {
+  margin-bottom: 31px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
 .gasholder-type__description {
   padding: 40px;
   border: 1px solid rgba(26, 30, 36, 0.05);
@@ -3902,6 +3901,46 @@
 }
 
 .gasholder-type .half-wrap:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+.bio-station-type {
+  padding-top: 40px;
+  padding-bottom: 54px;
+
+  h2 {
+    text-align: center;
+    font-weight: 500;
+    color: @dark-text;
+    margin-bottom: 26px;
+  }
+
+  h3 {
+    margin-bottom: 23px;
+  }
+
+  .half {
+    min-height: 279px;
+  }
+
+  li {
+    color: #000;
+    margin-bottom: 5px;
+    line-height: normal;
+  }
+}
+
+.bio-station-type__description {
+  padding: 40px;
+
+  h3 {
+    font-weight: 500;
+    font-size: 1.125rem;
+    color: @link-blue;
+  }
+}
+
+.bio-station-type .half-wrap:nth-of-type(even) {
   flex-direction: row-reverse;
 }
 
@@ -3950,6 +3989,16 @@
   text-align: center;
 }
 
+.select-count {
+  display: flex;
+  align-items: center;
+}
+
+.select-count__info {
+  margin-left: 15px;
+  font-size: 0.875rem;
+  color: @dark-text;
+}
 
 /* - - - - - - - - - - - - footer - - - - - - - - - - - - */
 .footer {
@@ -4084,11 +4133,23 @@
 }
 
 .theme-background_gray {
-  background: rgba(26,30,36,.05);
+  background: rgba(26, 30, 36, .05);
 }
 
 .row_reverse {
   flex-direction: row-reverse;
+}
+
+.field_short {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .block {
+    flex: none;
+    width: 64px;
+    margin-left: 34px;
+  }
 }
 
 /* IE10+ specific styles go here */

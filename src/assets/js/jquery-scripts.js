@@ -59,6 +59,13 @@ $(document).ready(function () {
         arrows: true
     });
 
+    //слайдер брендов в описании раздела
+    $('div.page-description-slider').slick({
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        arrows: false
+    });
+
     //fancybox-popup
     $('.js_fancybox-img').fancybox({
         closeBtn: true,
@@ -132,6 +139,13 @@ $(document).ready(function () {
         theme: 'classic',
         minimumResultsForSearch: Infinity
     });
+
+    //custom select for counters with gray label
+    $('.js_select-count').select2({
+        width: 90,
+        theme: 'classic',
+        minimumResultsForSearch: Infinity
+    }).css({'opacity': '1'});
 
     //Обрезка длины текста
     $('.useful-information__item-txt').liTextLength({
