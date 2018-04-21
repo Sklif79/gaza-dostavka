@@ -166,10 +166,6 @@ $(document).ready(function () {
         $(this).parent().attr("id", "current"); // Активация идентификаторов
         $('#' + $(this).attr('data-title')).fadeIn(); // Показать содержимое текущей вкладки
     });
-
-
-
-
 });
 
 

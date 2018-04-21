@@ -10,6 +10,7 @@ ready(function () {
     checkedInput();
     jQueryTabs();
     countTabsContentList();
+    shiftCenterPageDescription();
 
     setTimeout(function () {
         inputFilter();
@@ -142,6 +143,7 @@ $(window).bind('load', function () {
         '.filter-section, ' +
         '.index-slider__item, ' +
         '.card-inner__pager__img, ' +
+        '.shipment-gallery-slider__item, ' +
         '.card-inner__slider-img';
 
     $(hiddenBeforLoad).css({'opacity': '1'})
@@ -661,4 +663,11 @@ function countTabsContentList() {
             $(this).addClass('js-single');
         }
     })
+}
+
+//сдвиг центра при наличии слайдера в описании раздела
+function shiftCenterPageDescription() {
+    if ($('.page-description-slider').length) {
+        $('.page-description__inner').css('padding-bottom', 120 + 'px');
+    }
 }
