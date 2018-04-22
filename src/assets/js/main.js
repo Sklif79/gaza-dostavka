@@ -23,7 +23,10 @@ ready(function () {
 
     $('.three-columns__title').setMaxHeights();
     $('.four-columns__title').setMaxHeights();
-    $('.additional-equipment__name').setMaxHeights();
+
+    setTimeout(function () {
+        $('.additional-equipment__name').setMaxHeights();
+    }, 0);
 
     $(window).resize(function () {
         setTimeout(function () {

@@ -1,0 +1,118 @@
+//= templates/head.html
+
+<body>
+
+<div class="wrapper">
+    //= templates/aside.html
+
+    <div class="content">
+        <div class="header-with-nav">
+            <div class="header-with-nav__top container">
+                <ul class="header-nav">
+                    <li><a href="#" class="active">Заправка автомобилей</a></li>
+                    <li><a href="#">Заправка баллонов</a></li>
+                    <li><a href="#">Скидочные карты</a></li>
+                    <li><a href="#">Партнерская программа</a></li>
+                </ul>
+
+                <div class="phones-dropdown">
+                    <a href="tel:+78126666707" class="phones-dropdown__title">+7 (812) 666-67-07</a>
+                    <div class="phones-dropdown__inner">
+                        <a href="tel:+78126666707">+7 (812) 666-67-07</a>
+
+                        <div class="phones-dropdown__schedule">
+                            <span>Часы работы:</span>
+                            Пн-Пт; с 8:00 до 19:00
+                        </div>
+
+                        <a href="#feedback" class="btn  js-modal">Заказать звонок</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-with-nav__bottom-wrap">
+                <div class="header-with-nav__bottom">
+                    <h1>Скидочные карты</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-description">
+            <img src="assets/images/discounts-card__bg.jpg" alt="" class="page-description__bg">
+
+            <div class="page-description__inner page-description_center theme-background_transparent">
+                <div class="page-description__inner-wrap">
+                    <div class="page-description__img">
+                        <img src="assets/images/card-discount-description.png" alt="">
+                    </div>
+
+                    <div class="page-description__info">
+                        <h3>Скидочная карта «АТГ»</h3>
+                        <p>
+                            Приобретая скидочную карту на всю сеть автогазозаправочных станций компании
+                            «АТГ» вы получаете скидку 3% на заправку газом.
+                        </p>
+
+                        <a href="#discount-card-order" class="btn js-modal">приобрести за 200 &#8381;</a>
+                    </div>
+                </div>
+                <div class="page-description__warn">
+                    Карту можно приобрести на любой АГЗС сети АТГ. (Скидка не действует на АГЗС по адресу
+                    дер. Лангерево).
+                </div>
+            </div>
+        </div>
+
+        <div class="shipment-sale theme-background_white">
+            <div class="shipment-sale__more">
+                <img src="assets/images/shipment-sale__bg.png" alt="">
+                <div class="shipment-sale__more-info">
+                    <div class="shipment-sale__label">Акция</div>
+                    <h2>Доставка газа со скидкой до 25% от розничной цены</h2>
+                    <a href="#" class="btn-transparent">Подробнее</a>
+                </div>
+            </div>
+            <div class="shipment-sale__sales">
+                <div class="shipment-sale__sales-label">Другие акции</div>
+                <div class="shipment-sale__sales-item">
+                    <img src="assets/images/remove/shipment-sale__sales.png" alt="">
+                    <div class="shipment-sale__sales-info">
+                        <p>
+                            Скачай приложение-
+                            получай баллы длинное
+                        </p>
+                        <a href="#" class="shipment-sale__sales-lnk">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="shipment-sale__sales-item">
+                    <img src="assets/images/remove/shipment-sale__sales.png" alt="">
+                    <div class="shipment-sale__sales-info">
+                        <p>
+                            Скачай приложение-
+                            получай баллы
+                        </p>
+                        <a href="#" class="shipment-sale__sales-lnk">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="container">
+            //= templates/useful-information.html
+        </div>
+
+    </div>
+</div>
+
+//= templates/popups.html
+
+
+<script src="assets/js/libs.js"></script>
+<script src="assets/js/jquery-scripts.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
