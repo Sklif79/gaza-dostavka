@@ -59,6 +59,15 @@ $(document).ready(function () {
         arrows: true
     });
 
+    $('div.article-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        nextArrow: '<div class="article-slider__next"></div>',
+        prevArrow: '<div class="article-slider__prev"></div>',
+        arrows: true
+    });
+
     //слайдер брендов в описании раздела
     $('div.page-description-slider').slick({
         slidesToShow: 8,

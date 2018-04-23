@@ -1037,7 +1037,7 @@
     </form>
 </div>
 
-<!-- Заявка на газификацию -->
+<!-- заявка на установку источника электроэнергии -->
 <div id="power-source-order" class="popup">
     <h2>заявка на установку <br> источника электроэнергии</h2>
     <form name="shipment-order" action="#" method="post">
@@ -1123,7 +1123,7 @@
     </form>
 </div>
 
-<!-- Заявка на газификацию -->
+<!-- заявка на доставку баллонов -->
 <div id="cylinder-shipment-order" class="popup">
     <h2>заявка на доставку баллонов</h2>
     <form name="shipment-order" action="#" method="post">
@@ -1315,6 +1315,93 @@
         <input type="submit" value="оформить скидочную карту" class="btn btn-submit">
     </form>
 </div>
+
+<!-- заявка на обслуживание газификации -->
+<div id="maintenance-gasification-order" class="popup">
+    <h2>заявка на обслуживание <br> газификации</h2>
+    <form name="shipment-order" action="#" method="post">
+
+        <div class="field__wrap">
+            <label class="field__label custom-placeholder-wrap">
+            <span class="block">
+                <input type="text" autocomplete="off" class="field" placeholder="" name="name">
+
+                <!--тултип для обязательных полей-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                <!--/-->
+
+            </span>
+                <span class="custom-placeholder">Ваше имя</span>
+            </label>
+        </div>
+
+        <div class="field__wrap">
+            <label class="field__label custom-placeholder-wrap">
+                <span class="block">
+                    <input type="text" class="field js-phone-mask error" autocomplete="off" placeholder="" name="phone">
+
+                    <!--тултип для обязательных полей, чтобы появился,
+                     на input добавить класс error-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                    <!--/-->
+
+                </span>
+                <span class="custom-placeholder">Телефон для связи</span>
+            </label>
+        </div>
+
+        <div class="field__wrap">
+            <label class="field__label custom-placeholder-wrap">
+            <span class="block">
+                <input type="text" autocomplete="off" class="field" placeholder="" name="email">
+
+                <!--тултип для обязательных полей-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                <!--/-->
+
+            </span>
+                <span class="custom-placeholder">Ваш email</span>
+            </label>
+        </div>
+
+        <div class="field__wrap">
+            <label class="field__label custom-placeholder-wrap">
+            <span class="block">
+                <input type="text" autocomplete="off" class="field" placeholder="" name="address">
+
+                <!--тултип для обязательных полей-->
+                    <span class="tooltip field__tooltip">
+                        <img src="assets/images/error-icon.svg" alt="">
+                        <span class="tooltip__description">
+                            Необходимо заполнить поле
+                        </span>
+                    </span>
+                <!--/-->
+
+            </span>
+                <span class="custom-placeholder">Адрес обслуживания</span>
+            </label>
+        </div>
+
+        <input type="submit" value="Отправить заявку" class="btn btn-submit">
+    </form>
+</div>
+
 
                                   
 

@@ -11,6 +11,7 @@ ready(function () {
     jQueryTabs();
     countTabsContentList();
     shiftCenterPageDescription();
+    faq();
 
     // setTimeout(function () {
     //     inputFilter();
@@ -147,6 +148,7 @@ $(window).bind('load', function () {
         '.index-slider__item, ' +
         '.card-inner__pager__img, ' +
         '.shipment-gallery-slider__item, ' +
+        '.article-slider, ' +
         '.card-inner__slider-img';
 
     $(hiddenBeforLoad).css({'opacity': '1'})
@@ -676,4 +678,11 @@ function shiftCenterPageDescription() {
     if ($('.page-description-slider').length) {
         $('.page-description__inner').css('padding-bottom', 120 + 'px');
     }
+}
+
+//часто задаваемые вопросы
+function faq() {
+    $(document).on('click', '.faq-question', function () {
+        $(this).toggleClass('active').next('.faq-answer').slideToggle();
+    })
 }

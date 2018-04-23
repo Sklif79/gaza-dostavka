@@ -13,6 +13,7 @@ ready(function () {
     jQueryTabs();
     countTabsContentList();
     shiftCenterPageDescription();
+    faq();
 
     // setTimeout(function () {
     //     inputFilter();
@@ -141,7 +142,7 @@ function findParent(el, class_) {
 
 //появление после загрузки страницы
 $(window).bind('load', function () {
-    var hiddenBeforLoad = '.filter-section, ' + '.index-slider__item, ' + '.card-inner__pager__img, ' + '.shipment-gallery-slider__item, ' + '.card-inner__slider-img';
+    var hiddenBeforLoad = '.filter-section, ' + '.index-slider__item, ' + '.card-inner__pager__img, ' + '.shipment-gallery-slider__item, ' + '.article-slider, ' + '.card-inner__slider-img';
 
     $(hiddenBeforLoad).css({ 'opacity': '1' });
 });
@@ -650,4 +651,11 @@ function shiftCenterPageDescription() {
     if ($('.page-description-slider').length) {
         $('.page-description__inner').css('padding-bottom', 120 + 'px');
     }
+}
+
+//часто задаваемые вопросы
+function faq() {
+    $(document).on('click', '.faq-question', function () {
+        $(this).toggleClass('active').next('.faq-answer').slideToggle();
+    });
 }
