@@ -4547,6 +4547,8 @@
 
 /* - - - - - - - - - - - - map-filter - - - - - - - - - - - - */
 .map-filter {
+  position: relative;
+
   h2 {
     margin-bottom: 38px;
   }
@@ -4562,8 +4564,221 @@
   overflow: hidden;
 }
 
-#map {
+.map-filter {
+  position: absolute;
+  right: 41px;
+  top: 50%;
+  margin-top: -127px;
+  //min-width: 202px;
+  background: #fff;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+}
+
+.map-filter__reset {
+  height: 38px;
+  line-height: 37px;
+  border-top: 1px solid #E0E6ED;
+  color: @dark-text;
+  font-size: 0.875rem;
+  text-align: center;
+  background: transparent;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.map-filter__header {
+  height: 44px;
+  line-height: 41px;
+  border-bottom: 1px solid #E0E6ED;
+  font-weight: 500;
+  text-align: center;
+  color: @dark-text;
+}
+
+.map-filter__content {
+  padding: 16px 30px 7px;
+}
+
+#map-station {
   height: 555px;
+}
+
+.map-filter__item.checkbox {
+  padding-left: 0;
+  margin-bottom: 9px;
+
+  &::before {
+    display: none;
+  }
+
+  &.active {
+    color: @link-blue;
+  }
+}
+
+.map-filter__item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+
+  i {
+    margin-right: 11px;
+  }
+}
+
+i[class] {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+}
+
+i {
+  &.card {
+    background-image: url('../images/filter-ico/card.png');
+  }
+
+  &.basket {
+    background-image: url('../images/filter-ico/basket.png');
+  }
+
+  &.compressor {
+    background-image: url('../images/filter-ico/compressor.png');
+  }
+
+  &.hoover {
+    background-image: url('../images/filter-ico/hoover.png');
+  }
+
+  &.wc {
+    background-image: url('../images/filter-ico/wc.png');
+  }
+
+  &.active {
+    &.card {
+      background-image: url('../images/filter-ico/card-hover.png');
+    }
+
+    &.basket {
+      background-image: url('../images/filter-ico/basket-hover.png');
+    }
+
+    &.compressor {
+      background-image: url('../images/filter-ico/compressor-hover.png');
+    }
+
+    &.hoover {
+      background-image: url('../images/filter-ico/hoover-hover.png');
+    }
+
+    &.wc {
+      background-image: url('../images/filter-ico/wc-hover.png');
+    }
+  }
+}
+
+.active {
+  > .card {
+    background-image: url('../images/filter-ico/card-hover.png');
+  }
+
+  > .basket {
+    background-image: url('../images/filter-ico/basket-hover.png');
+  }
+
+  > .compressor {
+    background-image: url('../images/filter-ico/compressor-hover.png');
+  }
+
+  > .hoover {
+    background-image: url('../images/filter-ico/hoover-hover.png');
+  }
+
+  > .wc {
+    background-image: url('../images/filter-ico/wc-hover.png');
+  }
+}
+
+.map-filter-result {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+}
+
+.map-filter-result__item {
+  padding: 0 35px 24px;
+  flex: none;
+  width: 50%;
+  border-bottom: 1px solid #E0E6ED;
+  border-right: 1px solid #E0E6ED;
+  display: flex;
+  flex-direction: column;
+
+  &:nth-of-type(even) {
+    border-right: none;
+  }
+}
+
+.map-filter__item-title {
+  padding: 10px 0;
+  min-height: 59px;
+  border-bottom: 1px solid #f4f4f4;
+  color: @dark-text;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  align-items: center;
+
+  span {
+    color: @link-blue;
+    padding-left: 20px;
+  }
+}
+
+.map-filter__icons {
+  margin: 20px 0;
+
+  i {
+    margin-right: 19px;
+  }
+}
+
+.map-filter__phone {
+  margin-bottom: 10px;
+}
+
+.map-filter__phone, .map-filter__work {
+  color: @dark-text;
+  font-size: 0.875rem;
+}
+
+.map-filter__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.map-filter__location {
+  position: relative;
+  font-size: 0.75rem;
+  background: linear-gradient(to right, fade(@primary-text-color, 70%) 1px, transparent 1px) 0 bottom repeat-x;
+  background-size: 2px 1px;
+  line-height: 1rem;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -15px;
+    width: 11px;
+    height: 16px;
+    background: url("../images/loc-mini.png") center no-repeat;
+  }
+
 }
 
 /* - - - - - - - - - - - - offer-legal - - - - - - - - - - - - */
@@ -4993,7 +5208,6 @@
   padding: 54px 0 48px;
 
   &.theme-background_gray {
-    margin-bottom: 54px;
 
     .seo-text-inner {
       max-width: 715px;

@@ -24,7 +24,7 @@
     <!--[if IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
-
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 <body>
 
 <div class="wrapper">
@@ -305,35 +305,262 @@
             <p>Узнайте как получить <a href="#">3 -х процентую скидку</a> на наших заправках</p>
             <a href="#" class="btn-transparent">подробнее</a>
         </div>
-        <div class="map-filter">
-            <div class="map-wrap">
-                <div id="map"></div>
-                <div class="map-filter">
-                    <div class="map-filter__header">
-                        Сервис
-                    </div>
-                    <label>
-                        <input type="checkbox">Оплата картой
+
+        <div class="map-wrap">
+            <div id="map-station"></div>
+            <form class="map-filter">
+                <div class="map-filter__header">Сервис</div>
+        
+                <div class="map-filter__content">
+                    <label class="map-filter__item checkbox">
+                        <input type="checkbox">
+                        <i class="card"></i>
+                        Оплата картой
                     </label>
-                    <label>
-                        <input type="checkbox">Магазин
+                    <label class="map-filter__item checkbox">
+                        <input type="checkbox">
+                        <i class="basket"></i>
+                        Магазин
                     </label>
-                    <label>
-                        <input type="checkbox">Подкачка колес
+                    <label class="map-filter__item checkbox">
+                        <input type="checkbox">
+                        <i class="compressor"></i>
+                        Подкачка колес
                     </label>
-                    <label>
-                        <input type="checkbox">Пылесос
+                    <label class="map-filter__item checkbox">
+                        <input type="checkbox">
+                        <i class="hoover"></i>
+                        Пылесос
                     </label>
-                    <label>
-                        <input type="checkbox">Туалет
+                    <label class="map-filter__item checkbox">
+                        <input type="checkbox">
+                        <i class="wc"></i>
+                        Туалет
                     </label>
-                    <div class="map-filter__footer">
-                        очистить
-                    </div>
                 </div>
+        
+                <div class="map-filter__footer">
+                    <input type="reset" class="map-filter__reset" value="очистить">
+                </div>
+            </form>
+        </div>
+        
+        <div class="map-filter-result">
+            <!---->
+            <div class="map-filter-result__item">
+                <div class="map-filter__item-title">
+                    <h4>Верхняя улица, дом 10, АЗС «Фаэтон»</h4>
+                    <span>17.85 руб./литр</span>
+                </div>
+                <div class="map-filter__icons">
+                    <i class="card active"></i>
+                    <i class="basket"></i>
+                    <i class="hoover"></i>
+                    <i class="compressor"></i>
+                    <i class="wc"></i>
+                </div>
+                <div class="map-filter__phone">
+                    Номер телефона: +7 (911) 831-28-13
+                </div>
+                <div class="map-filter__footer">
+                    <div class="map-filter__work">
+                        Время работы: 24 часа в сутки
+                    </div>
+        
+                    <span class="map-filter__location" data-location="60.057792, 30.364898">Показать на карте</span>
+                </div>
+        
             </div>
-            
-            <div class="map-filter-result"></div>
+        
+            <!---->
+            <div class="map-filter-result__item">
+                <div class="map-filter__item-title">
+                    <h4>Ленинградская обл., Ломоносовский район,<br>
+                        д. Лангерево, ул Пениковская, уч. 16 </h4>
+                    <span>16 руб./литр
+                        <div class="fyi">
+                            <div class="fyi__tooltip">
+                                Описание… Описание… Описание… Описание…Описание…
+                                Описание…Описание… Описание…
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="map-filter__icons">
+                    <i class="card active"></i>
+                    <i class="basket"></i>
+                    <i class="hoover"></i>
+                    <i class="compressor"></i>
+                    <i class="wc"></i>
+                </div>
+                <div class="map-filter__phone">
+                    Номер телефона: +7 (911) 987-48-35
+                </div>
+                <div class="map-filter__footer">
+                    <div class="map-filter__work">
+                        Время работы: 24 часа в сутки
+                    </div>
+        
+                    <span class="map-filter__location" data-location="59.905362064211765, 29.642814499999908">Показать на карте</span>
+                </div>
+        
+            </div>
+        
+            <!---->
+            <div class="map-filter-result__item">
+                <div class="map-filter__item-title">
+                    <h4>Политехническая улица, дом 5 лит. Б</h4>
+                    <span>17.85 руб./литр</span>
+                </div>
+                <div class="map-filter__icons">
+                    <i class="card active"></i>
+                    <i class="basket"></i>
+                    <i class="hoover"></i>
+                    <i class="compressor"></i>
+                    <i class="wc"></i>
+                </div>
+                <div class="map-filter__phone">
+                    Номер телефона: +7 (911) 831-28-13
+                </div>
+                <div class="map-filter__footer">
+                    <div class="map-filter__work">
+                        Время работы: 24 часа в сутки
+                    </div>
+        
+                    <span class="map-filter__location" data-location="59.99161006412185,30.355609499999975">Показать на карте</span>
+                </div>
+        
+            </div>
+        
+            <!---->
+            <div class="map-filter-result__item">
+                <div class="map-filter__item-title">
+                    <h4>Объездное шоссе, дом 15, АЗС «Фаэтон»</h4>
+                    <span>17.85 руб./литр</span>
+                </div>
+                <div class="map-filter__icons">
+                    <i class="card active"></i>
+                    <i class="basket"></i>
+                    <i class="hoover"></i>
+                    <i class="compressor"></i>
+                    <i class="wc"></i>
+                </div>
+                <div class="map-filter__phone">
+                    Номер телефона: +7 (911) 831-28-13
+                </div>
+                <div class="map-filter__footer">
+                    <div class="map-filter__work">
+                        Время работы: 24 часа в сутки
+                    </div>
+        
+                    <span class="map-filter__location" data-location="59.95429956411944,30.454119000000016">Показать на карте</span>
+                </div>
+        
+            </div>
+        
+            <!---->
+            <div class="map-filter-result__item">
+                <div class="map-filter__item-title">
+                    <h4>Дунайский проспект, дом 62, АЗС «Фаэтон»</h4>
+                    <span>17.85 руб./литр</span>
+                </div>
+                <div class="map-filter__icons">
+                    <i class="card active"></i>
+                    <i class="basket"></i>
+                    <i class="hoover"></i>
+                    <i class="compressor"></i>
+                    <i class="wc"></i>
+                </div>
+                <div class="map-filter__phone">
+                    Номер телефона: +7 (911) 831-28-13
+                </div>
+                <div class="map-filter__footer">
+                    <div class="map-filter__work">
+                        Время работы: 24 часа в сутки
+                    </div>
+        
+                    <span class="map-filter__location" data-location="59.845297064306514,30.41812349999999">Показать на карте</span>
+                </div>
+        
+            </div>
+        
+            <!---->
+            <div class="map-filter-result__item">
+                <div class="map-filter__item-title">
+                    <h4>Уральская улица, дом 14 </h4>
+                    <span>17.85 руб./литр</span>
+                </div>
+                <div class="map-filter__icons">
+                    <i class="card active"></i>
+                    <i class="basket"></i>
+                    <i class="hoover"></i>
+                    <i class="compressor"></i>
+                    <i class="wc"></i>
+                </div>
+                <div class="map-filter__phone">
+                    Номер телефона: +7 (911) 831-28-13
+                </div>
+                <div class="map-filter__footer">
+                    <div class="map-filter__work">
+                        Время работы: 24 часа в сутки
+                    </div>
+        
+                    <span class="map-filter__location" data-location="59.95547556412251,30.252976999999966">Показать на карте</span>
+                </div>
+        
+            </div>
+        
+            <!---->
+            <div class="map-filter-result__item">
+                <div class="map-filter__item-title">
+                    <h4>Дорога на Турухтанные острова 12 лит. К, АЗС «Фаэтон»</h4>
+                    <span>17.85 руб./литр</span>
+                </div>
+                <div class="map-filter__icons">
+                    <i class="card active"></i>
+                    <i class="basket"></i>
+                    <i class="hoover"></i>
+                    <i class="compressor"></i>
+                    <i class="wc"></i>
+                </div>
+                <div class="map-filter__phone">
+                    Номер телефона: +7 (911) 831-28-13
+                </div>
+                <div class="map-filter__footer">
+                    <div class="map-filter__work">
+                        Время работы: 24 часа в сутки
+                    </div>
+        
+                    <span class="map-filter__location" data-location="59.867362564269804,30.24770399999998">Показать на карте</span>
+                </div>
+        
+            </div>
+        
+            <!---->
+            <div class="map-filter-result__item">
+                <div class="map-filter__item-title">
+                    <h4>Глиняная улица, дом корпус 23 кор. 1, АЗС «Фаэтон»</h4>
+                    <span>17.85 руб./литр</span>
+                </div>
+                <div class="map-filter__icons">
+                    <i class="card active"></i>
+                    <i class="basket"></i>
+                    <i class="hoover"></i>
+                    <i class="compressor"></i>
+                    <i class="wc"></i>
+                </div>
+                <div class="map-filter__phone">
+                    Номер телефона: +7 (911) 831-28-13
+                </div>
+                <div class="map-filter__footer">
+                    <div class="map-filter__work">
+                        Время работы: 24 часа в сутки
+                    </div>
+        
+                    <span class="map-filter__location" data-location="59.91344256420138,30.381400499999998">Показать на карте</span>
+                </div>
+        
+            </div>
         </div>
 
         <div class="offer-legal">
@@ -1558,7 +1785,7 @@
 
 
 <script src="assets/js/libs.js"></script>
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
 <script src="assets/js/jquery-scripts.js"></script>
 <script src="assets/js/main.js"></script>
 
