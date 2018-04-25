@@ -65,7 +65,9 @@ $(document).ready(function () {
         dots: true,
         nextArrow: '<div class="article-slider__next"></div>',
         prevArrow: '<div class="article-slider__prev"></div>',
-        arrows: true
+        arrows: true,
+        fade: true,
+        cssEase: 'linear'
     });
 
     //слайдер брендов в описании раздела
@@ -155,13 +157,6 @@ $(document).ready(function () {
         theme: 'classic',
         minimumResultsForSearch: Infinity
     }).css({'opacity': '1'});
-
-    //Обрезка длины текста
-    $('.useful-information__item-txt').liTextLength({
-        length: 110,         //Видимое кол-во символов
-        afterLength: '...',  //Текст после видимого содержания
-        fullText: false       //Добавить ссылку для отображения скрытого текста
-    });
 
     //табы
     $("#tabs-content div").hide(); // Скрытое содержимое

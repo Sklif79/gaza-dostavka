@@ -12,10 +12,7 @@ ready(function () {
     countTabsContentList();
     shiftCenterPageDescription();
     faq();
-
-    // setTimeout(function () {
-    //     inputFilter();
-    // }, 1000);
+    cropText($('.useful-information__item-txt'), 120);
 
     hoverImages('div.nav-index', 'div.nav-index__item');
     hoverImages('ul.aside-nav', '.aside-nav__link');
@@ -685,4 +682,16 @@ function faq() {
     $(document).on('click', '.faq-question', function () {
         $(this).toggleClass('active').next('.faq-answer').slideToggle();
     })
+}
+
+
+//обрезка текста
+function cropText(item, size) {
+
+    item.each(function () {
+        var newsText = $(this).text();
+        if(newsText.length > size){
+            $(this).text(newsText.slice(0, size) + '...');
+        }
+    });
 }
