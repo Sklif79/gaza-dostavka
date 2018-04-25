@@ -1,0 +1,100 @@
+//= templates/head.html
+
+<body>
+
+<div class="wrapper">
+    //= templates/aside.html
+
+    <div class="content contacts-content">
+
+        <div class="header-inner container">
+            <a href="/" class="back-index">Главная</a>
+
+            <h1>Контакты</h1>
+
+            <div class="phones-dropdown"></div>
+        </div>
+
+        <div class="office-map-wrap">
+            <div id="office-map"></div>
+            <div class="select-points">
+                <div class="select-points__selected"></div>
+                <ul class="select-points__list">
+                    <li class="select-city active" data-city-id="0">Санкт-Петербург</li>
+                    <li class="select-city" data-city-id="1">Москва</li>
+                    <li class="select-city" data-city-id="2">Майкоп</li>
+                    <li class="select-city" data-city-id="3">Тверь</li>
+                    <li class="select-city" data-city-id="4">Обнинск</li>
+                </ul>
+            </div>
+            <div id="office-map-description" class="office-map__description">
+                <div class="tabs-wrap">
+                    <div class="tabs-header">
+                    <div class="tabs">
+                        <span data-id="contacts" class="tab active">Контактные данные</span>
+                        <span data-id="feedback" class="tab">Обратная связь</span>
+                    </div>
+                    </div>
+
+                    <div class="panels">
+                        <div data-id="contacts" class="panel active">
+                            <div id="contacts-data">
+
+                            </div>
+                        </div>
+                        <div data-id="feedback" class="panel">
+                            <form action="" method="post" class="feedback">
+                                <div class="field__wrap">
+                                    <label class="field__label custom-placeholder-wrap">
+                                <span class="block">
+                                    <input type="text" class="field" autocomplete="off"
+                                           placeholder="" name="">
+
+                                    </span>
+                                        <span class="custom-placeholder">Ваше имя</span>
+                                    </label>
+                                </div>
+
+                                <div class="field__wrap">
+                                    <label class="field__label custom-placeholder-wrap">
+                                        <span class="block">
+                                            <input type="text" class="field js-phone-mask error" autocomplete="off" placeholder="" name="phone">
+
+                                        </span>
+                                        <span class="custom-placeholder">Телефон для связи</span>
+                                    </label>
+                                </div>
+
+                                <div class="field__wrap">
+                                    <label class="field__label custom-placeholder-wrap">
+                                        <span class="block">
+                                            <textarea class="field custom-textarea" placeholder=""></textarea>
+                                        </span>
+                                        <span class="custom-placeholder textarea-custom-placeholder">Введите ваш отзыв...</span>
+                                    </label>
+                                </div>
+
+                                <input type="submit" value="ОТПРАВИТЬ" class="btn office-map__submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="office-map__footer">
+                <div id="office-map-footer" class="container"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+//= templates/popups.html
+
+
+<script src="assets/js/libs.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="assets/js/jquery-scripts.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
