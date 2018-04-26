@@ -72,6 +72,10 @@ a:not([class]){
     color: @link-blue;
 }
 
+a:hover {
+    border-bottom-color: transparent;
+}
+
 input[type='submit'] {
     cursor: pointer;
     -webkit-appearance: none;
@@ -349,7 +353,7 @@ label.checkbox {
         position: absolute;
         content: "";
         border-style: solid;
-        border-width: 5px 4.5px 0 4.5px;
+        border-width: 5px 4px 0 4px;
         border-color: #3c4858 transparent transparent transparent;
         top: 16px;
         right: 17px;
@@ -402,6 +406,10 @@ label.checkbox {
 .select2-container--classic.select2-container--open .selection .select2-selection--single .select2-selection__arrow b {
     border-width: 5px 4px 0 4px;
     border-color: #8F9CAE transparent transparent transparent;
+}
+
+.select2-container--classic.select2-container--open .select2-dropdown {
+    border-radius: 3px;
 }
 
 .fancybox-nav {

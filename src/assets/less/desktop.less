@@ -456,6 +456,10 @@
   color: @link-blue;
   transition: @transition;
   background-repeat: no-repeat;
+  
+  &:hover {
+    background-color: #F4F4F4;
+  };
 
   &.callback::before {
     background-image: url("../images/phone-call-feedback.svg");
@@ -554,7 +558,7 @@
 
 .phones-dropdown__title {
   font-weight: 500;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: @dark-text;
   padding-right: 14px;
   position: relative;
@@ -600,6 +604,12 @@
     display: inline-block;
     margin-bottom: 12px;
   }
+
+  .btn {
+    height: 31px;
+    line-height: 31px;
+    font-size: 0.625rem;
+  }
 }
 
 .phones-dropdown__schedule {
@@ -612,6 +622,7 @@
     display: block;
     font-size: 12px;
     color: @gray;
+    margin-bottom: 5px;
   }
 }
 
@@ -620,13 +631,39 @@
 }
 
 .back-index {
-  padding-left: 39px;
-  display: inline-block;
+  display: flex;
   font-size: 0.875rem;
   color: @gray;
   height: 28px;
   line-height: 28px;
-  background: url("../images/back-btn.svg") 0 center no-repeat;
+
+  svg {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    color: #6F7D90;
+
+    #Vector__back-btn {
+      fill: #6F7D90;
+    }
+
+    #Ellipse__back-btn {
+      stroke: #6F7D90;
+    }
+  }
+}
+
+#Vector__back-btn {
+  fill: #8F9CAE;
+}
+
+#Ellipse__back-btn {
+  stroke: #8F9CAE;
+}
+
+#Canvas__back-btn {
+  fill: none;
 }
 
 .header-with-nav {
@@ -637,8 +674,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 17px;
-  padding-bottom: 17px;
+  padding: 17px 50px;
 }
 
 .header-nav {
@@ -679,7 +715,19 @@
 
 .header-with-nav__bottom .back-index {
   color: #fff;
-  background-image: url("../images/back-btn-white.svg");
+  transition: opacity 0.1s;
+
+  #Ellipse__back-btn {
+    stroke: #fff;
+  }
+
+  #Vector__back-btn {
+    fill: #fff;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .header-with-nav__bottom h1 {
@@ -996,6 +1044,10 @@
     top: 3px;
     left: -19px;
   }
+
+  &:hover {
+    border-color: transparent;
+  }
 }
 
 /* - - - - - - - - - - - - catalog - - - - - - - - - - - - */
@@ -1009,6 +1061,15 @@
   background: #EDEDED;
   width: 31.4191%;
   vertical-align: top;
+
+  img {
+    transition: 0.5s;
+    will-change: transform;
+  }
+
+  &:hover img {
+    transform: scale(1.15);
+  }
 }
 
 .four-columns__item {
@@ -1217,7 +1278,7 @@
 .description-section__info h2 {
   font-size: 2.1875rem;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 1.375rem;
   line-height: 2.5rem;
 }
 
@@ -1254,6 +1315,7 @@
   .select2-container--classic .select2-selection--multiple {
     font-size: 0;
     line-height: 0;
+    border-color: #CCD3DB;
   }
 
   .select2-container--classic .select2-search--inline .select2-search__field {
@@ -1312,6 +1374,11 @@
   .select2-selection__choice + .select2-search.select2-search--inline {
     display: none;
   }
+
+  .select2-container .select2-search--inline::after {
+    top: 50%;
+    margin-top: -2px;
+  }
 }
 
 .filter-section__title {
@@ -1332,7 +1399,7 @@
   vertical-align: middle;
   position: relative;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 1px;
   width: 16px;
   height: 16px;
   border: 1px solid #CCD3DB;
@@ -1936,7 +2003,7 @@
 
 .distributors__item {
   text-align: center;
-  max-width: 510px;
+  max-width: 550px;
   padding: 0 25px;
 }
 
@@ -2026,7 +2093,6 @@
 
   li {
     padding-left: 26px;
-    font-weight: 500;
     margin-bottom: 16px;
     position: relative;
 
@@ -2044,7 +2110,7 @@
 
 /* - - - - - - - - - - - - counter-advanced-info - - - - - - - - - - - - */
 .counter-advanced-info {
-  margin-bottom: 35px;
+  margin-bottom: 58px;
   text-align: center;
   font-size: .875rem;
   color: @dark-text;
@@ -2467,7 +2533,7 @@
   width: 47.209%;
 }
 
-/* - - - - - - - - - - - - footer - - - - - - - - - - - - */
+/* - - - - - - - - - - - - shipment - - - - - - - - - - - - */
 .shipment-calculation {
   display: flex;
   background-color: #171F29;
@@ -2484,7 +2550,6 @@
   background: url("../images/Russia.png") center no-repeat #273444;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .shipment-calculation__inner {
@@ -2767,6 +2832,11 @@
   flex: none;
   width: 30%;
   margin-right: 53px;
+  transition: border-color 0.1s;
+
+  &:hover {
+    border-color: @link-blue;
+  }
 
   &:last-of-type {
     margin-right: 0;
@@ -2846,13 +2916,13 @@
     border-radius: 50%;
   }
 
-  .shipment-slider__next:hover {
-    background-image: url("../images/arrows/shipment-right-arrow.svg");
-  }
-
-  .shipment-slider__prev:hover {
-    background-image: url("../images/arrows/shipment-left-arrow.svg");
-  }
+  //.shipment-slider__next:hover {
+  //  background-image: url("../images/arrows/shipment-right-arrow.svg");
+  //}
+  //
+  //.shipment-slider__prev:hover {
+  //  background-image: url("../images/arrows/shipment-left-arrow.svg");
+  //}
 }
 
 .shipment-gallery-slider__item {
@@ -3592,6 +3662,11 @@
     white-space: nowrap;
     color: @link-blue;
     border-bottom: 1px solid fade(@link-blue, 70%);
+    transition: border-color 0.1s;
+
+    &:hover {
+      border-color: transparent;
+    }
   }
 }
 
@@ -5548,6 +5623,20 @@ i {
   position: relative;
 }
 
+.footer-inner-wrap {
+  display: inline-block;
+  line-height:normal;
+  transition: @transition;
+
+  &:hover {
+    color: #CDCDC9;
+
+    .tooltip-click__title::after {
+      border-top-color: #CDCDC9;
+    }
+  }
+}
+
 .footer__tooltip {
   display: inline;
 }
@@ -5568,6 +5657,7 @@ i {
   color: #3C4858;
   font-size: 13px;
   line-height: 19px;
+  cursor: default;
 }
 
 .tooltip-click.active .tooltip-click__inner-wrap {
@@ -5584,7 +5674,7 @@ i {
   content: "";
   position: absolute;
   right: 6px;
-  top: 7px;
+  top: 8px;
   border-style: solid;
   border-width: 3px 3px 0 3px;
   border-color: #ffffff transparent transparent transparent;
@@ -5594,11 +5684,37 @@ i {
   cursor: pointer;
   width: 12px;
   height: 12px;
-  background: url("../images/tooltip-close.svg") center no-repeat;
   position: absolute;
   right: 10px;
   top: 10px;
   z-index: 10;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 1px;
+    background-color: #8F9CAE;
+    transition: background-color;
+  }
+
+  &:hover {
+    &::before, &::after {
+      background-color: @link-blue;
+    }
+  }
+
+  &::before {
+    transform-origin: 0 0 0;
+    transform: rotate(45deg);
+    left: 0;
+  }
+
+  &::after {
+    transform-origin: 100% 100% 0;
+    transform: rotate(-45deg);
+    right: 0;
+  }
 }
 
 /* - - - - - - - - - - - - toUp - - - - - - - - - - - - */
