@@ -2975,6 +2975,14 @@
 .photo-gallery {
   padding-top: 54px;
   padding-bottom: 60px;
+
+  .shipment-slider__prev:hover {
+    background-image: url('../images/arrows/photo-gallery-left-arrow-hover.svg');
+  }
+
+  .shipment-slider__next:hover {
+    background-image: url('../images/arrows/photo-gallery-right-arrow-hover.svg');
+  }
 }
 
 /* - - - - - - - - - - - - shipment-sale - - - - - - - - - - - - */
@@ -4112,6 +4120,8 @@
 
   h4 {
     margin-bottom: 22px;
+    font-weight: 500;
+    font-size: 1.375rem;
   }
 
   p {
@@ -4310,11 +4320,16 @@
     font-weight: 500;
     font-size: 1.125rem;
     color: @link-blue;
+    margin-bottom: 15px;
   }
 
   &.theme-background_dark {
     font-size: 1rem;
     line-height: 1.75rem;
+  }
+
+  p {
+    line-height: 1.5rem;
   }
 }
 
