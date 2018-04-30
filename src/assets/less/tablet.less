@@ -1,3 +1,5 @@
+@import "variables";
+
 @media (max-width: 1041px) {
   .aside-nav ul {
     left: 0 !important;
@@ -14,5 +16,107 @@
 
   .moved .aside-nav__txt, .moved .aside-callback__txt {
     display: initial!important;
+  }
+
+  .aside, .contacts-schedule  {
+    display: none;
+  }
+
+  .index-content {
+    margin-left: 0;
+  }
+
+  .header-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 51px;
+    border-bottom: 1px solid #E0E6ED;
+    padding: 6px 22px 7px 12px;
+    background: url("../images/logo-mobile.png") center no-repeat #fff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .wrapper {
+    margin-top: 51px;
+    margin-bottom: 60px;
+  }
+
+  .mobile-logo {
+    //display: inline-block;
+
+  }
+
+  .mobile-nav-btn {
+    color: @dark-text;
+    font-weight: 500;
+    font-size: 0.8125rem;
+    position: relative;
+    line-height: normal;
+    text-transform: uppercase;
+    //padding-left: 36px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      background: url("../images/mobile-nav-sprite.png") -3px -6px no-repeat;
+      width: 26px;
+      height: 18px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    &::after {
+      content: "Меню";
+    }
+
+    &.active {
+      &::before {
+        background-position: -33px -6px;
+      }
+
+      &::after {
+        content: "Закрыть";
+      }
+    }
+  }
+
+  .phones-dropdown__info {
+    font-size: 0.6875rem;
+    color: @gray;
+    padding-right: 14px;
+    text-align: right;
+  }
+
+  .feedback-mobile {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    //height: 60px;
+    background: @link-blue;
+    text-align: center;
+  }
+
+  .feedback-mobile__btn {
+    color: #ffffff;
+    display: inline-block;
+    margin: 10px auto;
+    height: 40px;
+    line-height: 38px;
+    border-color: #fff;
+
+    &:hover {
+      border-color: #fff;
+    }
   }
 }
