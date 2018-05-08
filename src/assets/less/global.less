@@ -270,8 +270,20 @@ label.checkbox {
     background-color: @btn-bg-hover;
 }
 
+#fancybox-thumbs ul {
+    padding-right: 2px;
+}
+
 #fancybox-thumbs ul li {
     padding-left: 0;
+}
+
+.fancybox-nav {
+    transition: opacity 0.1s;
+}
+
+.fancybox-nav:hover {
+    opacity: 0.7;
 }
 
 .jspScrollable:focus {
@@ -439,6 +451,10 @@ label.checkbox {
 
 .fancybox-prev span {
     background: url("../images/arrows/fancybox-left-arrow.svg") center no-repeat;
+}
+
+.fancybox-opened .fancybox-skin {
+    box-shadow: none;
 }
 
 .noUi-target {

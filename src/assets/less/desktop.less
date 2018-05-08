@@ -541,7 +541,6 @@
   height: 56.5149vh;
   opacity: .99;
   display: flex;
-  //min-height: 280px;
   min-height: 380px;
 }
 
@@ -574,8 +573,7 @@
 }
 
 .header-inner {
-  padding-top: 31px;
-  padding-bottom: 32px;
+  padding: 31px 50px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1466,7 +1464,7 @@
   position: absolute;
   font-weight: normal;
   background: #fff;
-  padding: 11px 12px 9px;
+  padding: 7px 12px 9px;
   bottom: 25px;
   left: -80px;
   width: 300px;
@@ -2172,6 +2170,7 @@
 
   h4 {
     line-height: normal;
+    font-size: 1.125rem;
   }
 }
 
@@ -2334,6 +2333,7 @@
 
   &.active {
     color: #197AE3;
+    font-weight: bold;
   }
 }
 
@@ -3303,7 +3303,7 @@
       content: counter(numbers); /* Выводим число */
       counter-increment: numbers; /* Увеличиваем значение счётчика */
       position: absolute;
-      top: -2px;
+      top: -4px;
       left: 0;
       font-weight: bold;
       font-size: 2.5rem;
@@ -4092,6 +4092,10 @@
 .radio-inline {
   display: flex;
 
+  + .fyi {
+    margin-left: 8px;
+  }
+
   input[type=radio] {
     display: none;
   }
@@ -4178,6 +4182,7 @@
   max-width: 750px;
   margin: 0 auto 20px;
   text-align: center;
+  line-height: 1.5rem;
 }
 
 .table-wrap {
@@ -4324,6 +4329,7 @@
     font-weight: 500;
     color: @dark-text;
     margin-bottom: 26px;
+    line-height: 1.625rem;
   }
 
   h3 {
@@ -4558,8 +4564,10 @@
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     color: #fff;
+    transition: color .1s;
 
     &:hover {
+      color: @link-blue;
       border-bottom: transparent;
     }
   }
@@ -4712,6 +4720,11 @@
   width: 100%;
   padding: 0;
   cursor: pointer;
+  transition: background-color 0.1s;
+
+  &:hover {
+    background-color: #f4f4f4;
+  }
 }
 
 .map-filter__header {
@@ -4730,32 +4743,32 @@
 #map-station {
   height: 555px;
 
-  .ymaps-2-1-62-balloon__close + .ymaps-2-1-62-balloon__content {
+  [class$="balloon__close"] + [class$="balloon__content"] {
     margin-right: 0;
   }
 
-  .ymaps-2-1-62-balloon__content {
+  [class$="balloon__content"] {
     padding: 0;
     margin: 0;
   }
 
-  .ymaps-2-1-62-balloon__close-button {
+  [class$="balloon__close-button"] {
     width: 40px;
     opacity: 1;
     background: url("../images/close-map.svg") center no-repeat;
   }
 
-  .ymaps-2-1-62-balloon {
+  [class$="balloon"] {
     padding: 0;
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.25);
   }
 
-  .ymaps-2-1-62-balloon__layout {
+  [class$="balloon__layout"] {
     border-radius: 3px;
     overflow: visible;
   }
 
-  .ymaps-2-1-62-balloon__content > ymaps {
+  [class$="balloon__content"] > ymaps {
     width: 376px !important;
     overflow: visible !important;
 
@@ -4773,7 +4786,7 @@
     }
   }
 
-  .ymaps-2-1-62-balloon__tail {
+  [class$="balloon__tail"] {
     left: 50%;
     margin-left: -9px;
   }
@@ -5015,6 +5028,12 @@ i {
     height: 16px;
     background: url("../images/loc-mini.png") center no-repeat;
   }
+
+  &:hover {
+    color: @link-blue;
+    background: linear-gradient(to right, fade(@link-blue, 70%) 1px, transparent 1px) 0 bottom repeat-x;
+    background-size: 2px 1px;
+  }
 }
 
 /* - - - - - - - - - - - - offer-legal - - - - - - - - - - - - */
@@ -5069,6 +5088,15 @@ i {
   margin-bottom: 20px;
   text-align: center;
   padding: 0 15px;
+
+  a {
+    border-bottom: 1px solid transparent;
+    transition: border-color;
+
+    &:hover {
+      border-color: @link-blue;
+    }
+  }
 }
 
 .affiliate-form {
