@@ -1,6 +1,73 @@
 @import "variables";
 
+@media (max-width: 1200px) {
+  .index-main {
+    height: auto;
+  }
+
+  .index-slider-wrap {
+    padding: 34px 20px 20px;
+    margin-bottom: 10px;
+  }
+
+  .index-slider__inner > img {
+    margin-right: 0 !important;
+    align-self: center;
+  }
+
+  .index-slider__inner > * {
+    order: 3;
+  }
+
+  .index-slider__inner > .index-slider__title {
+    order: 0;
+    text-align: center;
+  }
+
+
+  .index-slider__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .index-slider__title {
+    font-size: 0.875rem;
+    margin-top: 0;
+    margin-bottom: 17px;
+  }
+
+  .slick-slide.index-slider__item {
+    padding: 0;
+  }
+
+  .link-store-wrap {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .nav-index {
+    width: 68.5%;
+  }
+
+  .index-slider-wrap {
+    width: 31.5%;
+  }
+}
+
 @media (max-width: 1041px) {
+  .header-index {
+    padding-top: 110px;
+    padding-bottom: 65px;
+  }
+
+  .index-main {
+    //height: 380px;
+  }
+
+  .phones-dropdown__title {
+    font-size: 0.875rem;
+  }
+
   .aside-nav ul {
     left: 0 !important;
   }
@@ -15,10 +82,10 @@
   }
 
   .moved .aside-nav__txt, .moved .aside-callback__txt {
-    display: initial!important;
+    display: initial !important;
   }
 
-  .aside, .contacts-schedule  {
+  .aside, .contacts-schedule {
     display: none;
   }
 
@@ -94,7 +161,10 @@
     color: @gray;
     padding-right: 14px;
     text-align: right;
+    text-transform: uppercase;
   }
+
+
 
   .feedback-mobile {
     display: block;
