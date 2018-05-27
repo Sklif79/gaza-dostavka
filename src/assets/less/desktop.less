@@ -2445,6 +2445,11 @@
   padding-bottom: 18px;
   max-width: 1085px;
   margin: 0 auto;
+
+  + .shipment-sale {
+    padding-top: 0;
+    margin-top: -9px;
+  }
 }
 
 .advantages-list h2 {
@@ -4188,7 +4193,6 @@
 .table-wrap {
   border: 1px solid #E0E6ED;
   border-radius: 3px;
-  overflow: hidden;
 }
 
 .table_color-column {
@@ -4293,8 +4297,44 @@
   flex-basis: 50%;
 }
 
-.js_select-count {
-  opacity: 0;
+.balloon-count {
+  width: 90px;
+  display: inline-block;
+  border: 1px solid #CCD3DB;
+  border-radius: 3px;
+  height: 40px;
+  line-height: 38px;
+  padding: 0 14px;
+  text-align: center;
+  font-family: inherit;
+  font-size: inherit;
+
+  &::-webkit-input-placeholder {
+    color: @dark-text;
+  }
+  &:-moz-placeholder {
+    color: @dark-text;
+  }
+  &::-moz-placeholder {
+    color: @dark-text;
+  }
+  &:-ms-input-placeholder {
+    color: @dark-text;
+  }
+
+  &:focus::-webkit-input-placeholder{
+    color:transparent;
+  }
+  &:focus::-moz-placeholder{
+    color:transparent;
+  }
+  &:focus:-ms-input-placeholder{
+    color:transparent;
+  }
+  &:focus::placeholder{
+    color:transparent;
+  }
+
 }
 
 .half__section {
@@ -4377,6 +4417,15 @@
   border-radius: 3px;
   margin: 0 auto 30px;
   max-width: 956px;
+  transition: border-color 0.1s;
+
+  &:hover {
+    border-color: @link-blue;
+
+    .promo-description__img {
+      border-color: @link-blue!important;
+    }
+  }
 
   &:last-of-type {
     margin-bottom: 0;
@@ -4388,6 +4437,7 @@
     .promo-description__img {
       border-left: 1px solid #E0E6ED;
       border-right: none;
+      transition: border-color 0.1s;
     }
   }
 }
@@ -5700,11 +5750,11 @@ i {
   transition: @transition;
 
   &:hover {
-    color: #CDCDC9;
+    //color: #CDCDC9;
 
-    .tooltip-click__title::after {
-      border-top-color: #CDCDC9;
-    }
+    //.tooltip-click__title::after {
+    //  border-top-color: #CDCDC9;
+    //}
   }
 }
 
@@ -5716,11 +5766,16 @@ i {
   cursor: pointer;
 }
 
+.tooltip-click__inner {
+  height: 114px;
+  overflow: auto;
+}
+
 .tooltip-click__inner-wrap {
   height: 0;
   overflow: hidden;
   max-width: 647px;
-  padding: 0;
+  padding: 0 20px;
   border-radius: 5px 5px 0 0;
   position: absolute;
   bottom: 0;
@@ -5729,6 +5784,11 @@ i {
   font-size: 13px;
   line-height: 19px;
   cursor: default;
+
+  .jspVerticalBar {
+    z-index: 10;
+    width: 2px;
+  }
 }
 
 .tooltip-click.active .tooltip-click__inner-wrap {
@@ -5739,6 +5799,14 @@ i {
 .tooltip-click__title {
   position: relative;
   padding-right: 18px;
+
+  &:hover {
+    color: #CDCDC9;
+
+    &::after {
+      border-top-color: #CDCDC9;
+    }
+  }
 }
 
 .tooltip-click__title::after {

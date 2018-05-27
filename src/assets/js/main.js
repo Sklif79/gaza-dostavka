@@ -163,7 +163,6 @@ function tooltipClick() {
 
     if ($tooltip.length) {
 
-
         $tooltip.on('click', function (e) {
             if ($(e.target).hasClass('tooltip-click__close')) {
                 $(this).removeClass('active');
@@ -172,6 +171,16 @@ function tooltipClick() {
             }
         });
     }
+
+    $(document).on('click', function (e) {
+        var $tooltipFooter = $('.tooltip-click');
+
+        if ($tooltipFooter.hasClass('active')
+            && !$(e.target).closest('.tooltip-click__inner-wrap').length
+            && !$(e.target).hasClass('js-tooltip__footer')) {
+            $tooltipFooter.removeClass('active');
+        }
+    })
 }
 
 window.asideNavCheck = {
@@ -527,6 +536,8 @@ if (slider) {
 
     slider.noUiSlider.on('update', function (values, handle) {
         input.value = parseInt(values[handle]);
+
+        hideShipmentInfo(input.value);
     });
 
     // Listen to keydown events on the input field.
@@ -599,6 +610,18 @@ function setSliderHandle(i, value) {
     slider.noUiSlider.set(r);
 }
 
+//прячем текст стоимости доставки, при количестве литров более 1000
+function hideShipmentInfo(inputValue) {
+    var liters = 1000,
+        $textEl = $('.shipment-calculation__info');
+
+    if (inputValue >= liters && $('.shipment-calculation__info:visible')) {
+        $textEl.css({'visibility': 'hidden'});
+    } else if (inputValue < liters && $('.shipment-calculation__info:hidden')) {
+        $textEl.css({'visibility': ''});
+    }
+}
+
 //https://refreshless.com/nouislider/slider-read-write/
 //получение значения
 //slider.noUiSlider.get();
@@ -629,7 +652,6 @@ function faq() {
         $(this).toggleClass('active').next('.faq-answer').slideToggle();
     })
 }
-
 
 //обрезка текста
 function cropText(item, size) {
